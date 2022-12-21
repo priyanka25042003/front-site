@@ -1,0 +1,17 @@
+.bg-image {
+    background-image: url("https://assets.wego.com/image/upload/c_fill,fl_lossy,q_auto:best,f_auto,w_2560/v1597920829/web/hero_images/in_1");
+    width: 98.9vw;
+    height: 50vh;
+    background-size: cover;
+}
+
+.entry {
+    align-items: center;
+    display: flex;
+    gap: 0 8px;
+    
+}
+.btn-entry {
+    background-color: #e7fddc;
+    color: #160038;
+}

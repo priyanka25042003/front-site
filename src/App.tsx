@@ -13,6 +13,7 @@ import Navbar from "./navigatiion/navbar";
 import Singin from './auth/signin/signin';
 import Home from './component/home/home';
 import Hotel from './component/Hotel/hotel';
+import Flight from './component/Flight/flight';
 
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
         <Route path="/" element={<Navbar />} >
           <Route path="/" element={< Home/>} />
           <Route path="hotal" element={< Hotel/>} />
+          <Route path="flight" element={< Flight/>} />
+
         </Route>
         <Route path="singin" element={<Singin />} />
       </Routes>
