@@ -1,6 +1,6 @@
 .bg-image {
     background-image: url("https://modtel.travelerwp.com/wp-content/uploads/2022/04/banner-search-form-min.png");
-    width: 100vw;
+    width: 98.9vw;
     height: 50vh;
     background-size: cover;
 }
@@ -19,18 +19,64 @@
 }
 
 .algin {
-  
+    display: flex;
+    justify-content: space-evenly;
     background-color: rgb(255, 255, 255) !important;
-    width: 100vw;
+    width: 83.9vw;
     position: absolute;
-    top: 60%;
-    left: 0%;
+    top: 62%;
+    left: 8%;
     transform: translate(0%, -50%);
-    padding: 2%;
+    padding: 1.5rem;
+
 }
 
 .w-100 {
     border: none;
     outline: none;
     padding: 2%;
+}
+.card{
+    width: 18rem;
+    transition: ease-in 0.5s;
+    padding: 0;
+    border-radius: 1em;
+    margin-top:15%;
+
+
+}
+.card:hover{
+    width: 19rem;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    transition: ease-out 0.5s;
+}
+.container-fluid{
+    display:flex ;
+    justify-content: space-between;
+}
+.card-img-top{
+
+    border-radius: 1em;
+}
+.bgcolor{
+    background-color:#f7f8fa;
+}
+.roundede img  {
+    border-radius: 50%;
+    width: 220px;
+    transition: ease 0.5s;
+
+
+}
+.roundede img:hover {
+    width: 250px;
+    transition: ease 0.5s;
+    box-shadow: 0 5px 33px rgb(0 0 0 / 40%);
+}
+.overflow{
+    overflow-x: scroll;
+    transition: ease 0.5s;
+}
+.overflow::-webkit-scrollbar {
+    display: none;
 }
