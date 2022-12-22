@@ -26,10 +26,9 @@ function Hotel() {
       });
   }
 
-  const example = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <div>
-      <div className="bg-image containerd">
+      <div className="bgg-image containerd">
         <div className="centered">
           <h1 className="text-left text-light display-3">
             Find your next stay
@@ -88,34 +87,6 @@ function Hotel() {
           <h2 className="text-center">Top destinations</h2>
         </div>
         <div className="container-fluid d-flex overflow mt-3">
-          <HorizontalGallery
-            tiles={next_plan.map((value) => (
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-around",
-                  width: 300,
-                  height: 350,
-                }}
-              >
-                <div className="card rounded-5 ">
-                  <div className="card-body">
-                    <img className="card-img-top" src={value.img} alt="" />
-                    <p className="card-text">{value.hotel_type}</p>
-                    <small className="card-text">
-                      {value.state} / {value.city}{" "}
-                    </small>
-                    <h3 className="card-title">{value.hotel_name}</h3>
-                    <hr />
-                    <h6>From : {value.total_price} / night</h6>
-                  </div>
-                </div>
-              </div>
-            ))}
-            elementWidth={350}
-            // fadeDistance={100}
-            minPadding={20}
-          />
           <div className="m-5">
             <div className="roundede">
               <img

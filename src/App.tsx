@@ -11,22 +11,36 @@ import {
 } from "react-router-dom";
 import Navbar from "./navigatiion/navbar";
 import Singin from './auth/signin/signin';
-import Home from './component/home/home';
-import Hotel from './component/Hotel/hotel';
-import Bus from './component/Bus/bus';
-import Flight from './component/Flight/flight';
+import  useRoutes  from "react-router-dom";
+const Home = React.lazy(() => import('./component/home/home'))
+const Hotel = React.lazy(() => import('./component/Hotel/hotel'))
+
+const Bus = React.lazy(() => import('./component/Bus/bus'))
+
+const Flight = React.lazy(() => import('./component/Flight/flight'))
+
 
 
 
 function App() {
+  let router = useRoutes
+  // router.Navigate('/home')
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navbar />} >
-          <Route path="home" element={< Home/>} />
-          <Route path="hotal" element={< Hotel/>} />
-          <Route path="bus" element={< Bus/>} />
-          <Route path="flight" element={< Flight/>} />
+          <Route path="home" element={<React.Suspense >
+              <Home />
+            </React.Suspense>} />
+          <Route path="hotal" element={<React.Suspense >
+              <Hotel />
+            </React.Suspense>} />
+          <Route path="bus" element={<React.Suspense >
+              <Bus />
+            </React.Suspense>} />
+          <Route path="flight" element={<React.Suspense >
+              <Flight />
+            </React.Suspense>} />
 
 
 

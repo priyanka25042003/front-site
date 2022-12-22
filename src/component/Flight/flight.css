@@ -18,7 +18,7 @@
     background-color: white;
     margin: 20px auto;
     padding: 30px 25px;
-    max-width: 800px
+    max-width: 65vw
 }
 
 .box {
@@ -106,4 +106,20 @@
     body {
         padding: 20px
     }
+}
+.d{
+    display: flex !important;
+    justify-content: space-between;
+}
+.algine {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(255, 255, 255) !important;
+    width: 83.9vw;
+    position: absolute;
+    top: 60%;
+    left: 8%;
+    transform: translate(0%, -50%);
+    padding: 1.5rem;
+
 }
