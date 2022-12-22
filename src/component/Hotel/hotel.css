@@ -46,7 +46,7 @@
 
 }
 .card:hover{
-    width: 19rem;
+    width: 18.5rem;
     box-shadow: 0 5px 10px rgba(0,0,0,.2);
     transition: ease-out 0.5s;
 }
@@ -69,7 +69,7 @@
 
 }
 .roundede img:hover {
-    width: 250px;
+    width: 225px;
     transition: ease 0.5s;
     box-shadow: 0 5px 33px rgb(0 0 0 / 40%);
 }
@@ -79,4 +79,8 @@
 }
 .overflow::-webkit-scrollbar {
     display: none;
+}
+.container-f{
+    width: 92vw;
+    margin-left: 3vw;
 }
