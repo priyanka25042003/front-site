@@ -31,10 +31,10 @@ function navbar() {
             <li className="nav-item active">
               <NavLink className="nav-link" to={"listflight"}>listflight <span className="sr-only">(current)</span></NavLink>
             </li>
-<<<<<<< HEAD
+            <li className="nav-item active">
+              <NavLink className="nav-link" to={"listhotel"}>listhotel <span className="sr-only">(current)</span></NavLink>
+            </li>
             
-=======
->>>>>>> c6656700cd3f20b734ae957e3136a99587a77d91
 
           </ul>
           <form className="form-inline my-2 my-lg-0">

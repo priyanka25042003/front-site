@@ -13,6 +13,7 @@ import Navbar from "./navigatiion/navbar";
 import Singin from './auth/signin/signin';
 import useRoutes from "react-router-dom";
 import Listflight from './component/Flight/ListFlight/listflight'
+import Listhotel from './component/Hotel/ListHotel/listhotel';
 const Home = React.lazy(() => import('./component/home/home'))
 const Hotel = React.lazy(() => import('./component/Hotel/hotel'))
 
@@ -27,11 +28,6 @@ const Flight = React.lazy(() => import('./component/Flight/flight'))
 
 
 function App() {
-<<<<<<< HEAD
-=======
-
-  // router.Navigate('/home')
->>>>>>> c6656700cd3f20b734ae957e3136a99587a77d91
   return (
     <BrowserRouter>
       <Routes>
@@ -46,21 +42,20 @@ function App() {
             <Bus />
           </React.Suspense>} />
           <Route path="flight" element={<React.Suspense >
-<<<<<<< HEAD
               <Flight />
             </React.Suspense>} />
+            <Route path="listflight" element={<React.Suspense >
+              <Listflight />
+            </React.Suspense>} />
+            <Route path="listhotel" element={<React.Suspense >
+              <Listhotel />
+            </React.Suspense>} />
+
             
            
 
 
 
-=======
-            <Flight />
-          </React.Suspense>} />
-          <Route path="listflight" element={<React.Suspense >
-            <Listflight />
-          </React.Suspense>} />
->>>>>>> c6656700cd3f20b734ae957e3136a99587a77d91
         </Route>
         <Route path="singin" element={<Singin />} />
       </Routes>
