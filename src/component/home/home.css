@@ -1,4 +1,4 @@
-.bggg-image {
+.bggg-image{
     background-image: url("https://images.unsplash.com/photo-1490129375591-2658b3e2ee50?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2244&q=80");
     width: 98.9vw;
     height: 50vh;
@@ -15,4 +15,11 @@
     top: 28%;
     left: 40%;
     transform: translate(-50%, -50%);
+    }
+    .roundedee img{
+        border-radius: 50%;
+    width: 220px;
+    transition: ease 0.5s;
+
+
     }
