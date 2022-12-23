@@ -35,6 +35,7 @@ function navbar() {
               <NavLink className="nav-link" to={"listhotel"}>listhotel <span className="sr-only">(current)</span></NavLink>
             </li>
             
+              
 
           </ul>
           <form className="form-inline my-2 my-lg-0">

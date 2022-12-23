@@ -75,7 +75,7 @@
 }
 .overflow{
     overflow-x: scroll;
-    transition: ease 0.5s;
+    transition: ease 0.5s;             
 }
 .overflow::-webkit-scrollbar {
     display: none;
