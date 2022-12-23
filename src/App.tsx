@@ -23,8 +23,6 @@ const Flight = React.lazy(() => import('./component/Flight/flight'))
 
 
 function App() {
-  let router = useRoutes
-  // router.Navigate('/home')
   return (
     <BrowserRouter>
       <Routes>
@@ -41,6 +39,8 @@ function App() {
           <Route path="flight" element={<React.Suspense >
               <Flight />
             </React.Suspense>} />
+            
+           
 
 
 
