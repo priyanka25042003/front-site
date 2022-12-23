@@ -28,6 +28,12 @@ function navbar() {
             <li className="nav-item active">
               <NavLink className="nav-link" to={"package"}>PACKAGE <span className="sr-only">(current)</span></NavLink>
             </li>
+            <li className="nav-item active">
+              <NavLink className="nav-link" to={"listflight"}>listflight <span className="sr-only">(current)</span></NavLink>
+            </li>
+            <li className="nav-item active">
+              <NavLink className="nav-link" to={"listHotel"}>listHotel <span className="sr-only">(current)</span></NavLink>
+            </li>
 
           </ul>
           <form className="form-inline my-2 my-lg-0">
