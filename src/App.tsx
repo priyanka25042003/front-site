@@ -11,39 +11,43 @@ import {
 } from "react-router-dom";
 import Navbar from "./navigatiion/navbar";
 import Singin from './auth/signin/signin';
-import  useRoutes  from "react-router-dom";
+import useRoutes from "react-router-dom";
+import Listflight from './component/Flight/ListFlight/listflight'
 const Home = React.lazy(() => import('./component/home/home'))
 const Hotel = React.lazy(() => import('./component/Hotel/hotel'))
 
 const Bus = React.lazy(() => import('./component/Bus/bus'))
 
 const Flight = React.lazy(() => import('./component/Flight/flight'))
+// const Listflight = React.lazy(() => import('./component/Flight/ListFlight/listflight'))
+
+
 
 
 
 
 function App() {
-  let router = useRoutes
+
   // router.Navigate('/home')
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navbar />} >
           <Route path="home" element={<React.Suspense >
-              <Home />
-            </React.Suspense>} />
+            <Home />
+          </React.Suspense>} />
           <Route path="hotal" element={<React.Suspense >
-              <Hotel />
-            </React.Suspense>} />
+            <Hotel />
+          </React.Suspense>} />
           <Route path="bus" element={<React.Suspense >
-              <Bus />
-            </React.Suspense>} />
+            <Bus />
+          </React.Suspense>} />
           <Route path="flight" element={<React.Suspense >
-              <Flight />
-            </React.Suspense>} />
-
-
-
+            <Flight />
+          </React.Suspense>} />
+          <Route path="listflight" element={<React.Suspense >
+            <Listflight />
+          </React.Suspense>} />
         </Route>
         <Route path="singin" element={<Singin />} />
       </Routes>
