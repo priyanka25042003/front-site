@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function listflight() {
+ 
   return (
+    
     <div className="d-flex mt-5  container">
-      <div className='w-25 h-100 bg-ight mr-5  bg-info' >
+      <div className='w-25 h-100 bg-ight mr-5 rounded shadow-lg ' >
         <div className="mb-3">
           <div className="container-sm">
-            <div className="my-2 card">
-              <div className="card-body">
-                <h5 className="card-title">Locations</h5>
+            <div className="my-2 ">
+              <div className="">
+                <h5 className="">Locations</h5>
                 <div className="row">
                   <div className="col-sm-12">
                     <div className="mb-2">
@@ -39,6 +41,7 @@ function listflight() {
                           id="destination-input"
                           placeholder="Location"
                           aria-describedby="destination-label"
+
                         />
                         <datalist id="destination-options"></datalist>
                       </div>
@@ -51,7 +54,7 @@ function listflight() {
 
           <div className="row">
             <div className="mb-2 col-sm-12">
-              <div className="h-100 card"><br />
+              <div className="h-100 "><br />
                 <div className="card-body">
                   <h5 className="card-title">Dates</h5>
                   <div className="mb-2">
@@ -111,59 +114,59 @@ function listflight() {
                     </div>
                     {/* <label className="form-label">Passengers</label>
                     <div className="mb-2">
-                      <div className="input-group">
-                        <label htmlFor="adults-input" className="input-group-text">Adults</label>
-                        <input
-                          type="number"
-                          min="0"
-                          className="form-control"
-                          id="adults-input"
-                          aria-describedby="adults-label"
-                        />
-                      </div>
-                      <span id="adults-label" className="form-text">12 years old and older</span>
+                    <div className="input-group">
+                    <label htmlFor="adults-input" className="input-group-text">Adults</label>
+                    <input
+                    type="number"
+                    min="0"
+                    className="form-control"
+                    id="adults-input"
+                    aria-describedby="adults-label"
+                    />
+                    </div>
+                    <span id="adults-label" className="form-text">12 years old and older</span>
                     </div>
                     <div className="mb-2">
-                      <div className="input-group">
-                        <label htmlFor="children-input" className="input-group-text">Children</label>
-                        <input
-                          type="number"
-                          min="0"
-                          className="form-control"
-                          id="children-input"
+                    <div className="input-group">
+                    <label htmlFor="children-input" className="input-group-text">Children</label>
+                    <input
+                    type="number"
+                    min="0"
+                    className="form-control"
+                    id="children-input"
                           aria-describedby="children-label"
                         />
-                      </div>
-                      <span id="children-label" className="form-text">2 to 12 years old</span>
-                    </div>
-                    <div className="mb-2">
-                      <div className="input-group">
+                        </div>
+                        <span id="children-label" className="form-text">2 to 12 years old</span>
+                        </div>
+                        <div className="mb-2">
+                        <div className="input-group">
                         <label htmlFor="infants-input" className="input-group-text">Infants</label>
                         <input
-                          type="number"
-                          min="0"
-                          className="form-control"
-                          id="infants-input"
-                          aria-describedby="infants-label"
+                        type="number"
+                        min="0"
+                        className="form-control"
+                        id="infants-input"
+                        aria-describedby="infants-label"
                         />
-                      </div>
-                      <span id="infants-label" className="form-text">Up to 2 years old</span>
-                    </div> */}
+                        </div>
+                        <span id="infants-label" className="form-text">Up to 2 years old</span>
+                      </div> */}
                     <button id="search-button" className="w-100 btn btn-primary" disabled>
-                      Search
+                      Apply
                     </button>
                   </div>
                 </div>
               </div>
             </div>
             <div className="mb-2 col">
-              <div className="h-100 card"></div>
+              <div className="h-100 "></div>
             </div>
           </div>
 
         </div>
       </div>
-      <div className='w-75   h-100 '>
+      <div className='w-75   h-100  rounded shadow-lg'>
         <table className="table table-hover">
           <thead>
             <tr>
@@ -218,6 +221,7 @@ function listflight() {
     </div>
   )
 }
+
 
 
 export default listflight

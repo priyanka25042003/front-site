@@ -36,22 +36,19 @@ function App() {
           <Route path="home" element={<React.Suspense >
             <Home />
           </React.Suspense>} />
-          <Route path="hotal" element={<React.Suspense >
-            <Hotel />
-          </React.Suspense>} />
+          <Route path="hotal" element={<Hotel /> } />
+          <Route path="hotallist/:city/:chackin/:chackout/:serch" element={<Listhotel />} />
           <Route path="bus" element={<React.Suspense >
             <Bus />
           </React.Suspense>} />
           <Route path="flight" element={<React.Suspense >
-              <Flight />
-            </React.Suspense>} />
-            <Route path="listflight" element={<React.Suspense >
-              <Listflight />
-            </React.Suspense>} />
-            <Route path="listhotel" element={<React.Suspense >
-              <Listhotel />
-            </React.Suspense>} />
-        
+            <Flight />
+          </React.Suspense>} />
+          <Route path="listflight" element={<React.Suspense >
+            <Listflight />
+          </React.Suspense>} />
+
+
         </Route>
         <Route path="singin" element={<Singin />} />
       </Routes>

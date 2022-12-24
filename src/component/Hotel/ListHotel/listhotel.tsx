@@ -1,48 +1,59 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+
+// function Listhotel() {
+//     return (
+//         <div className="d-flex mt-5  container">
+//             <div className='w-25 h-100 bg-ight mr-5  bg-info'>
+
+
+//                 <div className="mb-2">
+//                     <label id="hotel-type-label" htmlFor="hotel-type-select" className="form-label"
+//                     >Hotel</label                  >
+
+//                 </div>
+//                 <div id="departure-date" className="mb-2">
+//                     <label id="departure-date-label" htmlFor="departure-date-input" className="form-label">CHECK-IN DATE</label                   >
+//                     <div className="input-group">
+//                         <span className="input-group-text"><i className="bi-calendar"></i></span>
+//                         <input
+//                             type="date"
+//                             className="form-control"
+//                             id="departure-date-input"
+//                             aria-describedby="departure-date-label"
+//                         />
+//                     </div>
+//                 </div>
+//                 <div id="return-date" className="mb-2">
+//                     <label id="return-date-label" htmlFor="return-date-input" className="form-label">CHECK-OUT DATE</label>
+//                     <div className="input-group">
+//                         <span className="input-group-text"><i className="bi-calendar-fill"></i> </span>
+//                         <input
+//                             type="date"
+//                             className="form-control"
+//                             id="return-date-input"
+//                             aria-describedby="return-date-label"
+//                         />
+//                     </div>
+//                 </div>
+//                 <button id="search-button" className="w-100 btn btn-primary" disabled>
+//                     Search
+//                 </button>
+
+
+//             </div>
+//             <div className='w-75   h-100 '>ghng
 
 function Listhotel() {
-    return (
-        <div className="d-flex mt-5  container">
-            <div className='w-25 h-100 bg-ight mr-5  bg-info'>
+    const { city, chackin, chackout, serch } = useParams();
+    useEffect(() => {
+        console.log(city, chackin, chackout, serch);
+
+    }, [])
 
 
-                <div className="mb-2">
-                    <label id="hotel-type-label" htmlFor="hotel-type-select" className="form-label"
-                    >Hotel</label                  >
+  
 
-                </div>
-                <div id="departure-date" className="mb-2">
-                    <label id="departure-date-label" htmlFor="departure-date-input" className="form-label">CHECK-IN DATE</label                   >
-                    <div className="input-group">
-                        <span className="input-group-text"><i className="bi-calendar"></i></span>
-                        <input
-                            type="date"
-                            className="form-control"
-                            id="departure-date-input"
-                            aria-describedby="departure-date-label"
-                        />
-                    </div>
-                </div>
-                <div id="return-date" className="mb-2">
-                    <label id="return-date-label" htmlFor="return-date-input" className="form-label">CHECK-OUT DATE</label>
-                    <div className="input-group">
-                        <span className="input-group-text"><i className="bi-calendar-fill"></i> </span>
-                        <input
-                            type="date"
-                            className="form-control"
-                            id="return-date-input"
-                            aria-describedby="return-date-label"
-                        />
-                    </div>
-                </div>
-                <button id="search-button" className="w-100 btn btn-primary" disabled>
-                    Search
-                </button>
-
-
-            </div>
-            <div className='w-75   h-100 '>ghng
-{/* function listhotel() {
     return (
         <div className="d-flex mt-5  container">
             <div className='w-25 h-100 bg-ight mr-5  bg-info' >
@@ -100,7 +111,7 @@ function Listhotel() {
                                 New Delhi</td>
                             <td>Fristclass <br />
                             </td>
-                          
+
                             <td> <small>11/5/2021</small> </td>
                             <td>14/5/2021<br />
                             </td>
@@ -109,11 +120,11 @@ function Listhotel() {
                             <td>₹1022</td>
                         </tr>
                     </tbody>
-                </table> */}
+                </table>
             </div>
         </div>
     )
 }
 
-export default Listhotel;
-{/* export default listhotel */}
+// export default Listhotel;
+export default Listhotel 

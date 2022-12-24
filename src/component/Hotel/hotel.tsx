@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./hotel.css";
 import firebase from "firebase";
 import HorizontalGallery from "react-dynamic-carousel";
+import { useNavigate } from "react-router-dom";
 function Hotel() {
   const [next_plan, setnxtplan] = useState<any[]>([]);
   useEffect(() => {
@@ -25,7 +26,16 @@ function Hotel() {
         console.log(err);
       });
   }
-
+  const [search , setsearch]:any = useState()
+  function setserch(e:any) {
+    let name = e.target.name
+    let value = e.target.value
+    setsearch({...search,[name]:value})
+  }
+  const navigate = useNavigate();
+  function navigat() {
+    navigate("/hotallist/"+search.citys+"/"+search.chackin+"/"+search.chackout+"/"+search.search);
+  }
   return (
     <div>
       <div className="bgg-image containerd">
@@ -47,38 +57,40 @@ function Hotel() {
               aria-label="Default select example"
               name="citys"
               id=""
+              onChange={(e)=>setserch(e)}
             >
               <option value="" selected>
                 location
               </option>
-              <option value="">Ahmdabad</option>
-              <option value="">Surat</option>
-              <option value="">Rajkot</option>
-              <option value="">Junagad</option>
+              <option value="Ahmdabad">Ahmdabad</option>
+              <option value="Surat">Surat</option>
+              <option value="Rajkot">Rajkot</option>
+              <option value="Junagad">Junagad</option>
             </select>
           </div>
           <div>
             <div className="input-group input-daterange">
-              <input type="date" className="form-control" />
+              <input type="date" className="form-control" aria-valuemin={Date.now()} onChange={(e)=>setserch(e)} name="chackin"  />
               <div className="input-group-addon m-1">to</div>
-              <input type="date" className="form-control" />
+              <input type="date" className="form-control" onChange={(e)=>setserch(e)} name="chackout"/>
             </div>
           </div>
           <div>
-            <form className="form-inline m-2 my-lg-0">
+            <div className="form-inline m-2 my-lg-0">
               <input
                 className="form-control mr-sm-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                name="search"
+                onChange={(e)=>setserch(e)}
               />
               <button
-                className="btn btn-outline-primary rounded-pill b my-2 my-sm-0"
-                type="submit"
+                className="btn btn-outline-primary rounded-pill b my-2 my-sm-0" onClick={navigat}
               >
                 Search
               </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
