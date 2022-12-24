@@ -34,6 +34,12 @@ function navbar() {
             <li className="nav-item active">
               <NavLink className="nav-link" to={"listhotel"}>listhotel <span className="sr-only">(current)</span></NavLink>
             </li>
+            <li className="nav-item active">
+              <NavLink className="nav-link" to={"offers"}>Offers <span className="sr-only">(current)</span></NavLink>
+            </li>
+            <li className="nav-item active">
+              <NavLink className="nav-link" to={"about"}>About <span className="sr-only">(current)</span></NavLink>
+            </li>
             
               
 

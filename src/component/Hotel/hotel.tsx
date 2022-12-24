@@ -105,6 +105,7 @@ function Hotel() {
                 src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
                 alt=""
               />
+              
             </div>
             <h5 className="text-center mt-2">cityname</h5>
           </div>
@@ -178,7 +179,7 @@ function Hotel() {
         <div className="text-center" style={{ marginTop: "6rem" }}>
           <h2 className=""> Plan your next staycation</h2>
         </div>
-        <div className="container-f">
+        <div className="container-f shadow p-3 mb-5 bg-body rounded">
           <HorizontalGallery
             tiles={next_plan.map((value) => (
               <div
@@ -189,7 +190,7 @@ function Hotel() {
                   height: 350,
                 }}
               >
-                <div className="card rounded-5 ">
+                <div className="card rounded-5 " style={{width:"18rem"}} >
                   <div className="card-body">
                     <img className="card-img-top" src={value.img} alt="" />
                     <p className="card-text">{value.hotel_type}</p>
@@ -212,8 +213,8 @@ function Hotel() {
         <div className="ml-5" style={{ marginTop: "6rem" }}>
           <h2 className=""> Plan your next staycation</h2>
         </div>
-        <div className="container-f">
-          <HorizontalGallery
+        <div className="container-f shadow p-3 mb-5 bg-body rounded">
+          <HorizontalGallery 
             tiles={next_plan.map((value) => (
               <div
                 style={{
@@ -223,7 +224,7 @@ function Hotel() {
                   height: 350,
                 }}
               >
-                <div className="card rounded-5 ">
+                <div className="card rounded-5 " style={{width:"18rem"}}>
                   <div className="card-body">
                     <img className="card-img-top" src={value.img} alt="" />
                     <p className="card-text">{value.hotel_type}</p>
