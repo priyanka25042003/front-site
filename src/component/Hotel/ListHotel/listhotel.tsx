@@ -127,4 +127,4 @@ function Listhotel() {
 }
 
 // export default Listhotel;
-export default Listhotel 
+export default Listhotel; 
