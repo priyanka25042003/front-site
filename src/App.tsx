@@ -14,7 +14,7 @@ import Singin from './auth/signin/signin';
 import useRoutes from "react-router-dom";
 import Listflight from './component/Flight/ListFlight/listflight'
 import Listhotel from './component/Hotel/ListHotel/listhotel';
-const Home = React.lazy(() => import('./component/Home/home'))
+const Home = React.lazy(() => import('./component/home/home'))
 const Hotel = React.lazy(() => import('./component/Hotel/hotel'))
 
 const Bus = React.lazy(() => import('./component/Bus/bus'))
@@ -47,8 +47,6 @@ function App() {
           <Route path="listflight" element={<React.Suspense >
             <Listflight />
           </React.Suspense>} />
-
-
         </Route>
         <Route path="singin" element={<Singin />} />
       </Routes>
