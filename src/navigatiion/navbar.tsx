@@ -38,7 +38,10 @@ function navbar() {
               <NavLink className="nav-link" to={"offers"}>Offers <span className="sr-only">(current)</span></NavLink>
             </li> */}
             <li className="nav-item active">
-              <NavLink className="nav-link" to={"about"}>About <span className="sr-only">(current)</span></NavLink>
+              <NavLink className="nav-link" to={"about"}>ABOUT <span className="sr-only">(current)</span></NavLink>
+            </li>
+            <li className="nav-item active">
+              <NavLink className="nav-link" to={"contact"}>CONTACT <span className="sr-only">(current)</span></NavLink>
             </li>
             
               

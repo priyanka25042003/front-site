@@ -17,6 +17,7 @@ import Listhotel from './component/Hotel/ListHotel/listhotel';
 import Package from './component/Package/package';
 import Offers from './component/offers';
 import About from './component/About/about';
+import Contact from './component/Contact/contact';
 const Home = React.lazy(() => import('./component/home/home'))
 const Hotel = React.lazy(() => import('./component/Hotel/hotel'))
 
@@ -59,6 +60,9 @@ function App() {
           </React.Suspense>} />
           <Route path="about" element={<React.Suspense >
             <About />
+          </React.Suspense>} />
+          <Route path="contact" element={<React.Suspense >
+            <Contact />
           </React.Suspense>} />
 
 

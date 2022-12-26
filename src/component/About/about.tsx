@@ -45,26 +45,21 @@ function About() {
                         <span className="sr-only">Next</span>
                     </button>
                 </div>
-                <div>
-                    <div className="m-3">
+                <div className="m-3 mt-5" >
+                    <div >
                         <h2 className="section-title mb-4">About Tours</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                        <ul className="list-unstyled two-col clearfix">
-                            <li>Outdoor recreation activities</li>
+                        <p className='text-justify' >Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                        <ul className="  two-col clearfix">
+                            <li> Bus</li>
                             <li>Airlines</li>
-                            <li>Car Rentals</li>
-                            <li>Cruise Lines</li>
                             <li>Hotels</li>
-                            <li>Railways</li>
-                            <li>Travel Insurance</li>
                             <li>Package Tours</li>
-                            <li>Insurance</li>
-                            <li>Guide Books</li>
                         </ul>
                     </div>
                 </div>
 
             </div>
+
 
         </div>
     )
