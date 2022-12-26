@@ -3,6 +3,7 @@ import "./hotel.css";
 import firebase from "firebase";
 import HorizontalGallery from "react-dynamic-carousel";
 import { useNavigate } from "react-router-dom";
+import Offers from "../offers";
 function Hotel() {
   const [next_plan, setnxtplan] = useState<any[]>([]);
   useEffect(() => {
@@ -243,6 +244,9 @@ function Hotel() {
             minPadding={20}
           />
         </div>
+      </div>
+      <div className="" >
+        <Offers></Offers>
       </div>
     </div>
   );

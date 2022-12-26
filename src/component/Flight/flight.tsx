@@ -1,7 +1,20 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Offers from "../offers";
 import "./flight.css"
 
 
 function Flight() {
+    const [search , setsearch]:any = useState()
+    function setserch(e:any) {
+      let name = e.target.name
+      let value = e.target.value
+      setsearch({...search,[name]:value})
+    }
+    const navigate = useNavigate();
+    function navigat() {
+      navigate("/listflight/"+search.from+"/"+search.to+"/"+search.day);
+    }
     return (
         <div>
             <div className="bg-image containerd">
@@ -12,16 +25,17 @@ function Flight() {
                         <select
                             className="form-select w-100 rounded"
                             aria-label="Default select example"
-                            name="citys"
+                            name="from"
+                            onChange={(e)=>setserch(e)}
                             id=""
                         >
                             <option value="" selected>
                                 location
                             </option>
-                            <option value="">Ahmdabad</option>
-                            <option value="">Surat</option>
-                            <option value="">Rajkot</option>
-                            <option value="">Junagad</option>
+                            <option value="Ahmdabad">Ahmdabad</option>
+                            <option value="Surat">Surat</option>
+                            <option value="Rajkot">Rajkot</option>
+                            <option value="Junagad">Junagad</option>
                         </select>
                     </div>
                     <div>to</div>
@@ -30,16 +44,18 @@ function Flight() {
                             <select
                                 className="form-select w-100 rounded"
                                 aria-label="Default select example"
-                                name="citys"
+                                name="to"
+                            onChange={(e)=>setserch(e)}
+
                                 id=""
                             >
                                 <option value="" selected>
                                     location
                                 </option>
-                                <option value="">Ahmdabad</option>
-                                <option value="">Surat</option>
-                                <option value="">Rajkot</option>
-                                <option value="">Junagad</option>
+                                <option value="Ahmdabad">Ahmdabad</option>
+                            <option value="Surat">Surat</option>
+                            <option value="Rajkot">Rajkot</option>
+                            <option value="Junagad">Junagad</option>
                             </select>
                         </div>
                     </div>
@@ -50,10 +66,14 @@ function Flight() {
                                 type="date"
                                 placeholder="Search"
                                 aria-label="Search"
+                                name="day"
+                            onChange={(e)=>setserch(e)}
+
                             />
                             <button
                                 className="btn btn-outline-primary rounded-pill b my-2 my-sm-0"
                                 type="submit"
+                                onClick={navigat}
                             >
                                 Search
                             </button>
@@ -255,6 +275,9 @@ function Flight() {
             </div>
         </section>
             </div> */}
+             <div className="" >
+        <Offers></Offers>
+      </div>
 
         </div>
 
