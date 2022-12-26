@@ -14,6 +14,9 @@ import Singin from './auth/signin/signin';
 import useRoutes from "react-router-dom";
 import Listflight from './component/Flight/ListFlight/listflight'
 import Listhotel from './component/Hotel/ListHotel/listhotel';
+import Package from './component/Package/package';
+import Offers from './component/offers';
+import About from './component/About/about';
 const Home = React.lazy(() => import('./component/home/home'))
 const Hotel = React.lazy(() => import('./component/Hotel/hotel'))
 
@@ -36,7 +39,10 @@ function App() {
           <Route path="home" element={<React.Suspense >
             <Home />
           </React.Suspense>} />
-          <Route path="hotal" element={<Hotel /> } />
+
+          <Route path="hotal" element={<React.Suspense >
+            <Hotel />
+          </React.Suspense>} />
           <Route path="hotallist/:city/:chackin/:chackout/:serch" element={<Listhotel />} />
           <Route path="bus" element={<React.Suspense >
             <Bus />
@@ -44,8 +50,18 @@ function App() {
           <Route path="flight" element={<React.Suspense >
             <Flight />
           </React.Suspense>} />
-          <Route path="listflight" element={<React.Suspense >
-            <Listflight />
+          <Route path="package" element={<React.Suspense >
+            <Package />
+          </React.Suspense>} />
+          <Route path="listpackage" element={<React.Suspense >
+            <Package />
+          </React.Suspense>} />
+          <Route path="listflight/:from/:to/:day" element={<Listflight />} />
+          <Route path="offers" element={<React.Suspense >
+            <Offers />
+          </React.Suspense>} />
+          <Route path="about" element={<React.Suspense >
+            <About />
           </React.Suspense>} />
         </Route>
         <Route path="singin" element={<Singin />} />

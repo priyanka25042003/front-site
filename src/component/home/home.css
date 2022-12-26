@@ -44,7 +44,9 @@
     margin-left: 3vw;
 }
 
-.cardd-img-top{
-
-    border-radius: 1em;
+.hocard:hover{
+    width: 18.5rem;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    transition: ease-out 0.5s;
+    box-shadow: 0 5px 10px 10px rgb(0 0 0 / 52%);
 }

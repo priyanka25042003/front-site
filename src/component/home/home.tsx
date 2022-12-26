@@ -93,24 +93,23 @@ function home() {
       <div className="bggcolor">
         <div className="ml-5" style={{ marginTop: "6rem" }}>
           <h2 className=""> Plan your next staycation</h2>
-        </div> 
-        <div className="mult-group">
-  <div className="mult">
-                </div>
-    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" className="mult-img-top" alt=""/>
-    <div className="cardd-body">
-      <h5 className="cardd-title">Card title</h5>
-      <p className="cardd-text">
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
-      </p>
-      <p className="cardd-text">
+        </div>
+        <div className="card  rounded hocard" style={{width:"18.5rem"}} >
+          
+          <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" className="mult-img-top" alt="" />
+          <div className="card-body">
+            <h5 className="card-title">Card title</h5>
+            <p className="card-text">
+              This is a wider card with supporting text below as a natural lead-in to
+              additional content. This content is a little bit longer.
+            </p>
+            <p className="card-text">
 
-      </p>
-    </div>
-  </div>
-       </div>
+            </p>
+          </div>
+        </div>
       </div>
+    </div>
 
 
 

@@ -1,0 +1,24 @@
+.cg-image {
+    background-image: url("https://www.shutterstock.com/image-vector/travel-time-vector-background-design-600w-2172252909.jpg");
+    width: 98.9vw;
+    height: 50vh;
+    background-size: cover;
+}
+.algine {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(255, 255, 255) !important;
+    width: 83.9vw;
+    position: absolute;
+    top: 62%;
+    left: 8%;
+    transform: translate(0%, -50%);
+    padding: 1.5rem;
+
+}
+
+.w-100 {
+    border: none;
+    outline: none;
+    padding: 2%;
+}
