@@ -65,18 +65,26 @@ function Contact() {
                     </div>
                 </div>
             </div>
-            <div id="carouselExampleControls" className="carousel slide carousel-dark text-center " data-mdb-ride="carousel">
-                <h1 className='mt-5'>Testimonials</h1>
+            {/* done ?  oyee start mukvana che jo nicaha. */}
+            <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+                <ol className="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <h1 className='mt-5 text-center'>Testimonials</h1>
                 <div className="carousel-inner ">
                     <div className="carousel-item active">
-                        <img className="rounded-circle shadow-1-strong mb-4 mt-5"
-                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp" alt="avatar"
-                            style={{ width: "150px" }} />
+                        <div className='d-flex justify-content-center' >
+                            <img className="rounded-circle shadow-1-strong mb-4 mt-5"
+                                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp" alt="avatar"
+                                style={{ width: "150px" }} />
+                        </div>
                         <div className="row d-flex justify-content-center">
                             <div className="col-lg-8">
-                                <h5 className="mb-3">Maria Kate</h5>
-                                <p>Photographer</p>
-                                <p className="text-muted">
+                                <h5 className="mb-3 text-center ">Maria Kate</h5>
+                                <p className=' text-center'>Photographer</p>
+                                <p className="text-muted text-center">
                                     <i className="fa fa-quote-left pe-2"></i>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti
                                     nesciunt sint eligendi reprehenderit reiciendis, quibusdam illo, beatae quia
@@ -86,22 +94,26 @@ function Contact() {
                             </div>
                         </div>
                         <ul className="list-unstyled d-flex justify-content-center text-warning mb-0">
-                            <li><i className="fas fa-star fa-sm"></i></li>
-                            <li><i className="fas fa-star fa-sm"></i></li>
-                            <li><i className="fas fa-star fa-sm"></i></li>
-                            <li><i className="fas fa-star fa-sm"></i></li>
-                            <li><i className="far fa-star fa-sm"></i></li>
+                            <li><i className="fa fa-star fa-sm"></i></li>
+                            <li><i className="fa fa-star fa-sm"></i></li>
+                            <li><i className="fa fa-star fa-sm"></i></li>
+                            <li><i className="fa fa-star fa-sm"></i></li>
+                            <li><i className="fa fa-star fa-sm"></i></li>
                         </ul>
                     </div>
                     <div className="carousel-item">
-                        <img className="rounded-circle shadow-1-strong mb-4"
-                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp" alt="avatar"
-                            style={{ width: "150px" }} />
+                        <div className='d-flex justify-content-center' >
+
+
+                            <img className="rounded-circle shadow-1-strong mb-4 mt-5"
+                                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp" alt="avatar"
+                                style={{ width: "150px" }} />
+                        </div>
                         <div className="row d-flex justify-content-center">
                             <div className="col-lg-8">
-                                <h5 className="mb-3">John Doe</h5>
-                                <p>Web Developer</p>
-                                <p className="text-muted">
+                                <h5 className="mb-3 text-center">John Doe</h5>
+                                <p className=' text-center'>Web Developer</p>
+                                <p className="text-muted text-center">
                                     <i className="fa fa-quote-left pe-2"></i>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti
                                     nesciunt sint eligendi reprehenderit reiciendis.
@@ -109,22 +121,24 @@ function Contact() {
                             </div>
                         </div>
                         <ul className="list-unstyled d-flex justify-content-center text-warning mb-0">
-                            <li><i className="fas fa-star fa-sm"></i></li>
-                            <li><i className="fas fa-star fa-sm"></i></li>
-                            <li><i className="fas fa-star fa-sm"></i></li>
-                            <li><i className="fas fa-star fa-sm"></i></li>
-                            <li><i className="far fa-star fa-sm"></i></li>
+                            <li><i className="fa fa-star fa-sm"></i></li>
+                            <li><i className="fa fa-star fa-sm"></i></li>
+                            <li><i className="fa fa-star fa-sm"></i></li>
+                            <li><i className="fa fa-star fa-sm"></i></li>
+                            <li><i className="fa fa-star fa-sm"></i></li>
                         </ul>
                     </div>
                     <div className="carousel-item">
-                        <img className="rounded-circle shadow-1-strong mb-4"
-                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" alt="avatar" 
-                            style={{ width: "150px" }} />
+                        <div className='d-flex justify-content-center' >
+                            <img className="rounded-circle shadow-1-strong mb-4 mt-5"
+                                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" alt="avatar"
+                                style={{ width: "150px" }} />
+                        </div>
                         <div className="row d-flex justify-content-center">
                             <div className="col-lg-8">
-                                <h5 className="mb-3">Anna Deynah</h5>
-                                <p>UX Designer</p>
-                                <p className="text-muted">
+                                <h5 className="mb-3  text-center">Anna Deynah</h5>
+                                <p className='  text-center'>UX Designer</p>
+                                <p className="text-muted  text-center">
                                     <i className="fas fa-quote-left pe-2"></i>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti
                                     nesciunt sint eligendi reprehenderit reiciendis, quibusdam illo, beatae quia
@@ -134,25 +148,78 @@ function Contact() {
                             </div>
                         </div>
                         <ul className="list-unstyled d-flex justify-content-center text-warning mb-0">
-                            <li><i className="fas fa-star fa-sm"></i></li>
-                            <li><i className="fas fa-star fa-sm"></i></li>
-                            <li><i className="fas fa-star fa-sm"></i></li>
-                            <li><i className="fas fa-star fa-sm"></i></li>
-                            <li><i className="far fa-star fa-sm"></i></li>
+                            <li><i className="fa fa-star fa-sm"></i></li>
+                            <li><i className="fa fa-star fa-sm"></i></li>
+                            <li><i className="fa fa-star fa-sm"></i></li>
+                            <li><i className="fa fa-star fa-sm"></i></li>
+                            <li><i className="fa fa-star fa-sm"></i></li>
                         </ul>
                     </div>
                 </div>
-                <button className="carousel-control-prev" type="button" data-mdb-target="#carouselExampleControls"
-                    data-mdb-slide="prev">
+                <button className="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
+                    <span className="sr-only">Previous</span>
                 </button>
-                <button className="carousel-control-next" type="button" data-mdb-target="#carouselExampleControls"
-                    data-mdb-slide="next">
+                <button className="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
+                    <span className="sr-only">Next</span>
                 </button>
             </div>
+
+            <footer className="page-footer font-small blue  pt-4">
+                <div className="container-fluid text-center text-md-left">
+                    <div className="row">
+                        <div className="col-md-6 mt-md-0 mt-3">
+                            <h5 className="text-uppercase">Footer Content</h5>
+                            <p>Here you can use rows and columns to organize your footer content.</p>
+
+                        </div>
+                        <hr className="clearfix w-100 d-md-none pb-3" />
+                        <div className="col-md-3 mb-md-0 mb-3">
+                            <h5 className="text-uppercase">Links</h5>
+
+                            <ul className="list-unstyled">
+                                <li>
+                                    <a href="#!">Link 1</a>
+                                </li>
+                                <li>
+                                    <a href="#!">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="#!">Link 3</a>
+                                </li>
+                                <li>
+                                    <a href="#!">Link 4</a>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                        <div className="col-md-3 mb-md-0 mb-3">
+                            <h5 className="text-uppercase">Links</h5>
+
+                            <ul className="list-unstyled">
+                                <li>
+                                    <a href="#!">Link 1</a>
+                                </li>
+                                <li>
+                                    <a href="#!">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="#!">Link 3</a>
+                                </li>
+                                <li>
+                                    <a href="#!">Link 4</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div className="footer-copyright text-center py-3 bg-#1A374D">© 2020 Copyright:
+                    <a href="/"> MDBootstrap.com</a>
+                </div>
+            </footer>
 
         </div>
     )

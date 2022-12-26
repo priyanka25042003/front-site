@@ -54,6 +54,9 @@ function App() {
           <Route path="package" element={<React.Suspense >
             <Package />
           </React.Suspense>} />
+          <Route path="listpackage" element={<React.Suspense >
+            <Package />
+          </React.Suspense>} />
           <Route path="listflight/:from/:to/:day" element={<Listflight />} />
           <Route path="offers" element={<React.Suspense >
             <Offers />
