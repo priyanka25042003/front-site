@@ -1,13 +1,62 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import firebase from 'firebase';
+import { useParams } from 'react-router-dom';
 
-function listflight() {
+function Listflight() {
+  const [maindata, setmaindata]: any[] = useState([])
+  const [filterdata, setfilterdata]: any[] = useState([])
+  const { from, to, day } = useParams();
+
+  useEffect(() => {
+    console.log(from, to, day);
+    getdata()
+  }, [])
+  function getdata() {
+    let arr: any[] = [];
+    let filter: any[] = []
+    firebase
+      .database()
+      .ref("/flight")
+      .get()
+      .then((res) => {
+        res.forEach((element) => {
+          arr.push({ key: element.key, ...element.val() });
+        });
+        debugger
+        setmaindata(arr);
+        console.log(arr);
+
+        // arr.forEach(element => {
+        //   if (element.city == city) {
+        //     filter.push(element)
+        //   }
+        // });
+        setfilterdata(filter);
+        console.log(filter);
+
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   return (
-
-    <div className="d-flex mt-5  container">
-      <div className='w-25 h-100 bg-ight mr-5 rounded shadow-lg ' >
-        <div className="mb-3">
-          <div className="container-sm">
+    <div>
+      <div>
+      <div className="dropdown">
+    <button className="btn btn-primary dropdown-toggle " type="button" data-toggle="dropdown" >Dropdown Example 
+    <span className="caret"></span></button>
+    <ul className="dropdown-menu">
+      <input className="form-control" id="myInput" type="text" placeholder="Search.."/>
+      
+    </ul>
+  </div>
+</div>
+    
+      <div className="d-flex mt-5  container">
+        {/* <div className='w-25 h-100 bg-ight mr-5 rounded shadow-lg ' > */}
+        {/* <div className="mb-3"> */}
+        {/* <div className="container-sm">
             <div className="my-2 ">
               <div className="">
                 <h5 className="">Locations</h5>
@@ -50,9 +99,9 @@ function listflight() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <div className="row">
+        {/* <div className="row">
             <div className="mb-2 col-sm-12">
               <div className="h-100 "><br />
                 <div className="card-body">
@@ -111,8 +160,8 @@ function listflight() {
                         <option value="BUSINESS">Business</option>
                         <option value="FIRST">First</option>
                       </select>
-                    </div>
-                    {/* <label className="form-label">Passengers</label>
+                    </div> */}
+        {/* <label className="form-label">Passengers</label>
                     <div className="mb-2">
                     <div className="input-group">
                     <label htmlFor="adults-input" className="input-group-text">Adults</label>
@@ -152,7 +201,7 @@ function listflight() {
                         </div>
                         <span id="infants-label" className="form-text">Up to 2 years old</span>
                       </div> */}
-                    <button id="search-button" className="w-100 btn btn-primary" disabled>
+        {/* <button id="search-button" className="w-100 btn btn-primary" disabled>
                       Apply
                     </button>
                   </div>
@@ -162,61 +211,47 @@ function listflight() {
             <div className="mb-2 col">
               <div className="h-100 "></div>
             </div>
+          </div> */}
+
+        {/* </div> */}
+        {/* </div> */}
+        <div className="mt-5 w-100 mr-5  ">
+          <div className="">
+            <table className="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col"> <small><b>Sorted By:</b></small>  </th>
+                  <th scope="col"><small>Departure</small></th>
+                  <th scope="col"><small>Duration</small></th>
+                  <th scope="col"><small>Arrival</small></th>
+                  <th scope="col"><small>
+                    Price</small></th>
+                </tr>
+              </thead>
+              <tbody>
+                {maindata.map((item: any, index: any) => {
+
+                  return (
+                    <tr key={index}>
+                      <td><img src={item.img} alt="" width={40} />AirIndia
+                      </td>
+                      <td>{item.flight_name}</td>
+                      <td>{item.arrival_time} <br />
+                        {item.from_location}</td>
+                      <td> <small>09h 15m</small> </td>
+                      <td>{item.departure_time}<br />
+                        {item.to_location}
+                      </td>
+                      <td>₹ 10,367</td>
+                    </tr>
+                  )
+                })
+                }
+
+              </tbody>
+            </table>
           </div>
-
         </div>
-      </div>
-      <div className='w-75   h-100  rounded shadow-lg'>
-        <table className="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col"> <small><b>Sorted By:</b></small>  </th>
-              <th scope="col"><small>Departure</small></th>
-              <th scope="col"><small>Duration</small></th>
-              <th scope="col"><small>Arrival</small></th>
-              <th scope="col"><small>
-                Price</small></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><img src="https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/I5.png?v=14" alt="" width={40} /> AirAsia </td>
-              <td>04:55 <br />
-                New Delhi</td>
-              <td> <small>09h 15m</small> </td>
-              <td>14:10<br />
-                Bengaluru
-
-              </td>
-              <td>₹ 10,367</td>
-            </tr>
-            <tr>
-              <td><img src="https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/I5.png?v=14" alt="" width={40} /> AirAsia</td>
-
-              <td>04:55 <br />
-                New Delhi</td>
-              <td><small>09h 15m</small></td>
-              <td>14:10<br />
-                Bengaluru
-
-              </td>
-              <td>₹ 10,367</td>
-
-            </tr>
-            <tr>
-              <td><img src="https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/I5.png?v=14" alt="" width={40} /> AirAsia</td>
-
-              <td>04:55 <br />
-                New Delhi</td>
-              <td><small>09h 15m</small></td>
-              <td>14:10<br />
-                Bengaluru
-
-              </td>
-              <td>₹ 10,367</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
   )
@@ -224,4 +259,8 @@ function listflight() {
 
 
 
-export default listflight
+export default Listflight
+
+
+
+
