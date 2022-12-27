@@ -63,7 +63,7 @@ function Hotel() {
               <option value="" selected>
                 location
               </option>
-              <option value="Ahmdabad">Ahmdabad</option>
+              <option value="Jaipur*">Jaipur</option>
               <option value="Surat">Surat</option>
               <option value="Rajkot">Rajkot</option>
               <option value="Junagad">Junagad</option>

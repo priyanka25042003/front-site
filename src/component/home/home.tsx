@@ -94,7 +94,7 @@ function home() {
         <div className="ml-5" style={{ marginTop: "6rem" }}>
           <h2 className=""> Plan your next staycation</h2>
         </div>
-        <div className="card  rounded hocard" style={{width:"18.5rem"}} >
+        <div className="card  rounded hocard"  >
           
           <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" className="mult-img-top" alt="" />
           <div className="card-body">
