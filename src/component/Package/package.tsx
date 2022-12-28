@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import "./package.css";
+import Offers from "../offers";
 
 
 function Package() {
@@ -97,6 +98,9 @@ function Package() {
             </p>
           </div>
         </div>
+        <div className="" >
+        <Offers></Offers>
+      </div>
       </div>
     </div>
 

@@ -31,7 +31,7 @@ function Listflight() {
     let filter: any[] = []
     firebase
       .database()
-      .ref("/flight")
+      .ref("/package")
       .get()
       .then((res) => {
         res.forEach((element) => {
