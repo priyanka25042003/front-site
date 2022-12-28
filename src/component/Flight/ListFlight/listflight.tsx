@@ -6,11 +6,26 @@ function Listflight() {
   const [maindata, setmaindata]: any[] = useState([])
   const [filterdata, setfilterdata]: any[] = useState([])
   const { from, to, day } = useParams();
+  const [filter ,setfilter]:any = useState([])
 
   useEffect(() => {
     console.log(from, to, day);
     getdata()
   }, [])
+
+  function filterD(e:any){
+    let name:any = e.target.name
+    let val:any = e.target.value
+    setfilter({...filter ,[name]:val})
+    console.log(filter);
+   
+
+  }
+  function submit(){
+    console.log(filter);
+    
+
+  }
   function getdata() {
     let arr: any[] = [];
     let filter: any[] = []
@@ -22,7 +37,6 @@ function Listflight() {
         res.forEach((element) => {
           arr.push({ key: element.key, ...element.val() });
         });
-        debugger
         setmaindata(arr);
         console.log(arr);
 
@@ -68,6 +82,8 @@ function Listflight() {
                           <span className="input-group-text"><i className="bi-pin-map"></i> </span>
                           <input
                             type="text"
+                            name="From"
+                            onChange={(e)=>filterD(e)}
                             className="form-control"
                             list="origin-options"
                             id="origin-input"
@@ -85,6 +101,8 @@ function Listflight() {
                           <span className="input-group-text"><i className="bi-pin-map-fill"></i> </span>
                           <input
                             type="text"
+                            name="To"
+                            onChange={(e)=>filterD(e)}
                             className="form-control"
                             list="destination-options"
                             id="destination-input"
@@ -124,6 +142,8 @@ function Listflight() {
                             <span className="input-group-text"><i className="bi-calendar"></i></span>
                             <input
                               type="date"
+                              name="Departure Data"
+                            onChange={(e)=>filterD(e)}
                               className="form-control"
                               id="departure-date-input"
                               aria-describedby="departure-date-label"
@@ -136,6 +156,8 @@ function Listflight() {
                             <span className="input-group-text"><i className="bi-calendar-fill"></i> </span>
                             <input
                               type="date"
+                              name="Return Data"
+                              onChange={(e)=>filterD(e)}
                               className="form-control"
                               id="return-date-input"
                               aria-describedby="return-date-label"
@@ -151,7 +173,7 @@ function Listflight() {
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary">Save changes</button>
+                <button type="button" className="btn btn-primary" onClick={submit}>Save changes</button>
               </div>
             </div>
           </div>

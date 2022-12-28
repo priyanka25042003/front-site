@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import "./package.css";
 
 
@@ -9,7 +10,10 @@ function Package() {
     let value = e.target.value
     setsearch({ ...search, [name]: value })
   }
-
+  const navigate = useNavigate();
+  function navigat() {
+    navigate("/listpackage/"+search.from+"/"+search.to+"/"+search.day);
+  }
   return (
     <div>
       <div className="cg-image " style={{ width: "100rem" }} >
@@ -67,6 +71,7 @@ function Package() {
               <button
                 className="btn btn-outline-primary rounded-pill b my-2 my-sm-0"
                 type="submit"
+                onClick={navigat}
               >
                 Search
               </button>

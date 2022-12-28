@@ -43,9 +43,7 @@ function navbar() {
             <li className="nav-item active">
               <NavLink className="nav-link" to={"contact"}>CONTACT <span className="sr-only">(current)</span></NavLink>
             </li>
-            <li className="nav-item active">
-              <NavLink className="nav-link" to={"listpackage"}>listpackage <span className="sr-only">(current)</span></NavLink>
-            </li> 
+           
             
               
 
