@@ -1,18 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import firebase from "firebase";
+import "./listhotel.css";
+
 
 
 
 function Listhotel() {
-    const [serchdata, setserchdata]:any = useState()
+    // const [serchdata, setserchdata]: any = useState()
     const { city, chackin, chackout, serch } = useParams();
-    const [maindata, setmaindata]: any = useState()
-    const [filterdata, setfilterdata]: any[] = useState([])
+    const [maindatah, setmaindatah]: any = useState([])
+    const [filterdata, setfilterdatah]: any[] = useState([])
+    const [filterh, setfilterh]: any = useState([])
+
+
     useEffect(() => {
         console.log(city, chackin, chackout, serch);
         getdata()
     }, [])
+
+    function filterDatah(e: any) {
+        let name: any = e.target.name
+        let val: any = e.target.value
+        setfilterh({ ...filterh, [name]: val })
+        console.log(filterh);  
+      }
+    function submit() {
+        console.log(filterh);
+    
+      }
     function getdata() {
         let arr: any[] = [];
         let filter: any[] = []
@@ -25,16 +41,16 @@ function Listhotel() {
                     arr.push({ key: element.key, ...element.val() });
                 });
 
-                setmaindata(arr);
+                setmaindatah(arr);
                 console.log(arr);
-                
-                arr.forEach(element => {
-                    if (element.city == city) {
-                        filter.push(element)
-                    }
-                });
-                setfilterdata(filter);
-                console.log(filter);
+
+                // arr.forEach(element => {
+                //     if (element.city == city) {
+                //         filter.push(element)
+                //     }
+                // });
+                setfilterdatah(filterh);
+                console.log(filterh);
 
             })
             .catch((err) => {
@@ -70,6 +86,8 @@ function Listhotel() {
                                                     <span className="input-group-text"><i className="bi-pin-map"></i> </span>
                                                     <input
                                                         type="text"
+                                                        name="From"
+                                                        onChange={(e) => filterDatah(e)}
                                                         className="form-control"
                                                         list="origin-options"
                                                         id="origin-input"
@@ -87,6 +105,8 @@ function Listhotel() {
                                                     <span className="input-group-text"><i className="bi-pin-map-fill"></i> </span>
                                                     <input
                                                         type="text"
+                                                        name="To"
+                                                        onChange={(e) => filterDatah(e)}
                                                         className="form-control"
                                                         list="destination-options"
                                                         id="destination-input"
@@ -110,6 +130,8 @@ function Listhotel() {
                                             <span className="input-group-text"><i className="bi-calendar"></i></span>
                                             <input
                                                 type="date"
+                                                name=""
+                                                onChange={(e) => filterDatah(e)}
                                                 className="form-control"
                                                 id="Check-in-input"
                                                 aria-describedby="Check-in-label"
@@ -122,6 +144,7 @@ function Listhotel() {
                                             <span className="input-group-text"><i className="bi-calendar-fill"></i> </span>
                                             <input
                                                 type="date"
+                                                onChange={(e) => filterDatah(e)}
                                                 className="form-control"
                                                 id="check-out-input"
                                                 aria-describedby="check-out-label"
@@ -146,82 +169,81 @@ function Listhotel() {
                                                 <option value={"⭐"}>⭐</option>
                                             </select>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                                 ...
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-primary">Save changes</button>
+                                <button type="button" className="btn btn-primary" onClick={submit}>Save changes</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <div className='mt-5 h-100 mr-5'>
-                <table className="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col"> <small><b>Sorted By:</b></small>  </th>
-                            <th scope="col"><small>Name</small></th>
-                            <th scope="col"><small>Room type</small></th>
-                            <th scope="col"><small>check-in date</small></th>
-                            <th scope="col"><small>check-in out</small></th>
-                            <th scope="col"><small>fx Days</small></th>
-                            <th scope="col"><small>no of guests</small></th>
-                            <th scope="col"><small>
-                                Price</small></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><img src="https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/I5.png?v=14" alt="" width={40} /> AirAsia </td>
-                            <td>silverpales <br />
-                                New Delhi</td>
-                            <td>Fristclass <br />
-                            </td>
-                            <td> <small>11/5/2021</small> </td>
-                            <td>14/5/2021<br />
-                            </td>
-                            <td>4</td>
-                            <td>7</td>
-                            <td>₹1022</td>
-                        </tr>
-                        <tr>
-                            <td><img src="https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/I5.png?v=14" alt="" width={40} /> AirAsia </td>
-                            <td>silverpales <br />
-                                New Delhi</td>
-                            <td>Fristclass <br />
-                            </td>
-                            <td> <small>11/5/2021</small> </td>
-                            <td>14/5/2021<br />
-                            </td>
-                            <td>4</td>
-                            <td>7</td>
-                            <td>₹1022</td>
-                        </tr>
-                        <tr>
-                            <td><img src="https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/I5.png?v=14" alt="" width={40} /> AirAsia </td>
-                            <td>silverpales <br />
-                                New Delhi</td>
-                            <td>Fristclass <br />
-                            </td>
+            <div className="d-flex mt-5  container-fluid">
+                <div className='mt-5 h-100 mr-5'>
+                    <div className="">
+                        <table className="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col"> <small><b>Sorted By:</b></small>  </th>
+                                    <th scope="col"><small>Hotel Name</small></th>
+                                    <th scope="col"><small> City</small></th>
+                                    <th scope="col"><small>Hotel Type</small></th>
+                                    {/* <th scope="col"><small>Check-in Date</small></th>
+                                    <th scope="col"><small>Check-in Out</small></th>
+                                    <th scope="col"><small>Fix Days</small></th>
+                                    <th scope="col"><small>No Of Guests</small></th> */}
+                                    <th scope="col"><small>Total Rooms</small></th>
+                                    {/* <th scope="col"><small>Total Price</small></th> */}
+                                    <th scope="col"><small>Booking</small></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {maindatah.map((item: any, index: any) => {
+                                    return (
+                                        <><tr key={index}>
+                                            <td><img src="https://previews.123rf.com/images/farang/farang1112/farang111200023/11537629-jet-airplane-in-a-sky-at-sunset-time-square-composition-.jpg" alt="" width={150} /> &nbsp;&nbsp;&nbsp;&nbsp;      &AirIndia
+                                            </td>
+                                            <td>{item.hotel_name}</td>
+                                            <td>{item.city}</td>
+                                            <td>{item.hotel_type}</td>
+                                            <td>{item.avilabe_rooms}<br /> </td>                               
+                                                <td>{item.total_rooms}</td>
+                                                                                
+                                            <td>
+                                                <button className='btn btn-primary btn-lg rounded-pill'> BOOK</button>
 
-                            <td> <small>11/5/2021</small> </td>
-                            <td>14/5/2021<br />
-                            </td>
-                            <td>4</td>
-                            <td>7</td>
-                            <td>₹1022</td>
-                        </tr>
-                    </tbody>
-                </table>
+                                                <button className="btn btn-info rounded-circle m-3" type="button" data-toggle="collapse" data-target={"#" + item.key} aria-expanded="false" aria-controls="collapseExample"> <i className="fa fa-info-circle " aria-hidden="true"></i>
+                                                </button>
+
+                                            </td>
+                                        </tr>
+                                            <tr>
+                                                <td colSpan={7}>
+                                                    <div className="collapse w-100" id={item.key}>
+                                                        <div className="card  " >{item.description}
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </>
+
+                                    )
+                                })
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
 
     )
 }
 
-    export default Listhotel; 
+export default Listhotel; 

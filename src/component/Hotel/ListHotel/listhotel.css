@@ -2,3 +2,16 @@
     
     margin: 18rem 0rem 18rem 0rem ;
 }
+.modal{
+    transition: ease 0.5s;
+    backdrop-filter: blur(5px) !important;
+}
+.card img{
+    width: 200px !important;
+    height: 200px;
+}
+td{
+    vertical-align: middle !important;
+    padding: 2%;
+    font-size: larger ;
+}
