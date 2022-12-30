@@ -1,6 +1,8 @@
 import React from 'react'
 
 function Offers() {
+    let location = window.location.pathname
+    
     return (
         <div className='' >
             <div className="mb-1 mt-5 ">
@@ -14,11 +16,11 @@ function Offers() {
                             <div className="col-md-12">
                                 <nav>
                                     <div className="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                        <a className="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-                                        <a className="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Hotel</a>
-                                        <a className="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Flight</a>
-                                        <a className="nav-item nav-link" id="nav-contactt-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Bus</a>
-                                        <a className="nav-item nav-link" id="nav-contactt-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">PACKAGE</a>
+                                        <a className={ location == "/home"?"nav-item nav-link active": " nav-item nav-link" } id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+                                        <a className={ location == "/hotel"?"nav-item nav-link active": " nav-item nav-link" } id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Hotel</a>
+                                        <a className={ location == "/flight"?"nav-item nav-link active": " nav-item nav-link" } id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Flight</a>
+                                        <a className={ location == "/bus"?"nav-item nav-link active": " nav-item nav-link" } id="nav-contactt-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Bus</a>
+                                        <a className={ location == "/package"?"nav-item nav-link active": " nav-item nav-link" } id="nav-contactt-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">PACKAGE</a>
 
                                     </div>
                                 </nav>

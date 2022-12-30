@@ -6,24 +6,24 @@ function Listflight() {
   const [maindata, setmaindata]: any[] = useState([])
   const [filterdata, setfilterdata]: any[] = useState([])
   const { from, to, day } = useParams();
-  const [filter ,setfilter]:any = useState([])
+  const [filter, setfilter]: any = useState([])
 
   useEffect(() => {
     console.log(from, to, day);
     getdata()
   }, [])
 
-  function filterD(e:any){
-    let name:any = e.target.name
-    let val:any = e.target.value
-    setfilter({...filter ,[name]:val})
+  function filterD(e: any) {
+    let name: any = e.target.name
+    let val: any = e.target.value
+    setfilter({ ...filter, [name]: val })
     console.log(filter);
-   
+
 
   }
-  function submit(){
+  function submit() {
     console.log(filter);
-    
+
 
   }
   function getdata() {
@@ -31,7 +31,7 @@ function Listflight() {
     let filter: any[] = []
     firebase
       .database()
-      .ref("/package")
+      .ref("/flight")
       .get()
       .then((res) => {
         res.forEach((element) => {
@@ -83,7 +83,7 @@ function Listflight() {
                           <input
                             type="text"
                             name="From"
-                            onChange={(e)=>filterD(e)}
+                            onChange={(e) => filterD(e)}
                             className="form-control"
                             list="origin-options"
                             id="origin-input"
@@ -102,7 +102,7 @@ function Listflight() {
                           <input
                             type="text"
                             name="To"
-                            onChange={(e)=>filterD(e)}
+                            onChange={(e) => filterD(e)}
                             className="form-control"
                             list="destination-options"
                             id="destination-input"
@@ -143,7 +143,7 @@ function Listflight() {
                             <input
                               type="date"
                               name="Departure Data"
-                            onChange={(e)=>filterD(e)}
+                              onChange={(e) => filterD(e)}
                               className="form-control"
                               id="departure-date-input"
                               aria-describedby="departure-date-label"
@@ -157,7 +157,7 @@ function Listflight() {
                             <input
                               type="date"
                               name="Return Data"
-                              onChange={(e)=>filterD(e)}
+                              onChange={(e) => filterD(e)}
                               className="form-control"
                               id="return-date-input"
                               aria-describedby="return-date-label"
@@ -181,27 +181,29 @@ function Listflight() {
 
       </div>
 
-      <div className="d-flex mt-5  container">
-
+      <div className="d-flex mt-5  container-fluid">
         <div className="mt-5 w-100 mr-5  ">
           <div className="">
-            <table className="table table-hover">
+            <table className="table table-hover" border={0}>
               <thead>
                 <tr>
                   <th scope="col"> <small><b>Sorted By:</b></small>  </th>
+                  <th scope="col"> <small>Flight Name</small>  </th>
+
                   <th scope="col"><small>Departure</small></th>
                   <th scope="col"><small>Duration</small></th>
                   <th scope="col"><small>Arrival</small></th>
                   <th scope="col"><small>
                     Price</small></th>
+                  <th scope="col"><small>booking</small></th>
+
                 </tr>
               </thead>
               <tbody>
                 {maindata.map((item: any, index: any) => {
-
                   return (
-                    <tr key={index}>
-                      <td><img src={item.img} alt="" width={40} />AirIndia
+                    <><tr key={index}>
+                      <td><img src="https://previews.123rf.com/images/farang/farang1112/farang111200023/11537629-jet-airplane-in-a-sky-at-sunset-time-square-composition-.jpg" alt="" width={150} /> &nbsp;&nbsp;&nbsp;&nbsp;      &AirIndia
                       </td>
                       <td>{item.flight_name}</td>
                       <td>{item.arrival_time} <br />
@@ -211,16 +213,36 @@ function Listflight() {
                         {item.to_location}
                       </td>
                       <td>₹ 10,367</td>
+                      <td>
+                        <button className='btn btn-primary btn-lg rounded-pill'> BOOK</button>
+
+                        <button className="btn btn-info rounded-circle m-3" type="button" data-toggle="collapse" data-target={"#" + item.key} aria-expanded="false" aria-controls="collapseExample"> <i className="fa fa-info-circle " aria-hidden="true"></i>
+                        </button>
+
+                      </td>
                     </tr>
+                    <tr>
+                      <td colSpan={7}>
+                      <div className="collapse w-100" id={item.key}>
+                        <div className="card  " >{item.description}
+                        </div>
+                      </div>
+                      </td>
+                    </tr>
+                    </>
+
                   )
                 })
                 }
-
               </tbody>
             </table>
           </div>
         </div>
       </div>
+
+      <div className="card mb-3 mt-3 ml-4 " >
+      </div>
+
 
     </div>
 
