@@ -3,10 +3,19 @@ import { useParams } from 'react-router-dom'
 import firebase from "firebase";
 import "./listhotel.css";
 
-
+import state from "../../../assert/state.json";
 
 
 function Listhotel() {
+    let array: string[] = []
+    const citys = Object.values(state)
+    citys.forEach(element => {
+        element.forEach(element => {
+            array.push(element)
+        });
+
+    });
+    
     // const [serchdata, setserchdata]: any = useState()
     const { city, chackin, chackout, serch } = useParams();
     const [maindatah, setmaindatah]: any = useState([])
@@ -23,12 +32,14 @@ function Listhotel() {
         let name: any = e.target.name
         let val: any = e.target.value
         setfilterh({ ...filterh, [name]: val })
-        console.log(filterh);  
-      }
+        if (name === "From" || name === "To") {
+            hendelautosagetion(e)
+        }
+    }
     function submit() {
         console.log(filterh);
-    
-      }
+
+    }
     function getdata() {
         let arr: any[] = [];
         let filter: any[] = []
@@ -56,7 +67,38 @@ function Listhotel() {
             .catch((err) => {
                 console.log(err);
             });
+
     }
+    const [autosagetion, setautosagetion]:any[] = useState([])
+    const [showautosagetion, setshowautosagetion]:any = useState(false)
+
+    function hendelautosagetion(e: any) {
+        setshowautosagetion(true)
+
+        let ar:any[]=[]
+        array.forEach(element => {
+            console.log();
+            const capitalized = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
+            if (element.startsWith(capitalized)) {
+                ar.push(element)
+            }
+            
+
+        });
+       
+        setautosagetion(ar)
+     
+        
+    }
+    window.onclick =()=>{
+        setshowautosagetion(false)
+    }
+    function select(params:any) {
+        setfilterh({From:params}) 
+        setshowautosagetion(false)
+    }
+
+
     return (
         <div>
 
@@ -75,7 +117,6 @@ function Listhotel() {
                                 </button>
                             </div>
                             <div className="modal-body">
-
                                 <div className="">
                                     <h5 className="">Locations</h5>
                                     <div className="row">
@@ -87,18 +128,27 @@ function Listhotel() {
                                                     <input
                                                         type="text"
                                                         name="From"
-                                                        onChange={(e) => filterDatah(e)}
+                                                        onInput={(e) => filterDatah(e)}
                                                         className="form-control"
                                                         list="origin-options"
                                                         id="origin-input"
                                                         placeholder="Location"
+                                                        value={filterh.From}
                                                         aria-describedby="origin-label"
                                                     />
-                                                    <datalist id="origin-options"></datalist>
+                                                    {showautosagetion? <div className=' autosagetion'>
+                                                        {
+                                                            autosagetion.map((item:any) =>{
+                                                             return   <div onClick={()=>select(item)} className='list-item'>{item}</div>
+                                                            })
+                                                        }
+                                                        
+                                                </div>:""}
                                                 </div>
+                                                
                                             </div>
                                         </div>
-                                        <div className="col-sm">
+                                        {/* <div className="col-sm">
                                             <div className="mb-2">
                                                 <label id="destination-label" htmlFor="destination-input" className="form-label">To</label                     >
                                                 <div className="input-group">
@@ -117,7 +167,7 @@ function Listhotel() {
                                                     <datalist id="destination-options"></datalist>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
 
@@ -129,8 +179,9 @@ function Listhotel() {
                                         <div className="input-group">
                                             <span className="input-group-text"><i className="bi-calendar"></i></span>
                                             <input
+
                                                 type="date"
-                                                name=""
+                                                name="date"
                                                 onChange={(e) => filterDatah(e)}
                                                 className="form-control"
                                                 id="Check-in-input"
@@ -183,8 +234,8 @@ function Listhotel() {
                 </div>
 
             </div>
-            <div className="d-flex mt-5  container-fluid">
-                <div className='mt-5 h-100 mr-5'>
+            <div className=" mt-5  container-fluid">
+                <div className='mt-5 h-100 ml-5'>
                     <div className="">
                         <table className="table table-hover">
                             <thead>
@@ -193,12 +244,9 @@ function Listhotel() {
                                     <th scope="col"><small>Hotel Name</small></th>
                                     <th scope="col"><small> City</small></th>
                                     <th scope="col"><small>Hotel Type</small></th>
-                                    {/* <th scope="col"><small>Check-in Date</small></th>
-                                    <th scope="col"><small>Check-in Out</small></th>
-                                    <th scope="col"><small>Fix Days</small></th>
-                                    <th scope="col"><small>No Of Guests</small></th> */}
+                                    <th scope="col"><small>WIFI</small></th>
+                                    <th scope="col"><small>A/C</small></th>
                                     <th scope="col"><small>Total Rooms</small></th>
-                                    {/* <th scope="col"><small>Total Price</small></th> */}
                                     <th scope="col"><small>Booking</small></th>
                                 </tr>
                             </thead>
@@ -206,23 +254,24 @@ function Listhotel() {
                                 {maindatah.map((item: any, index: any) => {
                                     return (
                                         <><tr key={index}>
-                                            <td><img src="https://previews.123rf.com/images/farang/farang1112/farang111200023/11537629-jet-airplane-in-a-sky-at-sunset-time-square-composition-.jpg" alt="" width={150} /> &nbsp;&nbsp;&nbsp;&nbsp;      &AirIndia
+                                            <td><img className='rounded' src={item.img} alt="" width={150} /> &nbsp;&nbsp;&nbsp;&nbsp;     {item.hotel_name}
                                             </td>
                                             <td>{item.hotel_name}</td>
                                             <td>{item.city}</td>
                                             <td>{item.hotel_type}</td>
-                                            <td>{item.avilabe_rooms}<br /> </td>                               
-                                                <td>{item.total_rooms}</td>
-                                                                                
+                                            <td>{item.wifi != "0" ? <i className="fa fa-check" aria-hidden="true"></i> : <i className="fa fa-times" aria-hidden="true"></i>}</td>
+                                            <td>{item.ac != "0" ? <i className="fa fa-check" aria-hidden="true"></i> : <i className="fa fa-times" aria-hidden="true"></i>}</td>
+                                            <td>{item.avilabe_rooms}<br /> </td>
+                                            <td>{item.total_rooms}</td>
                                             <td>
                                                 <button className='btn btn-primary btn-lg rounded-pill'> BOOK</button>
-
                                                 <button className="btn btn-info rounded-circle m-3" type="button" data-toggle="collapse" data-target={"#" + item.key} aria-expanded="false" aria-controls="collapseExample"> <i className="fa fa-info-circle " aria-hidden="true"></i>
                                                 </button>
 
                                             </td>
                                         </tr>
                                             <tr>
+
                                                 <td colSpan={7}>
                                                     <div className="collapse w-100" id={item.key}>
                                                         <div className="card  " >{item.description}

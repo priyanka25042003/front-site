@@ -182,10 +182,10 @@ function Listflight() {
 
       </div>
 
-      <div className="d-flex mt-5  container-fluid">
-        <div className="mt-5 w-100 mr-5  ">
+      <div className=" mt-5   container-fluid">
+        <div className=" ">
           <div className="">
-            <table className="table table-hover" border={0}>
+            <table className="table table-hover w-100" style={{width:"100%"}} border={0}>
               <thead>
                 <tr>
                   <th scope="col"> <small><b>Sorted By:</b></small>  </th>
