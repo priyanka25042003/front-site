@@ -106,13 +106,13 @@ function Offers() {
                     <div className="row row-cols-1 mx-1 row-cols-md-2 g-4">
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0 ">
                           <div className="col-md-4">
-                            <img
+                            <img 
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3 m-3"
                               alt="..."
                             />
                           </div>
@@ -135,13 +135,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -164,13 +164,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -193,13 +193,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -222,13 +222,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -251,13 +251,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -289,13 +289,13 @@ function Offers() {
                     <div className="row row-cols-1 mx-1 row-cols-md-2 g-4">
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0 ">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -318,13 +318,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -347,13 +347,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -376,13 +376,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -405,13 +405,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -434,13 +434,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -472,13 +472,13 @@ function Offers() {
                     <div className="row row-cols-1 mx-1 row-cols-md-2 g-4">
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0 ">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -501,13 +501,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -530,13 +530,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -559,13 +559,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -588,13 +588,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -617,13 +617,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -655,13 +655,13 @@ function Offers() {
                     <div className="row row-cols-1 mx-1 row-cols-md-2 g-4">
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0 ">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -684,13 +684,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
@@ -713,13 +713,13 @@ function Offers() {
                       </div>
                       <div
                         className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "500px" }}
+                        style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>

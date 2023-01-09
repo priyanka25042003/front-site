@@ -384,7 +384,8 @@ function Listhotel() {
                                                         className="rounded"
                                                         src={item.img}
                                                         alt=""
-                                                        width={150}
+                                                        width={200}
+                                                        height={150}
                                                     />{" "}
                                                     &nbsp;&nbsp;&nbsp;&nbsp; {item.hotel_name}
                                                 </td>

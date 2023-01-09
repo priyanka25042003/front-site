@@ -188,7 +188,7 @@ function Hotel() {
                   display: "flex",
                   justifyContent: "space-around",
                   width: 300,
-                  height: 350,
+                  height: 400,
                 }}
               >
                 <div className="card rounded-5 " style={{width:"18rem"}} >
@@ -222,7 +222,7 @@ function Hotel() {
                   display: "flex",
                   justifyContent: "space-around",
                   width: 300,
-                  height: 350,
+                  height: 400 ,
                 }}
               >
                 <div className="card rounded-5 " style={{width:"18rem"}}>
