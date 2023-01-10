@@ -4,8 +4,24 @@ import firebase from "firebase";
 import HorizontalGallery from "react-dynamic-carousel";
 import { useNavigate } from "react-router-dom";
 import Offers from "../offers";
+import state from "../../assert/state.json";
+
+
+
+
+
+
 function Hotel() {
   const [next_plan, setnxtplan] = useState<any[]>([]);
+  let array: string[] = [];
+  const citys = Object.values(state);
+
+  citys.forEach((element) => {
+    element.forEach((element) => {
+      array.push(element);
+    });
+  });
+
   useEffect(() => {
     getdata();
   }, []);
@@ -27,15 +43,26 @@ function Hotel() {
         console.log(err);
       });
   }
-  const [search , setsearch]:any = useState()
-  function setserch(e:any) {
+  const [autosagetion, setautosagetion]: any[] = useState([]);
+  const [showautosagetion, setshowautosagetion]: any = useState(false);
+  const [search, setsearch]: any = useState()
+  const [filterh, setfilterh]: any = useState([]);
+
+
+  function setserch(e: any) {
     let name = e.target.name
     let value = e.target.value
-    setsearch({...search,[name]:value})
+    setsearch({ ...search, [name]: value })
   }
   const navigate = useNavigate();
+
   function navigat() {
-    navigate("/hotallist/"+search.citys+"/"+search.chackin+"/"+search.chackout+"/"+search.search);
+    navigate("/hotallist/" + search.citys + "/" + search.chackin + "/" + search.chackout + "/" + search.search);
+  }
+
+  function select(params: any) {
+    setfilterh({ From: params });
+    setshowautosagetion(false);
   }
   return (
     <div>
@@ -53,27 +80,40 @@ function Hotel() {
       <div className="m-1">
         <div className=" hstack gap-3 bg-light text-dark d-flex justify-content-evenly shadow bg-body rounded rounded-pill algin">
           <div className="w-25    bg-body rounded">
-            <select
-              className="form-select w-100 rounded-circle"
-              aria-label="Default select example"
-              name="citys"
-              id=""
-              onChange={(e)=>setserch(e)}
-            >
-              <option value="" selected>
-                location
-              </option>
-              <option value="Jaipur*">Jaipur</option>
-              <option value="Surat">Surat</option>
-              <option value="Rajkot">Rajkot</option>
-              <option value="Junagad">Junagad</option>
-            </select>
+            <input
+              type="text"
+              name="From"
+              onInput={(e) => setsearch(e)}
+              className="form-control"
+              list="origin-options"
+              id="origin-input"
+              placeholder="Location"
+              value={filterh.From}
+              aria-describedby="origin-label"
+            />
+            {showautosagetion ? (
+              <div className="autosagetion">
+                {autosagetion.map((item: any) => {
+                  return (
+                    <div
+                      onClick={() => select(item)}
+                      className="list-item"
+                    >
+                      {item}
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              ""
+            )}
+
           </div>
           <div>
             <div className="input-group input-daterange">
-              <input type="date" className="form-control" aria-valuemin={Date.now()} onChange={(e)=>setserch(e)} name="chackin"  />
+              <input type="date" className="form-control" aria-valuemin={Date.now()} onChange={(e) => setserch(e)} name="chackin" />
               <div className="input-group-addon m-1">to</div>
-              <input type="date" className="form-control" onChange={(e)=>setserch(e)} name="chackout"/>
+              <input type="date" className="form-control" onChange={(e) => setserch(e)} name="chackout" />
             </div>
           </div>
           <div>
@@ -84,7 +124,7 @@ function Hotel() {
                 placeholder="Search"
                 aria-label="Search"
                 name="search"
-                onChange={(e)=>setserch(e)}
+                onChange={(e) => setserch(e)}
               />
               <button
                 className="btn btn-outline-primary rounded-pill b my-2 my-sm-0" onClick={navigat}
@@ -106,7 +146,7 @@ function Hotel() {
                 src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
                 alt=""
               />
-              
+
             </div>
             <h5 className="text-center mt-2">cityname</h5>
           </div>
@@ -191,7 +231,7 @@ function Hotel() {
                   height: 350,
                 }}
               >
-                <div className="card rounded-5 " style={{width:"18rem"}} >
+                <div className="card rounded-5 " style={{ width: "18rem" }} >
                   <div className="card-body">
                     <img className="card-img-top" src={value.img} alt="" />
                     <p className="card-text">{value.hotel_type}</p>
@@ -215,7 +255,7 @@ function Hotel() {
           <h2 className=""> Plan your next staycation</h2>
         </div>
         <div className="container-f shadow p-3 mb-5 bg-body rounded">
-          <HorizontalGallery 
+          <HorizontalGallery
             tiles={next_plan.map((value) => (
               <div
                 style={{
@@ -225,7 +265,7 @@ function Hotel() {
                   height: 350,
                 }}
               >
-                <div className="card rounded-5 " style={{width:"18rem"}}>
+                <div className="card rounded-5 " style={{ width: "18rem" }}>
                   <div className="card-body">
                     <img className="card-img-top" src={value.img} alt="" />
                     <p className="card-text">{value.hotel_type}</p>
