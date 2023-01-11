@@ -55,14 +55,38 @@ function Hotel() {
     setsearch({ ...search, [name]: value })
   }
   const navigate = useNavigate();
-
-  function navigat() {
-    navigate("/hotallist/" + search.citys + "/" + search.chackin + "/" + search.chackout + "/" + search.search);
+  function filterDatah(e: any) {
+    let name: any = e.target.name;
+    let val: any = e.target.value;
+    console.log({ ...filterh, [name]: val });
+    setfilterh({ ...filterh, [name]: val });
+    if (name === "From" || name === "To") {
+      hendelautosagetion(e);
+    }
+  }
+  function hendelautosagetion(e: any) {
+    setshowautosagetion(true);
+    let ar: any[] = [];
+    array.forEach((element) => {
+      const capitalized =
+        e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
+      if (element.startsWith(capitalized)) {
+        ar.push(element);
+      }
+    });
+    setautosagetion(ar);
   }
 
+  window.onclick = () => {
+    setshowautosagetion(false);
+  };
+  
   function select(params: any) {
     setfilterh({ From: params });
     setshowautosagetion(false);
+  }
+  function navigat() {
+    navigate("/hotallist/" + search.citys + "/" + search.chackin + "/" + search.chackout + "/" + search.search);
   }
   return (
     <div>
@@ -83,7 +107,7 @@ function Hotel() {
             <input
               type="text"
               name="From"
-              onInput={(e) => setsearch(e)}
+              onInput={(e) => filterDatah(e)}
               className="form-control"
               list="origin-options"
               id="origin-input"
@@ -262,7 +286,7 @@ function Hotel() {
                   display: "flex",
                   justifyContent: "space-around",
                   width: 300,
-                  height: 400 ,
+                  height: 400,
                 }}
               >
                 <div className="card rounded-5 " style={{ width: "18rem" }}>
