@@ -1,9 +1,34 @@
-import React from "react";
+import firebase from "firebase";
+import React, { useEffect, useState } from "react";
 
 function Offers() {
   let location = window.location.pathname;
 
+  const [data, setdata]: any[] = useState([])
+  useEffect(() => {
+    getdata();
+  }, []);
+  function getdata() {
+    let arr: any[] = [];
+    firebase
+      .database()
+      .ref("/offers")
+      .get()
+      .then((res) => {
+        res.forEach((element) => {
+          arr.push({ key: element.key, ...element.val() });
+        });
+        console.log(arr);
+
+        // setnxtplan(arr.slice(0, 4))
+        setdata(arr);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   return (
+
     <div className="">
       <div className="mb-1 mt-5 ">
         <h2 className="text-center ">Offers</h2>
@@ -55,11 +80,11 @@ function Offers() {
                           ? "nav-item nav-link active"
                           : " nav-item nav-link"
                       }
-                      id="nav-contact-tab"
+                      id="nav-flight-tab"
                       data-toggle="tab"
-                      href="#nav-contact"
+                      href="#nav-flight"
                       role="tab"
-                      aria-controls="nav-contact"
+                      aria-controls="nav-flight"
                       aria-selected="false"
                     >
                       Flight
@@ -70,11 +95,11 @@ function Offers() {
                           ? "nav-item nav-link active"
                           : " nav-item nav-link"
                       }
-                      id="nav-contactt-tab"
+                      id="nav-bus-tab"
                       data-toggle="tab"
-                      href="#nav-contact"
+                      href="#nav-bus"
                       role="tab"
-                      aria-controls="nav-contact"
+                      aria-controls="nav-bus"
                       aria-selected="false"
                     >
                       Bus
@@ -85,11 +110,11 @@ function Offers() {
                           ? "nav-item nav-link active"
                           : " nav-item nav-link"
                       }
-                      id="nav-contactt-tab"
+                      id="nav-pakage-tab"
                       data-toggle="tab"
-                      href="#nav-contact"
+                      href="#nav-pakage"
                       role="tab"
-                      aria-controls="nav-contact"
+                      aria-controls="nav-pakage"
                       aria-selected="false"
                     >
                       PACKAGE
@@ -110,7 +135,7 @@ function Offers() {
                       >
                         <div className="row g-0 ">
                           <div className="col-md-4">
-                            <img 
+                            <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
                               className="img-fluid rounded-start m-3 m-3"
                               alt="..."
@@ -118,7 +143,7 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">Card afsdasdftitle</h5>
                               <p className="card-text">
                                 This is a wider card with supporting text below
                                 as a natural lead-in to additional content. This
@@ -465,194 +490,59 @@ function Offers() {
                   </div>
                   <div
                     className="tab-pane fade"
-                    id="nav-contact"
+                    id="nav-flight"
                     role="tabpanel"
-                    aria-labelledby="nav-contact-tab"
+                    aria-labelledby="nav-flight-tab"
                   >
                     <div className="row row-cols-1 mx-1 row-cols-md-2 g-4">
-                      <div
-                        className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "33rem" }}
-                      >
-                        <div className="row g-0 ">
-                          <div className="col-md-4">
-                            <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start m-3"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
-                              <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
-                              </p>
-                              <p className="card-text">
-                                <small className="text-muted">
-                                  Last updated 3 mins ago
-                                </small>
-                              </p>
+
+                      {
+                        data.map((res: any) => {
+                          if (res.offers_type == "Flight") {
+                            console.log(res);
+
+
+                            <div
+                              className="card mb-3 mt-3 ml-4 "
+                              style={{ maxWidth: "33rem" }}
+                            >
+                              <div className="row g-0 ">
+                                <div className="col-md-4">
+                                  <img
+                                    src={res.img}
+                                    className="img-fluid rounded-start m-3"
+                                    alt="..."
+                                  />
+                                </div>
+                                <div className="col-md-8">
+                                  <div className="card-body">
+                                    <h5 className="card-title">Carddsds title</h5>
+                                    <p className="card-text">
+                                      This is a wider card with supporting text below
+                                      as a natural lead-in to additional content. This
+                                      content is as little bit longer.
+                                    </p>
+                                    <p className="card-text">
+                                      <small className="text-muted">
+                                        Last updated 3 mins ago
+                                      </small>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "33rem" }}
-                      >
-                        <div className="row g-0">
-                          <div className="col-md-4">
-                            <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start m-3"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
-                              <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
-                              </p>
-                              <p className="card-text">
-                                <small className="text-muted">
-                                  Last updated 3 mins ago
-                                </small>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "33rem" }}
-                      >
-                        <div className="row g-0">
-                          <div className="col-md-4">
-                            <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start m-3"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
-                              <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
-                              </p>
-                              <p className="card-text">
-                                <small className="text-muted">
-                                  Last updated 3 mins ago
-                                </small>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "33rem" }}
-                      >
-                        <div className="row g-0">
-                          <div className="col-md-4">
-                            <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start m-3"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
-                              <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
-                              </p>
-                              <p className="card-text">
-                                <small className="text-muted">
-                                  Last updated 3 mins ago
-                                </small>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "33rem" }}
-                      >
-                        <div className="row g-0">
-                          <div className="col-md-4">
-                            <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start m-3"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
-                              <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
-                              </p>
-                              <p className="card-text">
-                                <small className="text-muted">
-                                  Last updated 3 mins ago
-                                </small>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "33rem" }}
-                      >
-                        <div className="row g-0">
-                          <div className="col-md-4">
-                            <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start m-3"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
-                              <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
-                              </p>
-                              <p className="card-text">
-                                <small className="text-muted">
-                                  Last updated 3 mins ago
-                                </small>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+
+                          }
+
+                        })}
                     </div>
                   </div>
                   <div
                     className="tab-pane fade show active"
                     id="nav-home"
                     role="tabpanel"
-                    aria-labelledby="nav-contactt-tab"
-                  >
-                    <div className="row row-cols-1 mx-1 row-cols-md-2 g-4">
+                    aria-labelledby="nav-pakage-tab">
+                    <div className="row row-cols-1 mx-1 row-cols-md-2 g-4" >
                       <div
                         className="card mb-3 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
@@ -753,3 +643,6 @@ function Offers() {
 }
 
 export default Offers;
+
+
+

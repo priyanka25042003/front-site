@@ -1,9 +1,24 @@
-import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import React, { useEffect } from "react";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
-function navbar() {
+function Navbar() {
+ 
+  let  navigate = useNavigate()
+ function navig() {
+  
+   if (window.location.pathname  == "/") {
+      
+      navigate("home")
+    }
+  }
+useEffect(() => {
+  navig()
+}, [])
+  
+  
+  
   return (
-    <div className="">
+    <div className="" onLoad={navig}>
       <nav className="navbar navbar-expand-lg navbar-light bg-light  p-3" >
         <h3 className="navbar-brand">Navbar</h3 >
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +50,7 @@ function navbar() {
               <NavLink className="nav-link" to={"listhotel"}>listhotel <span className="sr-only">(current)</span></NavLink>
             </li> */}
             <li className="nav-item active">
-              <NavLink className="nav-link" to={"offers"}>Offers <span className="sr-only">(current)</span></NavLink>
+              <NavLink className="nav-link" to={"offers"}>OFFERS <span className="sr-only">(current)</span></NavLink>
             </li>
             <li className="nav-item active">
               <NavLink className="nav-link" to={"about"}>ABOUT <span className="sr-only">(current)</span></NavLink>
@@ -60,4 +75,4 @@ function navbar() {
   );
 }
 
-export default navbar;
+export default Navbar;

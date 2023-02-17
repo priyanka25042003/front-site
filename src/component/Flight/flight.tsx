@@ -13,10 +13,12 @@ function Flight() {
         let name = e.target.name
         let value = e.target.value
         setsearch({ ...search, [name]: value })
+        console.log(search);
+
     }
     const navigate = useNavigate();
     function navigat() {
-        navigate("/listflight/" + search.from + "/" + search.to + "/" + search.day);
+        navigate("/listflight/" + search.From + "/" + search.To + "/" + search.day);
     }
     const [autosagetion, setautosagetion]: any[] = useState([]);
     const [showautosagetion, setshowautosagetion]: any = useState(false);
@@ -30,7 +32,7 @@ function Flight() {
         let name: any = e.target.name;
         let val: any = e.target.value;
         console.log({ ...filterh, [name]: val });
-        setfilterh({ ...filterh, [name]: val });
+        setsearch({ ...search, [name]: val });
         if (name === "From") {
             hendelautosagetion(e);
         } else {
@@ -100,12 +102,14 @@ function Flight() {
 
     function select(params: any, location: any) {
         if (location == "From") {
-            setfilterh({ From: params });
+            setsearch({ ...search, From: params });
             setshowautosagetion(false);
         } else {
-            setfilterh({ To: params });
+            setsearch({ ...search, To: params });
             setshowautofrom(false);
         }
+        console.log(search);
+
 
     }
 
@@ -117,33 +121,37 @@ function Flight() {
             <div className="m-1">
                 <div className=" hstack gap-3 bg-light text-dark d-flex justify-content-evenly shadow bg-body rounded rounded-pill algine">
                     <div className="w-25    bg-body rounded">
-                        <input
-                            type="text"
-                            name="From"
-                            onInput={(e) => filterDatah(e)}
-                            className="form-control"
-                            list="origin-options"
-                            id="origin-input"
-                            placeholder="Location"
-                            value={filterh.From}
-                            aria-describedby="origin-label"
-                        />
-                        {showautosagetion ? (
-                            <div className="autosagetions">
-                                {autosagetion.map((item: any) => {
-                                    return (
-                                        <div
-                                            onClick={() => select(item.airport_name, "From")}
-                                            className="list-items"
-                                        >
-                                            {item.airport_name}
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        ) : (
-                            ""
-                        )}
+                        <div className="  input-group input-daterange">
+
+                            <input
+                                type="text"
+                                name="From"
+                                onInput={(e) => filterDatah(e)}
+                                className="form-control"
+                                list="origin-options"
+                                id="origin-input"
+                                placeholder="Location"
+                                value={search?.From}
+                                aria-describedby="origin-label"
+                                autoComplete="off"
+                            />
+                            {showautosagetion ? (
+                                <div className="autosagetions">
+                                    {autosagetion.map((item: any) => {
+                                        return (
+                                            <div
+                                                onClick={() => select(item.airport_name, "From")}
+                                                className="list-items"
+                                            >
+                                                {item.airport_name}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            ) : (
+                                ""
+                            )}
+                        </div>
                     </div>
                     <div>to</div>
                     <div className="w-25    bg-body rounded" >
@@ -156,8 +164,10 @@ function Flight() {
                                 list="origin-options"
                                 id="origin-input"
                                 placeholder="Location"
-                                value={filterh.To}
+                                value={search?.To}
                                 aria-describedby="origin-label"
+                                autoComplete="off"
+
                             />
                             {showautofrom ? (
                                 <div className="autosagetions">
@@ -242,7 +252,7 @@ function Flight() {
                 <Offers></Offers>
             </div>
 
-        </div>
+        </div >
 
 
 

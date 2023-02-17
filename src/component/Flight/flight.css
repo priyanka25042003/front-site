@@ -131,10 +131,10 @@
   left: 0;
   right: 0;
   overflow-y: auto;
-  
-  height:200px ;
+
+  height: 200px;
 }
-.list-items   {
+.list-items {
   padding: 10px;
   cursor: pointer;
   background-color: #fff;

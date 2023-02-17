@@ -14,7 +14,7 @@ export default function Singin() {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then((userCredential: any) => {
-        localStorage.setItem("admindata", userCredential);
+        localStorage.setItem("user", JSON.stringify(userCredential));
         const user = userCredential.user;
         console.log(user);
         navigate("/");
