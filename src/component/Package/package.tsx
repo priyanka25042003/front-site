@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import "./package.css";
+import Offers from "../offers";
 
 
 function Package() {
@@ -9,16 +11,21 @@ function Package() {
     let value = e.target.value
     setsearch({ ...search, [name]: value })
   }
+  const navigate = useNavigate();
+  function navigat() {
+    navigate("/listflight/"+search.from+"/"+search.to+"/"+search.day);
+  }
+
 
   return (
-    <div>
-      <div className="cg-image containerd" style={{ width: "100rem" }} >
+   <div>
+      <div className="cg-image " style={{ width: "100rem" }} >
       </div>
       <div className="m-1">
         <div className=" hstack gap-3 bg-light text-dark d-flex justify-content-evenly shadow bg-body rounded rounded-pill algine">
-          <div className="w-25    bg-body rounded">
+          <div className="w-25  bg-body rounded">
             <select
-              className="form-select w-101 rounded"
+              className="form-select w-100 rounded"
               aria-label="Default select example"
               name="from"
               onChange={(e) => setserch(e)}
@@ -37,7 +44,7 @@ function Package() {
           <div className="w-25    bg-body rounded" >
             <div className="  input-group input-daterange">
               <select
-                className="form-select w-101 rounded"
+                className="form-select w-100 rounded"
                 aria-label="Default select example"
                 name="to"
                 onChange={(e) => setserch(e)}
@@ -67,6 +74,7 @@ function Package() {
               <button
                 className="btn btn-outline-primary rounded-pill b my-2 my-sm-0"
                 type="submit"
+                onClick={navigat}
               >
                 Search
               </button>
@@ -78,8 +86,8 @@ function Package() {
         <div className="ml-5" style={{ marginTop: "6rem" }}>
           <h2 className=""> Plan your next staycation</h2>
         </div>
-        <div className="card  rounded hocard" style={{width:"18rem"}} >
-          
+        <div className="card  rounded hocard" style={{ width: "18rem" }} >
+
           <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" className="mult-img-top" alt="" />
           <div className="card-body">
             <h5 className="card-title">Card title</h5>
@@ -92,6 +100,9 @@ function Package() {
             </p>
           </div>
         </div>
+        <div className="" >
+        <Offers></Offers>
+      </div>
       </div>
     </div>
 

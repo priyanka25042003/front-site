@@ -29,6 +29,7 @@ function Contact() {
                                 </div>
                                 <div className="col-6">
                                     <div className="form-group">
+                                        
                                         <label className="text-black" htmlFor="lname">Last name</label>
                                         <input type="text" className="form-control" id="lname"></input>
                                     </div>

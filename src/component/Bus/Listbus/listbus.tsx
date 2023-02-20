@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import firebase from 'firebase';
 import { useParams } from 'react-router-dom';
-import "./listflight.css"
+import "./listbus.css"
 
-function Listflight() {
+function Listbus() {
   const [maindata, setmaindata]: any[] = useState([])
   const [filterdata, setfilterdata]: any[] = useState([])
   const { from, to, day } = useParams();
@@ -32,7 +32,7 @@ function Listflight() {
     let filter: any[] = []
     firebase
       .database()
-      .ref("/flight")
+      .ref("/bus")
       .get()
       .then((res) => {
         res.forEach((element) => {
@@ -66,7 +66,7 @@ function Listflight() {
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">Flight Filter</h5>
+                <h5 className="modal-title" id="exampleModalLabel">Bus Filter</h5>
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -78,7 +78,7 @@ function Listflight() {
                   <div className="row">
                     <div className="col-sm-12">
                       <div className="mb-2">
-                        <label id="origin-label" htmlFor="origin-input" className="form-label">From</label                    >
+                        <label id="origin-label" htmlFor="origin-input" className="form-label">Leaving From</label                    >
                         <div className="input-group">
                           <span className="input-group-text"><i className="bi-pin-map"></i> </span>
                           <input
@@ -97,7 +97,7 @@ function Listflight() {
                     </div>
                     <div className="col-sm">
                       <div className="mb-2">
-                        <label id="destination-label" htmlFor="destination-input" className="form-label">To</label                     >
+                        <label id="destination-label" htmlFor="destination-input" className="form-label"> Going To</label                     >
                         <div className="input-group">
                           <span className="input-group-text"><i className="bi-pin-map-fill"></i> </span>
                           <input
@@ -122,18 +122,19 @@ function Listflight() {
                   <div className="mb-2 col-sm-12">
                     <div className="h-100 "><br />
                       <div className="card-body">
-                        <h5 className="card-title">Dates</h5>
+                        <h5 className="card-title">Choose the Bus type...</h5>
                         <div className="mb-2">
                           <label id="flight-type-label" htmlFor="flight-type-select" className="form-label"
-                          >Flight</label                  >
+                          >BUS TYPE</label                  >
                           <select
                             id="flight-type-select"
                             className="form-select"
                             aria-describedby="flight-type-label"
                           >
-                            <option value="one-way">One-way</option>
-                            <option value="round-trip">Round-trip</option>
-                            <option value="round-trip">Multi City</option>
+                            <option value="one-way">Sleeper Coach/AC</option>
+                            <option value="round-trip">Seat/AC</option>
+                            <option value="round-trip">Sleeper CoachOnly</option>
+                            <option value="round-trip">Seat Only</option>
                           </select>
                         </div>
                         <div id="departure-date" className="mb-2">
@@ -189,13 +190,12 @@ function Listflight() {
               <thead>
                 <tr>
                   <th scope="col"> <small><b>Sorted By:</b></small>  </th>
-                  <th scope="col"> <small>Flight Name</small>  </th>
+                  <th scope="col"> <small>Bus Name</small>  </th>
 
                   <th scope="col"><small>Departure</small></th>
                   <th scope="col"><small>Duration</small></th>
                   <th scope="col"><small>Arrival</small></th>
-                  <th scope="col"><small>
-                    Price</small></th>
+                  <th scope="col"><small>total Price</small></th>
                   <th scope="col"><small>booking</small></th>
 
                 </tr>
@@ -204,7 +204,7 @@ function Listflight() {
                 {maindata.map((item: any, index: any) => {
                   return (
                     <><tr key={index}>
-                      <td><img src="https://previews.123rf.com/images/farang/farang1112/farang111200023/11537629-jet-airplane-in-a-sky-at-sunset-time-square-composition-.jpg" alt="" width={150} /> &nbsp;&nbsp;&nbsp;&nbsp;      &AirIndia
+                      <td><img src="https://thumbs.dreamstime.com/z/blank-tour-bus-5565609.jpg" alt="" width={150} /> &nbsp;&nbsp;&nbsp;&nbsp;      Mahasagar Travel
                       </td>
                       <td>{item.flight_name}</td>
                       <td>{item.arrival_time} <br />
@@ -213,7 +213,7 @@ function Listflight() {
                       <td>{item.departure_time}<br />
                         {item.to_location}
                       </td>
-                      <td>₹ 10,367</td>
+                      <td>₹ 5,400</td>
                       <td>
                         <button className='btn btn-primary btn-lg rounded-pill'> BOOK</button>
 
@@ -253,8 +253,4 @@ function Listflight() {
 
 
 
-export default Listflight
-
-
-
-
+export default Listbus

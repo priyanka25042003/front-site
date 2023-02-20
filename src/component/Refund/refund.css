@@ -1,0 +1,10 @@
+.bg-style {
+    padding: 4rem 0 6rem 0;
+    height: 100px;
+    background: red;
+}
+.cg-style {
+    padding: 4rem 0 5rem 0;
+    height: 100px;
+    background: rgb(164, 150, 179);
+}

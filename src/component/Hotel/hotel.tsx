@@ -40,7 +40,7 @@ function Hotel() {
   return (
     <div>
       <div className="bgg-image containerd">
-        <div className="centered">
+        <div className="left">
           <h1 className="text-left text-light display-3">
             Find your next stay
           </h1>
@@ -63,7 +63,7 @@ function Hotel() {
               <option value="" selected>
                 location
               </option>
-              <option value="Ahmdabad">Ahmdabad</option>
+              <option value="Jaipur*">Jaipur</option>
               <option value="Surat">Surat</option>
               <option value="Rajkot">Rajkot</option>
               <option value="Junagad">Junagad</option>

@@ -13,11 +13,15 @@ import Navbar from "./navigatiion/navbar";
 import Singin from './auth/signin/signin';
 import useRoutes from "react-router-dom";
 import Listflight from './component/Flight/ListFlight/listflight'
+import listbus from './component/Bus/Listbus/listbus';
 import Listhotel from './component/Hotel/ListHotel/listhotel';
 import Package from './component/Package/package';
 import Offers from './component/offers';
 import About from './component/About/about';
 import Contact from './component/Contact/contact';
+import Listpackage from './component/Package/Listpackage/listpackage'; 
+import feedback from './component/Feedback/feedback';
+import refund from './component/Refund/refund';
 const Home = React.lazy(() => import('./component/home/home'))
 const Hotel = React.lazy(() => import('./component/Hotel/hotel'))
 
@@ -25,8 +29,9 @@ const Bus = React.lazy(() => import('./component/Bus/bus'))
 
 const Flight = React.lazy(() => import('./component/Flight/flight'))
 // const Listflight = React.lazy(() => import('./component/Flight/ListFlight/listflight'))
-
-
+const Listbus=React.lazy(() => import('./component/Bus/Listbus/listbus'))
+const Feedback=React.lazy(() => import('./component/Feedback/feedback'))
+const Refund=React.lazy(() => import('./component/Refund/refund'))
 
 
 
@@ -54,10 +59,11 @@ function App() {
           <Route path="package" element={<React.Suspense >
             <Package />
           </React.Suspense>} />
-          <Route path="listpackage" element={<React.Suspense >
-            <Package />
+          <Route path="listpackage/:from/:to/:day" element={<React.Suspense >
+            <Listpackage />
           </React.Suspense>} />
           <Route path="listflight/:from/:to/:day" element={<Listflight />} />
+          <Route path="listbus/:from/:to/:day" element={<Listbus />} />
           <Route path="offers" element={<React.Suspense >
             <Offers />
           </React.Suspense>} />
@@ -67,7 +73,12 @@ function App() {
           <Route path="contact" element={<React.Suspense >
             <Contact />
           </React.Suspense>} />
-
+          <Route path="feedback" element={<React.Suspense >
+            <Feedback />
+          </React.Suspense>} /> 
+          <Route path="refund" element={<React.Suspense >
+            <Refund />
+          </React.Suspense>} />
 
         </Route>
         <Route path="singin" element={<Singin />} />

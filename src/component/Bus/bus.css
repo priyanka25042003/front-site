@@ -1,8 +1,8 @@
 
 .bg-imagee {
-    background-image: url("../../assert/pexels-timcompound-3608967.jpg");
-    width: 98.9vw;
-    height: 50vh;
+    background-image: url("https://images.unsplash.com/photo-1509749837427-ac94a2553d0e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+    width: 99.9vw;
+    height: 63vh;
     background-size: cover;
 }
 
@@ -12,8 +12,46 @@
     background-color: rgb(255, 255, 255) !important;
     width: 83.9vw;
     position: absolute;
-    top: 62%;
+    top: 77%;
     left: 8%;
     transform: translate(0%, -50%);
     padding: 1.5rem;
+}
+
+.containerdd {
+    position: relative;
+    text-align: center;
+    color: rgb(171, 47, 76);
+
+
+}
+
+.centeredd {
+    position: absolute;
+    top: 28%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+
+.roundedee img {
+    border-radius: 50%;
+    width: 220px;
+    transition: ease 0.5s;
+}
+
+.roundedee img:hover {
+    width: 225px;
+    transition: ease 0.5s;
+    box-shadow: 0 5px 33px rgb(0 0 0 / 40%);
+}
+.overfloww{
+    overflow-x: scroll;
+    transition: ease 0.5s;             
+}
+.overfloww::-webkit-scrollbar {
+    display: none;
+}
+.containerr-f{
+    width: 92vw;
+    margin-left: 3vw;
 }
