@@ -13,12 +13,10 @@ function Package() {
   }
   const navigate = useNavigate();
   function navigat() {
-    navigate("/listflight/"+search.from+"/"+search.to+"/"+search.day);
+    navigate("/listpackage/"+search.from+"/"+search.to+"/"+search.day);
   }
-
-
   return (
-   <div>
+    <div>
       <div className="cg-image " style={{ width: "100rem" }} >
       </div>
       <div className="m-1">
