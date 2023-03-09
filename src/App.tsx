@@ -20,7 +20,7 @@ import Offers from './component/offers';
 import About from './component/About/about';
 import Contact from './component/Contact/contact';
 import Listpackage from './component/Package/Listpackage/listpackage';
-import Seate from './component/seate/seat';
+import Seate from './component/busseate/seat';
 const Home = React.lazy(() => import('./component/home/home'))
 const Hotel = React.lazy(() => import('./component/Hotel/hotel'))
 
