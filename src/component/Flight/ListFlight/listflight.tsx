@@ -3,12 +3,13 @@ import firebase from "firebase";
 import { useNavigate, useParams } from "react-router-dom";
 import "./listflight.css";
 import Seate from "../../seate/seat";
+declare var Razorpay: any;
 
 function Listflight() {
   const [maindata, setmaindata]: any[] = useState([]);
   const [filterdata, setfilterdata]: any[] = useState([]);
   const { from, to, day } = useParams();
-  
+
   const [filter, setfilter]: any = useState([]);
   const [localinfo, setlocalinfo]: any = useState([]);
 
@@ -26,7 +27,40 @@ function Listflight() {
     child: 0,
     infants: 0,
   });
-  let navigate = useNavigate()
+  let razorPayOptions: any = {
+    key: "rzp_test_aEuup9ULohHsIp",
+    amount: "",
+    name: "Tour&Travels Agency",
+    order_id: "",
+    description: "Load Wallet",
+    image:
+      "https://livestatic.novopay.in/resources/img/nodeapp/img/Logo_NP.jpg",
+    prefill: {
+      name: "Tour&Travels Agency",
+
+      contact: "",
+      method: "",
+    },
+    handler: (response: any) => {
+      console.log(response);
+      responhendel(response);
+    },
+    modal: {
+      ondismiss: function () {
+        if (window.confirm("Are you sure, you want to close the form?")) {
+          let txt = "You pressed OK!";
+          console.log("Checkout form closed by the user");
+        } else {
+          let txt = "You pressed Cancel!";
+          console.log("Complete the Payment");
+        }
+      },
+    },
+    theme: {
+      color: "#0096C5",
+    },
+  };
+  let navigate = useNavigate();
   function setinfo(data: any) {
     let name: any = Object.keys(data);
     // {adults:1}
@@ -43,11 +77,19 @@ function Listflight() {
     setUserInfo({ ...userInfo, [name]: value });
     console.log(userInfo);
   }
-
+  function responhendel(res?: any): any {
+    // this.paymentID = res
+    // if (res["razorpay_payment_id"]) {
+    //   this.spinner.show()
+    //   this.message = res.razorpay_payment_id
+    //   this.placeorder()
+    //   console.log(this.tabIndex, res);
+    // }
+  }
   useEffect(() => {
     console.log(from, to, day);
     getdata();
-    setlocalinfo(JSON.parse(localStorage.getItem("user")+''))
+    setlocalinfo(JSON.parse(localStorage.getItem("user") + ""));
   }, []);
 
   function sendData(sate: any) {
@@ -65,7 +107,12 @@ function Listflight() {
   function submit() {
     console.log(info);
   }
-
+  function proceed(amount: any) {
+    razorPayOptions.amount = amount* 100
+    var rzp1 = new Razorpay(razorPayOptions);
+    rzp1.open();
+    responhendel(razorPayOptions.handler)
+  }
   function getdata() {
     let arr: any[] = [];
     let filter: any[] = [];
@@ -98,7 +145,11 @@ function Listflight() {
   function booking(item: any) {
     let data: any;
     data = JSON.parse(localStorage.getItem("user") + "").user;
-    data.item = item;
+    // data.item = item;
+    data.userinfo = item.userinfo;
+    data.seate = item.seate;
+    data.pasenger = item.pasenger;
+    data.flight = item.flight;
     firebase
       .database()
       .ref("/booking")
@@ -122,14 +173,38 @@ function Listflight() {
       }
     } else if (tabIndex == 1 && seate.length > 0) {
       settabIndex(2);
-    }else if(tabIndex == 2 ){
-      let data :any ={}
-      data.userinfo = userInfo
-      data.seate = seate
-      data.pasenger = info
+    } else if (tabIndex == 2) {
+      let data: any = {};
+      data.userinfo = userInfo;
+      data.seate = seate;
+      data.pasenger = info;
+      data.flight = book;
       console.log(data);
-      
-      booking(data)
+      let total_set: any;
+      let prise: any;
+      switch (userInfo.booking_class) {
+        case "eco":
+          total_set =
+            data.pasenger.adults + data.pasenger.child + data.pasenger.infants;
+          prise = data.flight.economy_class;
+          proceed(total_set * prise);
+          break;
+
+        case "first":
+          total_set =
+            data.pasenger.adults + data.pasenger.child + data.pasenger.infants;
+          prise = data.flight.first_class;
+          proceed(total_set * prise);
+          break;
+
+        case "business":
+          total_set =
+            data.pasenger.adults + data.pasenger.child + data.pasenger.infants;
+          prise = data.flight.business_class;
+          proceed(total_set * prise);
+          break;
+      }
+      booking(data);
     }
   }
 
@@ -388,7 +463,9 @@ function Listflight() {
                         <td>
                           <button
                             className="btn btn-primary btn-lg rounded-pill"
-                            onClick={() => localinfo ? setbook(item) : navigate("/singin")}
+                            onClick={() =>
+                              localinfo ? setbook(item) : navigate("/singin")
+                            }
                           >
                             BOOK
                           </button>
@@ -912,6 +989,27 @@ function Listflight() {
                         placeholder="Document Number"
                       />
                     </div>
+                    <div className="form-group">
+                      <label htmlFor="exampleFormControlSelect1">
+                        Document
+                      </label>
+                      <select
+                        className={
+                          userInfo.booking_class == null ||
+                          userInfo.booking_class == ""
+                            ? "form-control is-invalid"
+                            : "form-control "
+                        }
+                        onChange={(e) => setuserinfo(e)}
+                        name="booking_class"
+                        id="exampleFormControlSelect1"
+                        required
+                      >
+                        <option value="eco">ECONOMY</option>
+                        <option value="first">FIRST CLASS</option>
+                        <option value="business">BUSINESS CLASS</option>
+                      </select>
+                    </div>
                   </div>
 
                   <div
@@ -939,15 +1037,12 @@ function Listflight() {
                         </div>
                         <div className="col-12 text-center h6 mt-4 text-muted userinfo">
                           <div>
-
-                          <p>Name:{userInfo.name}</p>
-                          <p>Age: {userInfo.age}
-                          </p>
+                            <p>Name:{userInfo.name}</p>
+                            <p>Age: {userInfo.age}</p>
                           </div>
                           <div>
-
-                          <p> Document: {userInfo.idproof} </p>
-                          <p>Document NO.: {userInfo.idproofNumber}</p>
+                            <p> Document: {userInfo.idproof} </p>
+                            <p>Document NO.: {userInfo.idproofNumber}</p>
                           </div>
                         </div>
                         <br />
