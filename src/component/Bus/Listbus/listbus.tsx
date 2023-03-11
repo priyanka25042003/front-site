@@ -11,11 +11,14 @@ function Listbus() {
   const { from, to, day } = useParams();
   const [filter, setfilter]: any = useState([])
 
+  const [localinfo, setlocalinfo]: any = useState([]);
   
 
   useEffect(() => {
     console.log(from, to, day);
     getdata()
+    setlocalinfo(JSON.parse(localStorage.getItem("user") + ""));
+
   }, [])
 
   function filterD(e: any) {
@@ -32,6 +35,7 @@ function Listbus() {
 
   }
   function getdata() {
+
     let arr: any[] = [];
     let filter: any[] = []
     firebase
@@ -44,13 +48,14 @@ function Listbus() {
         });
         setmaindata(arr);
         console.log(arr);
-
+        // console.log(maindata);
+        
         // arr.forEach(element => {
         //   if (element.city == city) {s
         //     filter.push(element)
         //   }
         // });
-        setfilterdata(filter);
+        // setfilterdata(filter);
         console.log(filter);
 
       })
@@ -62,6 +67,8 @@ function Listbus() {
   const [book, setbook]: any = useState(false);
   const [tabIndex, settabIndex]: any = useState(0);
   const [seate, setseate]: any[] = useState([]);
+  let data: any = {};
+
   const [userInfo, setUserInfo]: any[] = useState({
     name: " ",
     age: " ",
@@ -130,26 +137,19 @@ function Listbus() {
     console.log(userInfo);
   }
   function responhendel(res?: any): any {
-    // this.paymentID = res
-    // if (res["razorpay_payment_id"]) {
-    //   this.spinner.show()
-    //   this.message = res.razorpay_payment_id
-    //   this.placeorder()
-    //   console.log(this.tabIndex, res);
-    // }
+    let paymentID = res
+    if (paymentID) {
+      data.paymentid =paymentID?.razorpay_payment_id
+      booking(data)
+    }
   }
- function booking(item: any) {
-    let data: any;
-    data = JSON.parse(localStorage.getItem("user") + "").user;
+  function booking(item: any) {
     // data.item = item;
-    data.userinfo = item.userinfo;
-    data.seate = item.seate;
-    data.pasenger = item.pasenger;
-    data.flight = item.flight;
+
     firebase
       .database()
       .ref("/booking")
-      .push(data)
+      .push(item)
       .then((res) => {
         console.log(res);
       })
@@ -170,37 +170,15 @@ function Listbus() {
     } else if (tabIndex == 1 && seate.length > 0) {
       settabIndex(2);
     } else if (tabIndex == 2) {
-      let data: any = {};
-      data.userinfo = userInfo;
-      data.seate = seate;
-      data.pasenger = info;
-      data.flight = book;
+      Object.assign(data,userInfo,seate,info,book)
+
       console.log(data);
       let total_set: any;
       let prise: any;
-      switch (userInfo.booking_class) {
-        case "eco":
-          total_set =
-            data.pasenger.adults + data.pasenger.child + data.pasenger.infants;
-          prise = data.flight.economy_class;
+      total_set =
+            data.adults + data.child + data.infants;
+          prise = data.bus_seat_price;
           proceed(total_set * prise);
-          break;
-
-        case "first":
-          total_set =
-            data.pasenger.adults + data.pasenger.child + data.pasenger.infants;
-          prise = data.flight.first_class;
-          proceed(total_set * prise);
-          break;
-
-        case "business":
-          total_set =
-            data.pasenger.adults + data.pasenger.child + data.pasenger.infants;
-          prise = data.flight.business_class;
-          proceed(total_set * prise);
-          break;
-      }
-      booking(data);
     }
   }
   function sendData(sate: any) {
@@ -357,7 +335,7 @@ function Listbus() {
                 {maindata.map((item: any, index: any) => {
                   return (
                     <><tr key={index}>
-                      <td><img src="https://thumbs.dreamstime.com/z/blank-tour-bus-5565609.jpg" alt="" width={150} /> &nbsp;&nbsp;&nbsp;&nbsp;      Mahasagar Travel
+                      <td><img src={item.img} alt="" width={150} /> &nbsp;&nbsp;&nbsp;&nbsp;      Mahasagar Travel
                       </td>
                       <td>{item.flight_name}</td>
                       <td>{item.arrival_time} <br />
@@ -366,9 +344,11 @@ function Listbus() {
                       <td>{item.departure_time}<br />
                         {item.to_location}
                       </td>
-                      <td>₹ 5,400</td>
+                      <td>₹ {item.bus_seat_price}</td>
                       <td>
-                        <button className='btn btn-primary btn-lg rounded-pill'> BOOK</button>
+                        <button className='btn btn-primary btn-lg rounded-pill' onClick={() =>
+                              localinfo ? setbook(item) : navigate("/singin")
+                            }> BOOK</button>
 
                         <button className="btn btn-info rounded-circle m-3" type="button" data-toggle="collapse" data-target={"#" + item.key} aria-expanded="false" aria-controls="collapseExample"> <i className="fa fa-info-circle " aria-hidden="true"></i>
                         </button>
@@ -841,67 +821,7 @@ function Listbus() {
                         />
                       </div>
                     </div>
-                    <div className="form-group">
-                      <label htmlFor="exampleFormControlSelect1">
-                        Document
-                      </label>
-                      <select
-                        className={
-                          userInfo.idproof == null || userInfo.idproof == ""
-                            ? "form-control is-invalid"
-                            : "form-control "
-                        }
-                        onChange={(e) => setuserinfo(e)}
-                        name="idproof"
-                        id="exampleFormControlSelect1"
-                        required
-                      >
-                        <option value="adharcard">Adharcard</option>
-                        <option value="pancard">PAN</option>
-                        <option value="pasport">Pasport</option>
-                        <option value="voterid">VoterId</option>
-                      </select>
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="formGroupExampleInput2">
-                        Document Number
-                      </label>
-                      <input
-                        type="tel"
-                        onChange={(e) => setuserinfo(e)}
-                        className={
-                          userInfo.idproofNumber == null ||
-                          userInfo.idproofNumber == ""
-                            ? "form-control is-invalid  "
-                            : "form-control "
-                        }
-                        name="idproofNumber"
-                        id="formGroupExampleInput2"
-                        required
-                        placeholder="Document Number"
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="exampleFormControlSelect1">
-                        Document
-                      </label>
-                      <select
-                        className={
-                          userInfo.booking_class == null ||
-                          userInfo.booking_class == ""
-                            ? "form-control is-invalid"
-                            : "form-control "
-                        }
-                        onChange={(e) => setuserinfo(e)}
-                        name="booking_class"
-                        id="exampleFormControlSelect1"
-                        required
-                      >
-                        <option value="eco">ECONOMY</option>
-                        <option value="first">FIRST CLASS</option>
-                        <option value="business">BUSINESS CLASS</option>
-                      </select>
-                    </div>
+                    
                   </div>
 
                   <div

@@ -86,7 +86,7 @@ function Hotel() {
     setshowautosagetion(false);
   }
   function navigat() {
-    navigate("/hotallist/" + search.citys + "/" + search.chackin + "/" + search.chackout + "/" + search.search);
+    navigate("/hotallist/" + filterh.From + "/" + search.chackin + "/" + search.chackout);
   }
   return (
     <div>
@@ -136,20 +136,12 @@ function Hotel() {
           <div>
             <div className="input-group input-daterange">
               <input type="date" className="form-control" aria-valuemin={Date.now()} onChange={(e) => setserch(e)} name="chackin" />
-              <div className="input-group-addon m-1">to</div>
+              <div className="input-group-addon mr-3 mt-1 ml-3">to</div>
               <input type="date" className="form-control" onChange={(e) => setserch(e)} name="chackout" />
             </div>
           </div>
           <div>
             <div className="form-inline m-2 my-lg-0">
-              <input
-                className="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                name="search"
-                onChange={(e) => setserch(e)}
-              />
               <button
                 className="btn btn-outline-primary rounded-pill b my-2 my-sm-0" onClick={navigat}
               >

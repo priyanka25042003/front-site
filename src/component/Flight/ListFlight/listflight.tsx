@@ -16,6 +16,8 @@ function Listflight() {
   const [book, setbook]: any = useState(false);
   const [tabIndex, settabIndex]: any = useState(0);
   const [seate, setseate]: any[] = useState([]);
+  let data: any = {};
+ 
   const [userInfo, setUserInfo]: any[] = useState({
     name: " ",
     age: " ",
@@ -77,15 +79,7 @@ function Listflight() {
     setUserInfo({ ...userInfo, [name]: value });
     console.log(userInfo);
   }
-  function responhendel(res?: any): any {
-    // this.paymentID = res
-    // if (res["razorpay_payment_id"]) {
-    //   this.spinner.show()
-    //   this.message = res.razorpay_payment_id
-    //   this.placeorder()
-    //   console.log(this.tabIndex, res);
-    // }
-  }
+
   useEffect(() => {
     console.log(from, to, day);
     getdata();
@@ -113,6 +107,7 @@ function Listflight() {
     rzp1.open();
     responhendel(razorPayOptions.handler)
   }
+  
   function getdata() {
     let arr: any[] = [];
     let filter: any[] = [];
@@ -142,18 +137,21 @@ function Listflight() {
         console.log(err);
       });
   }
+
+  function responhendel(res?: any): any {
+    let paymentID = res
+    if (paymentID) {
+      data.paymentid =paymentID?.razorpay_payment_id
+      booking(data)
+    }
+  }
+
   function booking(item: any) {
-    let data: any;
-    data = JSON.parse(localStorage.getItem("user") + "").user;
-    // data.item = item;
-    data.userinfo = item.userinfo;
-    data.seate = item.seate;
-    data.pasenger = item.pasenger;
-    data.flight = item.flight;
+  
     firebase
       .database()
       .ref("/booking")
-      .push(data)
+      .push(item)
       .then((res) => {
         console.log(res);
       })
@@ -174,33 +172,33 @@ function Listflight() {
     } else if (tabIndex == 1 && seate.length > 0) {
       settabIndex(2);
     } else if (tabIndex == 2) {
-      let data: any = {};
-      data.userinfo = userInfo;
-      data.seate = seate;
-      data.pasenger = info;
-      data.flight = book;
+      Object.assign(data,userInfo,seate,info,book)
+      // data.userinfo = userInfo;
+      // data.seate = seate;
+      // data.pasenger = info;
+      // data.flight = book;
       console.log(data);
       let total_set: any;
       let prise: any;
       switch (userInfo.booking_class) {
         case "eco":
           total_set =
-            data.pasenger.adults + data.pasenger.child + data.pasenger.infants;
-          prise = data.flight.economy_class;
+            data.adults + data.child + data.infants;
+          prise = data.economy_class;
           proceed(total_set * prise);
           break;
 
         case "first":
           total_set =
-            data.pasenger.adults + data.pasenger.child + data.pasenger.infants;
-          prise = data.flight.first_class;
+            data.adults + data.child + data.infants;
+          prise = data.first_class;
           proceed(total_set * prise);
           break;
 
         case "business":
           total_set =
-            data.pasenger.adults + data.pasenger.child + data.pasenger.infants;
-          prise = data.flight.business_class;
+            data.adults + data.child + data.infants;
+          prise = data.business_class;
           proceed(total_set * prise);
           break;
       }

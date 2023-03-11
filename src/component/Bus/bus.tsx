@@ -51,7 +51,7 @@ function Bus() {
   }
   const navigate = useNavigate();
   function navigat() {
-    navigate("/listbus/" + search.from + "/" + search.to + "/" + search.day);
+    navigate("/listbus/" + search.From + "/" + search.To + "/" + search.day);
   }
   function hendelautosagetion(e: any) {
     setshowautosagetion(true);
@@ -108,7 +108,7 @@ function Bus() {
     <div>
       <div className="bg-imagee "></div>
       <div className="m-1">
-        <div className=" hstack gap-3 bg-light text-dark d-flex justify-content-evenly shadow bg-body rounded rounded-pill algine">
+        <div className=" hstack gap-3 bg-light mt-5 text-dark d-flex justify-content-evenly shadow bg-body rounded rounded-pill alginne">
           <div className="w-25    bg-body rounded">
             <div className="  input-group input-daterange">
               <input

@@ -53,7 +53,7 @@ function App() {
           <Route path="hotal" element={<React.Suspense >
             <Hotel />
           </React.Suspense>} />
-          <Route path="hotallist/:city/:chackin/:chackout/:serch" element={<React.Suspense ><Listhotel /></React.Suspense>} />
+          <Route path="hotallist/:city/:chackin/:chackout" element={<React.Suspense ><Listhotel /></React.Suspense>} />
           <Route path="bus" element={<React.Suspense >
             <Bus />
           </React.Suspense>} />
@@ -67,7 +67,7 @@ function App() {
             <Listpackage />
           </React.Suspense>} />
           <Route path="listflight/:from/:to/:day" element={<React.Suspense ><Listflight /></React.Suspense>} />
-          <Route path="listbus/:from/:to/:day" element={<React.Suspense ><Listflight /></React.Suspense>} />
+          <Route path="listbus/:from/:to/:day" element={<React.Suspense ><Listbus /></React.Suspense>} />
           <Route path="offers" element={<React.Suspense >
             <Offers />
           </React.Suspense>} />
