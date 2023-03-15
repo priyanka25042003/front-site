@@ -437,11 +437,16 @@ function Listflight() {
                     <>
                       <tr key={index}>
                         <td>
-                          <img
+                        {!    item.img?<img
                             src="https://previews.123rf.com/images/farang/farang1112/farang111200023/11537629-jet-airplane-in-a-sky-at-sunset-time-square-composition-.jpg"
                             alt=""
                             width={150}
-                          />
+                          />:<img
+                          src={item.img}
+                          alt=""
+                          width={150}
+                        />}
+                          
                           &nbsp;&nbsp;&nbsp;&nbsp; &AirIndia
                         </td>
                         <td>{item.flight_name}</td>

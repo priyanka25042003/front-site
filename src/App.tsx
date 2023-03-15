@@ -21,6 +21,7 @@ import About from './component/About/about';
 import Contact from './component/Contact/contact';
 import Listpackage from './component/Package/Listpackage/listpackage';
 import Seate from './component/busseate/seat';
+import Hotelview from './component/Hotel/hotel.view';
 const Home = React.lazy(() => import('./component/home/home'))
 const Hotel = React.lazy(() => import('./component/Hotel/hotel'))
 
@@ -68,6 +69,8 @@ function App() {
           </React.Suspense>} />
           <Route path="listflight/:from/:to/:day" element={<React.Suspense ><Listflight /></React.Suspense>} />
           <Route path="listbus/:from/:to/:day" element={<React.Suspense ><Listbus /></React.Suspense>} />
+          <Route path="view/:id" element={<React.Suspense ><Hotelview /></React.Suspense>} />
+
           <Route path="offers" element={<React.Suspense >
             <Offers />
           </React.Suspense>} />

@@ -247,7 +247,7 @@ function Hotel() {
                   height: 400,
                 }}
               >
-                <div className="card rounded-5 " style={{ width: "18rem" }} >
+                <div className="card rounded-5 " onClick={()=>navigate("/view/"+value.key)}  style={{ width: "18rem" }} >
                   <div className="card-body">
                     <img className="card-img-top" src={value.img} alt="" />
                     <p className="card-text">{value.hotel_type}</p>

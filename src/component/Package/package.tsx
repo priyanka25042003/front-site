@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./package.css";
 import Offers from "../offers";
 import state from "../../assert/state.json";
+import HorizontalGallery from "react-dynamic-carousel";
+import firebase from "firebase";
 
 function Package() {
+  const [maindata, setmaindata]: any[] = useState([]);
+
   const [autosagetion, setautosagetion]: any[] = useState([]);
   const [showautosagetion, setshowautosagetion]: any = useState(false);
   const [showautofrom, setshowautofrom]: any = useState(false);
@@ -14,6 +18,9 @@ function Package() {
     let value = e.target.value;
     setsearch({ ...search, [name]: value });
   }
+  useEffect(() => {
+    getdata();
+  }, []);
   function filterDatah(e: any) {
     let name: any = e.target.name;
     let val: any = e.target.value;
@@ -32,6 +39,35 @@ function Package() {
       cityarr.push(city);
     });
   });
+  function getdata() {
+    let arr: any[] = [];
+    let filter: any[] = [];
+    firebase
+      .database()
+      .ref("/package")
+      .get()
+      .then((res) => {
+        res.forEach((element) => {
+          arr.push({ key: element.key, ...element.val() });
+        });
+        console.log(arr);
+
+        // arr.forEach((element) => {
+        //   if (element.from_location == from && element.to_location == to) {
+        //     filter.push(element);
+        //   }
+        // });
+        if (filter.length != -1) {
+          setmaindata(filter);
+        } else {
+          setmaindata(arr);
+        }
+        console.log(arr);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   function hendelautosagetion(e: any) {
     setshowautosagetion(true);
     let ar: any[] = [];
@@ -92,112 +128,133 @@ function Package() {
       <div className="cg-image " style={{ width: "100rem" }}></div>
       <div className="m-1"></div>
       <div className=" hstack gap-3 bg-light text-dark d-flex justify-content-evenly shadow bg-body rounded rounded-pill algine">
-            <div className="w-25    bg-body rounded">
-              <div className="  input-group input-daterange">
-                <input
-                  type="text"
-                  name="From"
-                  onInput={(e) => filterDatah(e)}
-                  className="form-control"
-                  list="origin-options"
-                  id="origin-input"
-                  placeholder="Location"
-                  value={search?.From}
-                  aria-describedby="origin-label"
-                  autoComplete="off"
-                />
-                {showautosagetion ? (
-                  <div className="autosagetions">
-                    {autosagetion.map((item: any) => {
-                      return (
-                        <div
-                          onClick={() => select(item, "From")}
-                          className="list-items"
-                        >
-                          {item}
-                        </div>
-                      );
-                    })}
-                  </div>
-                ) : (
-                  ""
-                )}
+        <div className="w-25    bg-body rounded">
+          <div className="  input-group input-daterange">
+            <input
+              type="text"
+              name="From"
+              onInput={(e) => filterDatah(e)}
+              className="form-control"
+              list="origin-options"
+              id="origin-input"
+              placeholder="Location"
+              value={search?.From}
+              aria-describedby="origin-label"
+              autoComplete="off"
+            />
+            {showautosagetion ? (
+              <div className="autosagetions">
+                {autosagetion.map((item: any) => {
+                  return (
+                    <div
+                      onClick={() => select(item, "From")}
+                      className="list-items"
+                    >
+                      {item}
+                    </div>
+                  );
+                })}
               </div>
-            </div>
-            <div>to</div>
-            <div className="w-25    bg-body rounded">
-              <div className="  input-group input-daterange">
-                <input
-                  type="text"
-                  name="To"
-                  onInput={(e) => filterDatah(e)}
-                  className="form-control"
-                  list="origin-options"
-                  id="origin-input"
-                  placeholder="Location"
-                  value={search?.To}
-                  aria-describedby="origin-label"
-                  autoComplete="off"
-                />
-                {showautofrom ? (
-                  <div className="autosagetions">
-                    {autosagetion.map((item: any) => {
-                      return (
-                        <div
-                          onClick={() => select(item, "to")}
-                          className="list-items"
-                        >
-                          {item}
-                        </div>
-                      );
-                    })}
-                  </div>
-                ) : (
-                  ""
-                )}
-              </div>
-            </div>
-            <div>
-              <form className="form-inline m-2 my-lg-0">
-                <input
-                  className="form-control mr-sm-2"
-                  type="date"
-                  placeholder="Search"
-                  aria-label="Search"
-                  name="day"
-                  onChange={(e) => setserch(e)}
-                />
-                <button
-                  className="btn btn-outline-primary rounded-pill b my-2 my-sm-0"
-                  type="submit"
-                  onClick={navigat}
-                >
-                  Search
-                </button>
-              </form>
-            </div>
+            ) : (
+              ""
+            )}
           </div>
+        </div>
+        <div>to</div>
+        <div className="w-25    bg-body rounded">
+          <div className="  input-group input-daterange">
+            <input
+              type="text"
+              name="To"
+              onInput={(e) => filterDatah(e)}
+              className="form-control"
+              list="origin-options"
+              id="origin-input"
+              placeholder="Location"
+              value={search?.To}
+              aria-describedby="origin-label"
+              autoComplete="off"
+            />
+            {showautofrom ? (
+              <div className="autosagetions">
+                {autosagetion.map((item: any) => {
+                  return (
+                    <div
+                      onClick={() => select(item, "to")}
+                      className="list-items"
+                    >
+                      {item}
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+        </div>
+        <div>
+          <form className="form-inline m-2 my-lg-0">
+            <input
+              className="form-control mr-sm-2"
+              type="date"
+              placeholder="Search"
+              aria-label="Search"
+              name="day"
+              onChange={(e) => setserch(e)}
+            />
+            <button
+              className="btn btn-outline-primary rounded-pill b my-2 my-sm-0"
+              type="submit"
+              onClick={navigat}
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
       <div className="bggcolor">
         <div className="ml-5" style={{ marginTop: "6rem" }}>
           <h2 className=""> Plan your next staycation</h2>
         </div>
-        <div className="card  rounded hocard" style={{ width: "18rem" }}>
-          
-          <img
-            src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp"
-            className="mult-img-top"
-            alt=""
+        <HorizontalGallery
+            tiles={maindata.map((value: any) => (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-around",
+                  width: 300,
+                  height: 500,
+                }}
+              >
+                <div className="card rounded-5 " style={{ width: "18rem" }}>
+                  <div className="card-body">
+                    <img className="card-img-top" src={value.img} alt="" />
+                    {/* <h6 className="card-text">{value.flight_name}</h6> */}
+                    <h3 className="card-title">{value.flight_name}</h3>
+                    <small className="card-text">
+                      <div className="d-flex justify-content-between">
+                        <p>{value.from_location}</p> to
+                        <p>{value.to_location}</p>
+                      </div>
+                      <div className="d-flex justify-content-between">
+                        <p>{value.departure_date}</p>
+                        <p>{value.arrival_date}</p>
+                      </div>
+                      <div className="d-flex justify-content-between">
+                        <p>{value.departure_time}</p>
+                        <p>{value.arrival_time}</p>
+                      </div>
+                    </small>
+
+                    <hr />
+                  </div>
+                </div>
+              </div>
+            ))}
+            elementWidth={350}
+            minPadding={20}
           />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p className="card-text"></p>
-          </div>
-        </div>
         <div className="">
           <Offers></Offers>
         </div>
