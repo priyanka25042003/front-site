@@ -44,12 +44,18 @@
     margin-left: 3vw;
 }
 .hocard{
-    width: 20rem !important;
+    width: 22rem !important;
     box-shadow: 0 5px 10px rgba(0,0,0,.2);
     transition: ease-out 0.5s;
+    border-radius: 50px !important;
+
 }
 .hocard:hover{
-    width: 20.5rem !important;
+    width: 22.5rem !important;
     transition: ease-out 0.5s;
     box-shadow: 0 5px 10px 10px rgb(0 0 0 / 52%);
+}
+.hocard img {
+    padding: .5rem;
+    border-radius: 50px;
 }

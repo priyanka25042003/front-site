@@ -1,8 +1,22 @@
 import React from "react";
 import "./home.css";
 import Offers from "../offers";
+import rajasthan from "../../assert/pexels-rahul-1011093.jpg";
+import maharastra from "../../assert/maharatra.jpg";
+import gujarat from "../../assert/Gujarat.jpg";
+import kerala from "../../assert/Kerala.jpg";
+import kashmir from "../../assert/Kashmir.jpg";
+import himachal from "../../assert/Himachal.jpg";
+
+
+
 
 function home() {
+
+  function sringk(value: string) {
+    let result = value.slice(0, 150);
+    return result + "....";
+  }
   return (
     <div>
       <div className="bggg-image containerdd">
@@ -110,22 +124,104 @@ function home() {
             <div className="col-4">
               <div className="card  rounded hocard m-4">
                 <img
-                  src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp"
+                  src={gujarat}
                   className="mult-img-top"
                   alt=""
                 />
                 <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
+                  <h5 className="card-title">GUJRAT</h5>
                   <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
+                    Gujarat tour packages offer opportunities to embrace the legacy of the exotic culture.
+                    Tourists cannot miss savouring the amazing food in Gujarat.
+
+                  </p>
+                  <p className="card-text"></p>
+                </div>
+              </div>
+            </div>
+            <div className="col-4" >
+              <div className="card  rounded hocard m-4">
+                <img
+                  src={kashmir}
+                  className="mult-img-top"
+                  alt=""
+                />
+                <div className="card-body">
+                  <h5 className="card-title">KASHMIR</h5>
+                  <p className="card-text">
+
+                    A nature lover's paradise, a light of hope for spiritual people, a reason for family get togethers, and a cozy nest for honeymooners, the heaven on earth, Jammu & Kashmir offers itself as the best holiday destination in India.
                   </p>
                   <p className="card-text"></p>
                 </div>
               </div>
             </div>
             <div className="col-4">
+              <div className="card  rounded hocard m-4">
+                <img
+                  src={kerala}
+                  className="mult-img-top"
+                  alt=""
+                />
+                <div className="card-body">
+                  <h5 className="card-title">KERALA</h5>
+                  <p className="card-text">
+                    Kerala holiday deals that come with the best prices.
+                    Get special discount on an advanced booking of Kerala Summer, Monsoon & Winter packaged tours
+                  </p>
+                  <p className="card-text"></p>
+                </div>
+              </div>
+            </div>
+            <div className="col-4">
+              <div className="card  rounded hocard m-4">
+                <img
+                  src={himachal}
+                  className="mult-img-top"
+                  alt=""
+                />
+                <div className="card-body">
+                  <h5 className="card-title">HIMACHAL</h5>
+                  <p className="card-text">
+                    Himachal Pradesh is a haven for adventure lovers, and offers the ultimate thrill and adrenaline rush with various adventure activities like camping, trekking, paragliding, skiing, ice skating, mountain cycling, river rafting and rock climbing.
+                  </p>
+                  <p className="card-text"></p>
+                </div>
+              </div>
+            </div>
+            <div className="col-4">
+              <div className="card  rounded hocard m-4">
+                <img
+                  src={maharastra}
+                  className="mult-img-top"
+                  alt=""
+                />
+                <div className="card-body">
+                  <h5 className="card-title">MAHARASHTRA</h5>
+                  <p className="card-text">
+                    Maharashtra - is brimming with an array of colorful shrines; a remarkable collection of caves; golden beaches lined with swaying palm trees; historic hotspots with strong past connection; and oodles of emerald hill stations under the canopy of lush western ghats.
+                  </p>
+                  <p className="card-text"></p>
+                </div>
+              </div>
+            </div>
+            <div className="col-4">
+              <div className="card  rounded hocard m-4">
+                <img
+                  src={rajasthan}
+                  className="mult-img-top"
+                  alt=""
+                />
+                <div className="card-body">
+                  <h5 className="card-title"> RAJASTHAN</h5>
+                  <p className="card-text">
+                    In rajasthan Visit the heritage tourist destinations like Jodhpur, Jaipur and Udaipur, or enjoy adventure activities in Pushkar, Bharatpur and Jaisalmer, ranging from hot air balloon ride to sand dune bashing.
+                  </p>
+                  <p className="card-text"></p>
+                </div>
+              </div>
+            </div>
+            {/* <div className="col-4">
               <div className="card  rounded hocard m-4">
                 <img
                   src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp"
@@ -142,97 +238,7 @@ function home() {
                   <p className="card-text"></p>
                 </div>
               </div>
-            </div>
-            <div className="col-4">
-              <div className="card  rounded hocard m-4">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp"
-                  className="mult-img-top"
-                  alt=""
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p className="card-text"></p>
-                </div>
-              </div>
-            </div>
-            <div className="col-4">
-              <div className="card  rounded hocard m-4">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp"
-                  className="mult-img-top"
-                  alt=""
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p className="card-text"></p>
-                </div>
-              </div>
-            </div>
-            <div className="col-4">
-              <div className="card  rounded hocard m-4">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp"
-                  className="mult-img-top"
-                  alt=""
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p className="card-text"></p>
-                </div>
-              </div>
-            </div>
-            <div className="col-4">
-              <div className="card  rounded hocard m-4">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp"
-                  className="mult-img-top"
-                  alt=""
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p className="card-text"></p>
-                </div>
-              </div>
-            </div>
-            <div className="col-4">
-              <div className="card  rounded hocard m-4">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp"
-                  className="mult-img-top"
-                  alt=""
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p className="card-text"></p>
-                </div>
-              </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
