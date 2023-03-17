@@ -136,18 +136,16 @@ function Offers() {
                         <div className="row g-0 ">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              src="https://www.sotc.in/images/sotc_home_page/Trending_Destinations/Gujarat-trn-img.jpg"
                               className="img-fluid rounded-start m-3 m-3"
                               alt="..."
                             />
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card afsdasdftitle</h5>
+                              <h5 className="card-title">Gujrat</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                                Gujarat tour packages offer opportunities to embrace the legacy of the exotic culture. Tourists cannot miss savouring the amazing food in Gujarat. 
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
@@ -495,46 +493,179 @@ function Offers() {
                     aria-labelledby="nav-flight-tab"
                   >
                     <div className="row row-cols-1 mx-1 row-cols-md-2 g-4">
-
-                      {
-                        data.map((res: any) => {
-                          if (res.offers_type == "Flight") {
-                            console.log(res);
-
-
-                            <div
-                              className="card mb-3 mt-3 ml-4 "
-                              style={{ maxWidth: "33rem" }}
-                            >
-                              <div className="row g-0 ">
-                                <div className="col-md-4">
-                                  <img
-                                    src={res.img}
-                                    className="img-fluid rounded-start m-3"
-                                    alt="..."
-                                  />
-                                </div>
-                                <div className="col-md-8">
-                                  <div className="card-body">
-                                    <h5 className="card-title">Carddsds title</h5>
-                                    <p className="card-text">
-                                      This is a wider card with supporting text below
-                                      as a natural lead-in to additional content. This
-                                      content is as little bit longer.
-                                    </p>
-                                    <p className="card-text">
-                                      <small className="text-muted">
-                                        Last updated 3 mins ago
-                                      </small>
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
+                    <div
+                        className="card mb-3 mt-3 ml-4 "
+                        style={{ maxWidth: "33rem" }}
+                      >
+                        <div className="row g-0 ">
+                          <div className="col-md-4">
+                            <img
+                              src="https://www.sotc.in/images/sotc_home_page/Trending_Destinations/Gujarat-trn-img.jpg"
+                              className="img-fluid rounded-start m-3 m-3"
+                              alt="..."
+                            />
+                          </div>
+                          <div className="col-md-8">
+                            <div className="card-body">
+                              <h5 className="card-title">Gujrat</h5>
+                              <p className="card-text">
+                                Gujarat tour packages offer opportunities to embrace the legacy of the exotic culture. Tourists cannot miss savouring the amazing food in Gujarat. 
+                              </p>
+                              <p className="card-text">
+                                <small className="text-muted">
+                                  Last updated 3 mins ago
+                                </small>
+                              </p>
                             </div>
-
-                          }
-
-                        })}
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="card mb-3 mt-3 ml-4 "
+                        style={{ maxWidth: "33rem" }}
+                      >
+                        <div className="row g-0">
+                          <div className="col-md-4">
+                            <img
+                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              className="img-fluid rounded-start m-3"
+                              alt="..."
+                            />
+                          </div>
+                          <div className="col-md-8">
+                            <div className="card-body">
+                              <h5 className="card-title">Card title</h5>
+                              <p className="card-text">
+                                This is a wider card with supporting text below
+                                as a natural lead-in to additional content. This
+                                content is a little bit longer.
+                              </p>
+                              <p className="card-text">
+                                <small className="text-muted">
+                                  Last updated 3 mins ago
+                                </small>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="card mb-3 mt-3 ml-4 "
+                        style={{ maxWidth: "33rem" }}
+                      >
+                        <div className="row g-0">
+                          <div className="col-md-4">
+                            <img
+                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              className="img-fluid rounded-start m-3"
+                              alt="..."
+                            />
+                          </div>
+                          <div className="col-md-8">
+                            <div className="card-body">
+                              <h5 className="card-title">Card title</h5>
+                              <p className="card-text">
+                                This is a wider card with supporting text below
+                                as a natural lead-in to additional content. This
+                                content is a little bit longer.
+                              </p>
+                              <p className="card-text">
+                                <small className="text-muted">
+                                  Last updated 3 mins ago
+                                </small>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="card mb-3 mt-3 ml-4 "
+                        style={{ maxWidth: "33rem" }}
+                      >
+                        <div className="row g-0">
+                          <div className="col-md-4">
+                            <img
+                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              className="img-fluid rounded-start m-3"
+                              alt="..."
+                            />
+                          </div>
+                          <div className="col-md-8">
+                            <div className="card-body">
+                              <h5 className="card-title">Card title</h5>
+                              <p className="card-text">
+                                This is a wider card with supporting text below
+                                as a natural lead-in to additional content. This
+                                content is a little bit longer.
+                              </p>
+                              <p className="card-text">
+                                <small className="text-muted">
+                                  Last updated 3 mins ago
+                                </small>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="card mb-3 mt-3 ml-4 "
+                        style={{ maxWidth: "33rem" }}
+                      >
+                        <div className="row g-0">
+                          <div className="col-md-4">
+                            <img
+                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              className="img-fluid rounded-start m-3"
+                              alt="..."
+                            />
+                          </div>
+                          <div className="col-md-8">
+                            <div className="card-body">
+                              <h5 className="card-title">Card title</h5>
+                              <p className="card-text">
+                                This is a wider card with supporting text below
+                                as a natural lead-in to additional content. This
+                                content is a little bit longer.
+                              </p>
+                              <p className="card-text">
+                                <small className="text-muted">
+                                  Last updated 3 mins ago
+                                </small>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="card mb-3 mt-3 ml-4 "
+                        style={{ maxWidth: "33rem" }}
+                      >
+                        <div className="row g-0">
+                          <div className="col-md-4">
+                            <img
+                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              className="img-fluid rounded-start m-3"
+                              alt="..."
+                            />
+                          </div>
+                          <div className="col-md-8">
+                            <div className="card-body">
+                              <h5 className="card-title">Card title</h5>
+                              <p className="card-text">
+                                This is a wider card with supporting text below
+                                as a natural lead-in to additional content. This
+                                content is a little bit longer.
+                              </p>
+                              <p className="card-text">
+                                <small className="text-muted">
+                                  Last updated 3 mins ago
+                                </small>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
                     </div>
                   </div>
                   <div
@@ -543,93 +674,7 @@ function Offers() {
                     role="tabpanel"
                     aria-labelledby="nav-pakage-tab">
                     <div className="row row-cols-1 mx-1 row-cols-md-2 g-4" >
-                      <div
-                        className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "33rem" }}
-                      >
-                        <div className="row g-0 ">
-                          <div className="col-md-4">
-                            <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start m-3"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
-                              <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
-                              </p>
-                              <p className="card-text">
-                                <small className="text-muted">
-                                  Last updated 3 mins ago
-                                </small>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "33rem" }}
-                      >
-                        <div className="row g-0">
-                          <div className="col-md-4">
-                            <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start m-3"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
-                              <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
-                              </p>
-                              <p className="card-text">
-                                <small className="text-muted">
-                                  Last updated 3 mins ago
-                                </small>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "33rem" }}
-                      >
-                        <div className="row g-0">
-                          <div className="col-md-4">
-                            <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start m-3"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
-                              <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
-                              </p>
-                              <p className="card-text">
-                                <small className="text-muted">
-                                  Last updated 3 mins ago
-                                </small>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                     
                     </div>
                   </div>
                 </div>
