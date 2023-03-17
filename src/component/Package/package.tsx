@@ -5,6 +5,7 @@ import Offers from "../offers";
 import state from "../../assert/state.json";
 import HorizontalGallery from "react-dynamic-carousel";
 import firebase from "firebase";
+import imgnotfound from "../../assert/img_notF.jpg";
 
 function Package() {
   const [maindata, setmaindata]: any[] = useState([]);
@@ -24,7 +25,7 @@ function Package() {
   function filterDatah(e: any) {
     let name: any = e.target.name;
     let val: any = e.target.value;
-    // console.log({ ...filterh, [name]: val });
+    // // console.log({ ...filterh, [name]: val });
     setsearch({ ...search, [name]: val });
     if (name === "From") {
       hendelautosagetion(e);
@@ -50,7 +51,7 @@ function Package() {
         res.forEach((element) => {
           arr.push({ key: element.key, ...element.val() });
         });
-        console.log(arr);
+        // console.log(arr);
 
         // arr.forEach((element) => {
         //   if (element.from_location == from && element.to_location == to) {
@@ -62,25 +63,28 @@ function Package() {
         } else {
           setmaindata(arr);
         }
+        console.log(maindata);
+        setmaindata(arr);
+        
         console.log(arr);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   }
   function hendelautosagetion(e: any) {
     setshowautosagetion(true);
     let ar: any[] = [];
     cityarr.forEach((element: any) => {
-      // console.log(element);
+      // // console.log(element);
 
       const capitalized =
         e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
-      // console.log(capitalized);
+      // // console.log(capitalized);
 
       if (element.startsWith(capitalized)) {
         ar.push(element);
-        console.log(ar);
+        // console.log(ar);
       }
     });
     setautosagetion(ar);
@@ -89,11 +93,11 @@ function Package() {
     setshowautofrom(true);
     let ar: any[] = [];
     cityarr.forEach((element: any) => {
-      // console.log(element);
+      // // console.log(element);
 
       const capitalized =
         e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
-      // console.log(capitalized);
+      // // console.log(capitalized);
 
       if (element.startsWith(capitalized)) {
         ar.push(element);
@@ -115,7 +119,7 @@ function Package() {
       setsearch({ ...search, To: params });
       setshowautofrom(false);
     }
-    // console.log(search);
+    // // console.log(search);
   }
   const navigate = useNavigate();
   function navigat() {
@@ -217,44 +221,48 @@ function Package() {
         <div className="ml-5" style={{ marginTop: "6rem" }}>
           <h2 className=""> Plan your next staycation</h2>
         </div>
+        <div className="container shadow p-3 mb-5 bg-body rounded">
         <HorizontalGallery
             tiles={maindata.map((value: any) => (
               <div
                 style={{
                   display: "flex",
-                  justifyContent: "space-around",
+                  justifyContent: "space-between",
                   width: 300,
                   height: 500,
                 }}
               >
                 <div className="card rounded-5 " style={{ width: "18rem" }}>
                   <div className="card-body">
-                    <img className="card-img-top" src={value.img} alt="" />
-                    {/* <h6 className="card-text">{value.flight_name}</h6> */}
-                    <h3 className="card-title">{value.flight_name}</h3>
-                    <small className="card-text">
+                    <img className="card-img-top" src={value.img ? value.img : imgnotfound} alt={value.img ? value.img : imgnotfound} />
+                    <h3 className="card-title">{value.package_name}</h3>
+                    <div className="card-text">
                       <div className="d-flex justify-content-between">
-                        <p>{value.from_location}</p> to
                         <p>{value.to_location}</p>
                       </div>
+                      <div className="m-1">
+                      {value.details}
+                    </div>
                       <div className="d-flex justify-content-between">
-                        <p>{value.departure_date}</p>
-                        <p>{value.arrival_date}</p>
+                        <p>{value.strating_date}</p>
+                        <p>{value.endind_date}</p>
                       </div>
-                      <div className="d-flex justify-content-between">
-                        <p>{value.departure_time}</p>
-                        <p>{value.arrival_time}</p>
-                      </div>
-                    </small>
-
+                    </div>
+                    
+                    <div>
+                      <h5 className="float-right mt-3">
+                      Price:<b> {value.total_price}</b>
+                      </h5>
+                    </div>
                     <hr />
                   </div>
                 </div>
               </div>
             ))}
             elementWidth={350}
-            minPadding={20}
+            minPadding={2}
           />
+          </div>
         <div className="">
           <Offers></Offers>
         </div>
