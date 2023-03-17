@@ -3,6 +3,12 @@ import "./home.css";
 import Offers from "../offers";
 import rajasthan from "../../assert/pexels-rahul-1011093.jpg";
 import maharastra from "../../assert/maharatra.jpg";
+import gujarat from "../../assert/Gujarat.jpg";
+import kerala from "../../assert/Kerala.jpg";
+import kashmir from "../../assert/Kashmir.jpg";
+import himachal from "../../assert/Himachal.jpg";
+
+
 
 
 function home() {
@@ -118,7 +124,7 @@ function home() {
             <div className="col-4">
               <div className="card  rounded hocard m-4">
                 <img
-                  src="https://www.sotc.in/images/sotc_home_page/Trending_Destinations/Gujarat-trn-img.jpg"
+                  src={gujarat}
                   className="mult-img-top"
                   alt=""
                 />
@@ -136,7 +142,7 @@ function home() {
             <div className="col-4" >
               <div className="card  rounded hocard m-4">
                 <img
-                  src="https://www.sotc.in/images/sotc_home_page/Trending_Destinations/Kashmir.jpg"
+                  src={kashmir}
                   className="mult-img-top"
                   alt=""
                 />
@@ -153,7 +159,7 @@ function home() {
             <div className="col-4">
               <div className="card  rounded hocard m-4">
                 <img
-                  src="https://www.sotc.in/images/sotc_home_page/Trending_Destinations/Kerala-trn-img.jpg"
+                  src={kerala}
                   className="mult-img-top"
                   alt=""
                 />
@@ -170,7 +176,7 @@ function home() {
             <div className="col-4">
               <div className="card  rounded hocard m-4">
                 <img
-                  src="https://www.sotc.in/images/sotc_home_page/Trending_Destinations/Himachal1.jpg"
+                  src={himachal}
                   className="mult-img-top"
                   alt=""
                 />
