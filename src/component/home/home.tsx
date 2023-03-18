@@ -7,6 +7,10 @@ import gujarat from "../../assert/Gujarat.jpg";
 import kerala from "../../assert/Kerala.jpg";
 import kashmir from "../../assert/Kashmir.jpg";
 import himachal from "../../assert/Himachal.jpg";
+import main from "../../assert/main.jpg";
+
+
+
 
 
 
@@ -22,17 +26,18 @@ function home() {
       <div className="bggg-image containerdd">
         <div className="centeredd">
           <h1
-            className="text-left text-light display-3"
-            style={{ color: "gray", opacity: "0.7" }}
+            className="text-left text-muted text-light fw-bold display-3"
+            
+            style={{ color: "gray" }}
           >
             A taste of every lifestyle
           </h1>
-          <h5
+          <h4
             className="text-left text-light display-6"
-            style={{ color: "gray", opacity: "0.7" }}
+            style={{ color: "gray" }}
           >
             Get the best prices properties, INDIA
-          </h5>
+          </h4>
         </div>
       </div>
       <div style={{ marginTop: "6rem" }}>
