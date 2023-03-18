@@ -1,5 +1,15 @@
 import firebase from "firebase";
 import React, { useEffect, useState } from "react";
+import rajasthan from "../assert/RajasthanP.jpg";
+import srilanka from "../assert/srilanka.jpg";
+import kerala from "../assert/Keralap.jpg";
+import uttarakhandp from "../assert/uttarakhandp.jpg";
+import kashmir from "../assert/Kashmir.jpg";
+import himachal from "../assert/Himachal.jpg";
+import plan1 from "../assert/plan1.jpg";
+import plan2 from "../assert/plan2.jpg";
+import plan3 from "../assert/plan3.jpg";
+
 
 function Offers() {
   let location = window.location.pathname;
@@ -136,20 +146,22 @@ function Offers() {
                         <div className="row g-0 ">
                           <div className="col-md-4">
                             <img
-                              src="https://www.sotc.in/images/sotc_home_page/Trending_Destinations/Gujarat-trn-img.jpg"
+                              src={rajasthan}
                               className="img-fluid rounded-start m-3 m-3"
                               alt="..."
+                              style={{ height: "150px", width: "150px" }}
+
                             />
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Gujrat</h5>
+                              <h5 className="card-title">Rajasthan</h5>
                               <p className="card-text">
-                                Gujarat tour packages offer opportunities to embrace the legacy of the exotic culture. Tourists cannot miss savouring the amazing food in Gujarat. 
+                                10% discount up to Rs. 4,000*
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                  Expires on 31st December 2023
                                 </small>
                               </p>
                             </div>
@@ -163,22 +175,23 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              src={srilanka}
                               className="img-fluid rounded-start m-3"
                               alt="..."
+                              style={{ height: "150px", width: "150px" }}
+
+
                             />
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">Sri lanka</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                                10% discount up to Rs. 3,500*
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                  Expires on 31st December 2023
                                 </small>
                               </p>
                             </div>
@@ -192,22 +205,23 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              src={kerala}
                               className="img-fluid rounded-start m-3"
                               alt="..."
+                              style={{ height: "150px", width: "150px" }}
+
+
                             />
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">kerala </h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                                10% discount up to Rs.3,500*
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                  Expires on 31st December 2023
                                 </small>
                               </p>
                             </div>
@@ -221,22 +235,23 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              src={uttarakhandp}
                               className="img-fluid rounded-start m-3"
                               alt="..."
+                              style={{ height: "150px", width: "150px" }}
+
+
                             />
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">Uttrakhand</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                                10% discount up to Rs.4,500*
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                  Expires on 31st December 2023
                                 </small>
                               </p>
                             </div>
@@ -250,22 +265,22 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              src={kashmir}
                               className="img-fluid rounded-start m-3"
                               alt="..."
+                              style={{ height: "150px", width: "150px" }}
+
                             />
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">Kshamir </h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                                10% discount up to Rs.4000*
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                  Expires on 31st December 2023
                                 </small>
                               </p>
                             </div>
@@ -279,22 +294,22 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              src={himachal}
                               className="img-fluid rounded-start m-3"
                               alt="..."
+                              style={{ height: "150px", width: "150px" }}
+
                             />
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">Himachal </h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                                10% discount up to Rs.3,500*
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                  Expires on 31st December 2023
                                 </small>
                               </p>
                             </div>
@@ -317,9 +332,12 @@ function Offers() {
                         <div className="row g-0 ">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+
                               className="img-fluid rounded-start m-3"
                               alt="..."
+
+
                             />
                           </div>
                           <div className="col-md-8">
@@ -346,9 +364,12 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+
                               className="img-fluid rounded-start m-3"
                               alt="..."
+
+
                             />
                           </div>
                           <div className="col-md-8">
@@ -375,9 +396,12 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+
                               className="img-fluid rounded-start m-3"
                               alt="..."
+
+
                             />
                           </div>
                           <div className="col-md-8">
@@ -404,9 +428,12 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+
                               className="img-fluid rounded-start m-3"
                               alt="..."
+
+
                             />
                           </div>
                           <div className="col-md-8">
@@ -433,9 +460,12 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+
                               className="img-fluid rounded-start m-3"
                               alt="..."
+
+
                             />
                           </div>
                           <div className="col-md-8">
@@ -462,7 +492,8 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+
                               className="img-fluid rounded-start m-3"
                               alt="..."
                             />
@@ -493,27 +524,88 @@ function Offers() {
                     aria-labelledby="nav-flight-tab"
                   >
                     <div className="row row-cols-1 mx-1 row-cols-md-2 g-4">
-                    <div
+                      <div
                         className="card mb-3 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0 ">
                           <div className="col-md-4">
                             <img
-                              src="https://www.sotc.in/images/sotc_home_page/Trending_Destinations/Gujarat-trn-img.jpg"
+                              src={plan1}
                               className="img-fluid rounded-start m-3 m-3"
                               alt="..."
+                              style={{ height: "150px", width: "150px" }}
+
                             />
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Gujrat</h5>
+                              <h5 className="card-title">Air India</h5>
                               <p className="card-text">
-                                Gujarat tour packages offer opportunities to embrace the legacy of the exotic culture. Tourists cannot miss savouring the amazing food in Gujarat. 
+                                FLAT Rs.650 OFF* | India Flights
+
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                  Expries on 31st December 2023
+                                </small>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="card mb-3 mt-3 ml-4 "
+                        style={{ maxWidth: "33rem" }}
+                      >
+                        <div className="row g-0">
+                          <div className="col-md-4">
+                            <img
+                              src={plan2}
+                              className="img-fluid rounded-start m-3"
+                              alt="..."
+                              style={{ height: "150px", width: "150px" }}
+
+                            />
+                          </div>
+                          <div className="col-md-8">
+                            <div className="card-body">
+                              <h5 className="card-title">Indigo Airlines</h5>
+                              <p className="card-text">
+                                FLAT Rs.550 OFF* | India Flights
+                              </p>
+                              <p className="card-text">
+                                <small className="text-muted">
+                                  Expries on 31st December 2023
+                                </small>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="card mb-3 mt-3 ml-4 "
+                        style={{ maxWidth: "33rem" }}
+                      >
+                        <div className="row g-0">
+                          <div className="col-md-4">
+                            <img
+                              src={plan3}
+                              className="img-fluid rounded-start m-3"
+                              alt="..."
+                              style={{ height: "150px", width: "150px" }}
+
+                            />
+                          </div>
+                          <div className="col-md-8">
+                            <div className="card-body">
+                              <h5 className="card-title">SpiceJet</h5>
+                              <p className="card-text">
+                                FLAT Rs.550 OFF* | India Flights
+                              </p>
+                              <p className="card-text">
+                                <small className="text-muted">
+                                  Expries on 31st December 2023
                                 </small>
                               </p>
                             </div>
@@ -528,21 +620,21 @@ function Offers() {
                           <div className="col-md-4">
                             <img
                               src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              style={{ height: "150px", width: "150px" }}
                               className="img-fluid rounded-start m-3"
                               alt="..."
+
                             />
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">AirAsia India</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                                FLAT Rs.550 OFF* | India Flights
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                  Expries on 31st December 2023
                                 </small>
                               </p>
                             </div>
@@ -556,22 +648,22 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+
                               className="img-fluid rounded-start m-3"
                               alt="..."
+
                             />
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">Go First</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                                FLAT Rs.550 OFF* | India Flights
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                  Expries on 31st December 2023
                                 </small>
                               </p>
                             </div>
@@ -585,87 +677,28 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+
                               className="img-fluid rounded-start m-3"
                               alt="..."
                             />
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">Air India</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                                FLAT Rs.550 OFF* | India Flights
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                  Expries on 31st December 2023
                                 </small>
                               </p>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div
-                        className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "33rem" }}
-                      >
-                        <div className="row g-0">
-                          <div className="col-md-4">
-                            <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start m-3"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
-                              <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
-                              </p>
-                              <p className="card-text">
-                                <small className="text-muted">
-                                  Last updated 3 mins ago
-                                </small>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "33rem" }}
-                      >
-                        <div className="row g-0">
-                          <div className="col-md-4">
-                            <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                              className="img-fluid rounded-start m-3"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
-                              <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
-                              </p>
-                              <p className="card-text">
-                                <small className="text-muted">
-                                  Last updated 3 mins ago
-                                </small>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
+
                     </div>
                   </div>
                   <div
@@ -674,7 +707,7 @@ function Offers() {
                     role="tabpanel"
                     aria-labelledby="nav-pakage-tab">
                     <div className="row row-cols-1 mx-1 row-cols-md-2 g-4" >
-                     
+
                     </div>
                   </div>
                 </div>
