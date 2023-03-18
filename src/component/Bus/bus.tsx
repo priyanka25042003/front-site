@@ -10,7 +10,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import Offers from "../offers";
 import Hotel from "../Hotel/hotel";
-
+import bus from "../../assert/bus.jpeg";
 import state from "../../assert/state.json";
 
 function Bus() {

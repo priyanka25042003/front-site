@@ -154,7 +154,7 @@ function home() {
                   <h5 className="card-title">KASHMIR</h5>
                   <p className="card-text">
 
-                    A nature lover's paradise, a light of hope for spiritual people, a reason for family get togethers, and a cozy nest for honeymooners, the heaven on earth, Jammu & Kashmir offers itself as the best holiday destination in India.
+                    A nature lover's paradise, a light of hope for spiritual people, a reason for family get togethers, the heaven on earth, Jammu & Kashmir offers itself as the best holiday destination in India.
                   </p>
                   <p className="card-text"></p>
                 </div>
@@ -203,7 +203,7 @@ function home() {
                 <div className="card-body">
                   <h5 className="card-title">MAHARASHTRA</h5>
                   <p className="card-text">
-                    Maharashtra - is brimming with an array of colorful shrines; a remarkable collection of caves; golden beaches lined with swaying palm trees; historic hotspots with strong past connection; and oodles of emerald hill stations under the canopy of lush western ghats.
+                    Maharashtra is brimming with an array of colorful shrines; a remarkable collection of caves; golden beaches lined with swaying palm trees; historic hotspots with strong past connection.
                   </p>
                   <p className="card-text"></p>
                 </div>
