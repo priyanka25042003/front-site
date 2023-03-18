@@ -4,7 +4,7 @@ import rajasthan from "../assert/RajasthanP.jpg";
 import srilanka from "../assert/srilanka.jpg";
 import kerala from "../assert/Keralap.jpg";
 import uttarakhandp from "../assert/uttarakhandp.jpg";
-import kashmir from "../assert/Kashmir.jpg";
+import kashmir from "../assert/kashmir.jpg";
 import himachal from "../assert/Himachal.jpg";
 import plan1 from "../assert/plan1.jpg";
 import plan2 from "../assert/plan2.jpg";

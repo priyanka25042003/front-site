@@ -8,7 +8,7 @@ import state from "../../assert/state.json";
 import gujrat from "../../assert/gujrat.jpg";
 import naital  from "../../assert/nailtal.jpeg";
 import uttarakhandp  from "../../assert/uttarakhandp.jpg";
-import Kashmir  from "../../assert/kashmir.jpg";
+import Kashmir  from "../../assert/kshamir.jpg";
 import Kerala  from "../../assert/Keralap.jpg";
 import Ooty  from "../../assert/oty.jpeg";
 import Kolkata  from "../../assert/kolkata.jpeg";
