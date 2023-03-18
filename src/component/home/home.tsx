@@ -5,7 +5,7 @@ import rajasthan from "../../assert/pexels-rahul-1011093.jpg";
 import maharastra from "../../assert/maharatra.jpg";
 import gujarat from "../../assert/Gujarat.jpg";
 import kerala from "../../assert/Kerala.jpg";
-import kashmir from "../../assert/Kashmir.jpg";
+import kashmir from "../../assert/Kashmir1.jpg";
 import himachal from "../../assert/Himachal.jpg";
 import main from "../../assert/main.jpg";
 
