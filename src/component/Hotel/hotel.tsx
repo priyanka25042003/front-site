@@ -5,6 +5,15 @@ import HorizontalGallery from "react-dynamic-carousel";
 import { useNavigate } from "react-router-dom";
 import Offers from "../offers";
 import state from "../../assert/state.json";
+import gujrat from "../../assert/gujrat.jpg";
+import naital  from "../../assert/nailtal.jpeg";
+import uttarakhandp  from "../../assert/uttarakhandp.jpg";
+import Kashmir  from "../../assert/kashmir.jpg";
+import Kerala  from "../../assert/Keralap.jpg";
+import Ooty  from "../../assert/oty.jpeg";
+import Kolkata  from "../../assert/kolkata.jpeg";
+import Kochi  from "../../assert/kochi.jpeg";
+
 
 
 
@@ -159,75 +168,75 @@ function Hotel() {
           <div className="m-5">
             <div className="roundede">
               <img
-                src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                src={gujrat}
                 alt=""
               />
 
             </div>
-            <h5 className="text-center mt-2">cityname</h5>
+            <h5 className="text-center mt-2">Gujarat</h5>
           </div>
           <div className="m-5">
             <div className="roundede">
               <img
-                src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                src={naital}
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">cityname</h5>
+            <h5 className="text-center mt-2">Nailtal</h5>
           </div>
           <div className="m-5">
             <div className="roundede">
               <img
-                src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                src={uttarakhandp}
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">cityname</h5>
+            <h5 className="text-center mt-2">uttarakhand</h5>
           </div>
           <div className="m-5">
             <div className="roundede">
               <img
-                src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                src={Kashmir}
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">cityname</h5>
+            <h5 className="text-center mt-2">Kashmir</h5>
           </div>
           <div className="m-5">
             <div className="roundede">
               <img
-                src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                src={Kerala}
                 alt=""
               />
             </div>
-            <h5 className="text-center  mt-2">cityname</h5>
+            <h5 className="text-center  mt-2">Kerala</h5>
           </div>
           <div className="m-5">
             <div className="roundede">
               <img
-                src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                src={Ooty}
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">cityname</h5>
+            <h5 className="text-center mt-2">Ooty</h5>
           </div>
           <div className="m-5">
             <div className="roundede">
               <img
-                src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                src={Kolkata}
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">cityname</h5>
+            <h5 className="text-center mt-2">Kolkata</h5>
           </div>
           <div className="m-5">
             <div className="roundede">
               <img
-                src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                src={Kochi}
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">cityname</h5>
+            <h5 className="text-center mt-2">kochi</h5>
           </div>
         </div>
       </div>

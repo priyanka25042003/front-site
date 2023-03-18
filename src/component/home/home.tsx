@@ -52,7 +52,7 @@ function home() {
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">Gujrat</h5>
+            <h5 className="text-center mt-2">Gujarat</h5>
           </div>
           <div className="m-5">
             <div className="roundedee">
