@@ -24,11 +24,12 @@
 .roundedee img {
     border-radius: 50%;
     width: 220px;
+    height: 220px;
     transition: ease 0.5s;
 }
 
 .roundedee img:hover {
-    width: 225px;
+    width: 250px;
     transition: ease 0.5s;
     box-shadow: 0 5px 33px rgb(0 0 0 / 40%);
 }

@@ -43,75 +43,74 @@ function home() {
           <div className="m-5">
             <div className="roundedee">
               <img
-                // src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                src="https://q-xx.bstatic.com/xdata/images/city/250x250/684765.jpg?k=3f7d20034c13ac7686520ac1ccf1621337a1e59860abfd9cbd96f8d66b4fc138&o="
+                src="https://www.indianluxurytrains.com/blog/wp-content/uploads/2013/09/Mahabat-ka-Maqbara.jpg"
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">cityname</h5>
+            <h5 className="text-center mt-2">Gujrat</h5>
           </div>
           <div className="m-5">
             <div className="roundedee">
               <img
-                src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                src="https://www.planetware.com/photos-large/IND/india-top-attractions-gateway-india.jpg"
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">cityname</h5>
+            <h5 className="text-center mt-2">mumbai</h5>
           </div>
           <div className="m-5">
             <div className="roundedee">
               <img
-                src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                src="https://www.planetware.com/wpimages/2019/08/india-top-attractions-goa-beaches.jpg"
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">cityname</h5>
+            <h5 className="text-center mt-2">Goa</h5>
           </div>
           <div className="m-5">
             <div className="roundedee">
               <img
-                src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                src="https://www.planetware.com/wpimages/2019/11/india-best-places-to-visit-new-delhi.jpg"
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">cityname</h5>
+            <h5 className="text-center mt-2">Delhi</h5>
           </div>
           <div className="m-5">
             <div className="roundedee">
               <img
-                src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                src="https://www.planetware.com/wpimages/2019/09/india-jaipur-top-attractions-hawa-mahal.jpg"
                 alt=""
               />
             </div>
-            <h5 className="text-center  mt-2">cityname</h5>
+            <h5 className="text-center  mt-2">Jaipur</h5>
           </div>
           <div className="m-5">
             <div className="roundedee">
               <img
-                src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                src="https://www.planetware.com/wpimages/2022/03/india-best-places-to-visit-manali.jpg"
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">cityname</h5>
+            <h5 className="text-center mt-2">Manali</h5>
           </div>
           <div className="m-5">
             <div className="roundedee">
               <img
-                src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                src="https://www.planetware.com/wpimages/2020/02/india-varanasi-best-places-to-visit-ganges-river.jpg"
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">cityname</h5>
+            <h5 className="text-center mt-2">Varanasi</h5>
           </div>
           <div className="m-5">
             <div className="roundedee">
               <img
-                src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                src="https://www.planetware.com/wpimages/2020/01/india-in-pictures-beautiful-places-to-photograph-kapaleeshwarar-temple.jpg"
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">cityname</h5>
+            <h5 className="text-center mt-2">Chennai</h5>
           </div>
         </div>
       </div>
