@@ -12,6 +12,16 @@ import plan3 from "../assert/plan3.jpg";
 import plan4 from "../assert/plan4.jpeg";
 import plan5 from "../assert/plan5.jpeg";
 import plan6 from "../assert/plan6.jpeg";
+import bus1 from "../assert/bus1.png";
+import bus2 from "../assert/bus2.png";
+import bus3 from "../assert/bus3.png";
+import bus4 from "../assert/bus4.png";
+import bus5 from "../assert/bus5.png";
+import bus6 from "../assert/bus6.png";
+import hotel2 from "../assert/hotel2.png";
+import hotel1 from "../assert/hotel1.jpg";
+import hotel4 from "../assert/hotel4.png";
+
 
 
 
@@ -336,7 +346,37 @@ function Offers() {
                         <div className="row g-0 ">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={hotel2} style={{ height: "150px", width: "150px" }}
+
+                              className="img-fluid rounded-start m-3"
+                              alt="..."
+
+
+                            />
+                          </div>
+                          <div className="col-md-8">
+                            <div className="card-body">
+                              <h5 className="card-title">EaseMyTrip</h5>
+                              <p className="card-text">
+                              Users under this offer will get up to 25% discount up to Rs. 1000 off on hotel bookings
+                              </p>
+                              <p className="card-text">
+                                <small className="text-muted">
+                                  Last updated 3 mins ago
+                                </small>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="card mb-3 mt-3 ml-4 "
+                        style={{ maxWidth: "33rem" }}
+                      >
+                        <div className="row g-0">
+                          <div className="col-md-4">
+                            <img
+                              src={hotel1} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -368,39 +408,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
-
-                              className="img-fluid rounded-start m-3"
-                              alt="..."
-
-
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
-                              <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
-                              </p>
-                              <p className="card-text">
-                                <small className="text-muted">
-                                  Last updated 3 mins ago
-                                </small>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "33rem" }}
-                      >
-                        <div className="row g-0">
-                          <div className="col-md-4">
-                            <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={hotel4} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -695,7 +703,7 @@ function Offers() {
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Expries on 31st December 2023
+                                  Expries on 31st December 2023Users under this offer will get up to 25% discount up to Rs. 1000 off on hotel bookings
                                 </small>
                               </p>
                             </div>
@@ -719,7 +727,7 @@ function Offers() {
                         <div className="row g-0 ">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={bus1} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -729,15 +737,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title"> Easy Bus</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                              Users under this offer will 10% discount up to Rs.250 on their first Bus booking with Easybus.com
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                This offer is valid for first user
                                 </small>
                               </p>
                             </div>
@@ -751,7 +757,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={bus2} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -761,15 +767,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">Big Bus</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                              Users will get 5% instant discount (up to Rs.500) on bus tickets
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                This offer is valid for first user
                                 </small>
                               </p>
                             </div>
@@ -783,7 +787,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={bus3} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -793,15 +797,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">Express Line 	</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                              Users will get up to Rs. 150 instant discount on bus tickets for all major bus routes
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                This offer is valid for first user
                                 </small>
                               </p>
                             </div>
@@ -815,7 +817,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={bus4} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -825,15 +827,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">Zoom Star</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                              Users will get 10% instant discount (upto Rs.75) on Bus Tickets
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                This offer is valid for first user
                                 </small>
                               </p>
                             </div>
@@ -847,7 +847,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={bus5} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -857,15 +857,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">Real Bus</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                              Users will get 12% (up to Rs. 100) instant discount on bus tickets for selected bus routes of VRL Travel
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                This offer is valid for first user
                                 </small>
                               </p>
                             </div>
@@ -879,7 +877,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={bus6} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -887,15 +885,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">Minibus</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                              Users will get flat 100 off on booking Intercity Smart Bus tickets above 500 Rs. and flat 200 off on booking above 1000 Rs.
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                This offer is valid for first user
                                 </small>
                               </p>
                             </div>
@@ -930,9 +926,7 @@ function Offers() {
                             <div className="card-body">
                               <h5 className="card-title">Card title</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                               
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
@@ -962,9 +956,7 @@ function Offers() {
                             <div className="card-body">
                               <h5 className="card-title">Card title</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                                
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
@@ -994,9 +986,7 @@ function Offers() {
                             <div className="card-body">
                               <h5 className="card-title">Card title</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                               
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
@@ -1026,9 +1016,7 @@ function Offers() {
                             <div className="card-body">
                               <h5 className="card-title">Card title</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                              
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
@@ -1058,9 +1046,7 @@ function Offers() {
                             <div className="card-body">
                               <h5 className="card-title">Card title</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                               
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
@@ -1088,9 +1074,7 @@ function Offers() {
                             <div className="card-body">
                               <h5 className="card-title">Card title</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                                
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
