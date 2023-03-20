@@ -256,9 +256,9 @@ function Hotel() {
                   height: 400,
                 }}
               >
-                <div className="card rounded-5 " onClick={()=>navigate("/view/"+value.key)}  style={{ width: "18rem" }} >
+                <div className="card rounded-5 "  style={{ width: "18rem" }} >
                   <div className="card-body">
-                    <img className="card-img-top" src={value.img} alt="" />
+                    <img className="card-img-top" src={value.img} style={{ width: "15rem" , height:"10rem"}} alt="" />
                     <p className="card-text">{value.hotel_type}</p>
                     <small className="card-text">
                       {value.state} / {value.city}{" "}
@@ -275,41 +275,7 @@ function Hotel() {
           />
         </div>
       </div>
-      <div className="bgcolor">
-        <div className="ml-5" style={{ marginTop: "6rem" }}>
-          <h2 className=""> Plan your next staycation</h2>
-        </div>
-        <div className="container-f shadow p-3 mb-5 bg-body rounded">
-          <HorizontalGallery
-            tiles={next_plan.map((value) => (
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-around",
-                  width: 300,
-                  height: 400,
-                }}
-              >
-                <div className="card rounded-5 " style={{ width: "18rem" }}>
-                  <div className="card-body">
-                    <img className="card-img-top" src={value.img} alt="" />
-                    <p className="card-text">{value.hotel_type}</p>
-                    <small className="card-text">
-                      {value.state} / {value.city}{" "}
-                    </small>
-                    <h3 className="card-title">{value.hotel_name}</h3>
-                    <hr />
-                    <h6>From : {value.total_price} / night</h6>
-                  </div>
-                </div>
-              </div>
-            ))}
-            elementWidth={350}
-            // fadeDistance={100}
-            minPadding={20}
-          />
-        </div>
-      </div>
+      
       <div className="" >
         <Offers></Offers>
       </div>

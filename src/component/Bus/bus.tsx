@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./bus.css";
 import {
   MDBFooter,
@@ -12,6 +12,16 @@ import Offers from "../offers";
 import Hotel from "../Hotel/hotel";
 import bus from "../../assert/bus.jpeg";
 import state from "../../assert/state.json";
+import HorizontalGallery from "react-dynamic-carousel";
+import firebase from "firebase";
+import gujrat from "../../assert/gujrat.jpg";
+import naital  from "../../assert/nailtal.jpeg";
+import uttarakhandp  from "../../assert/uttarakhandp.jpg";
+import Kashmir  from "../../assert/Kashmir.jpg";
+import Kerala  from "../../assert/Keralap.jpg";
+import Ooty  from "../../assert/oty.jpeg";
+import Kolkata  from "../../assert/kolkata.jpeg";
+import Kochi  from "../../assert/kochi.jpeg";
 
 function Bus() {
   let cityarr:any[]=[]
@@ -33,6 +43,29 @@ function Bus() {
   const [next_plan, setnxtplan] = useState<any[]>([]);
   const [filterh, setfilterh]: any = useState([]);
 
+  useEffect(() => {
+    getdata();
+  }, []);
+  function getdata() {
+    let arr: any[] = [];
+    firebase
+      .database()
+      .ref("/bus")
+      .get()
+      .then((res) => {
+        res.forEach((element) => {
+          arr.push({ key: element.key, ...element.val() });
+
+        });
+        console.log(arr);
+        
+        // setnxtplan(arr.slice(0, 4))
+        setnxtplan(arr);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   function filterDatah(e: any) {
     let name: any = e.target.name;
     let val: any = e.target.value;
@@ -92,6 +125,8 @@ function Bus() {
     setshowautosagetion(false);
     setshowautofrom(false);
   };
+ 
+
 
   function select(params: any, location: any) {
     if (location == "From") {
@@ -198,85 +233,126 @@ function Bus() {
       <>
         <br />
         <div style={{ marginTop: "9rem" }}>
-          <div className="mb-5" mt-5>
-            <h2 className="text-center">Popular Destination</h2>
+        <div style={{ marginTop: "6rem" }}>
+        <div className="mb-5">
+          <h2 className="text-center">Top destinations</h2>
+        </div>
+        <div className="container-fluid d-flex overflow mt-3">
+          <div className="m-5">
+            <div className="roundede">
+              <img
+                src={gujrat}
+                alt=""
+              />
+
+            </div>
+            <h5 className="text-center mt-2">Gujarat</h5>
           </div>
-          <div className="containerr-fluid d-flex overfloww mt-3">
-            <div className="m-5">
-              <div className="roundedee">
-                <img
-                  // src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                  src="https://q-xx.bstatic.com/xdata/images/city/250x250/684765.jpg?k=3f7d20034c13ac7686520ac1ccf1621337a1e59860abfd9cbd96f8d66b4fc138&o="
-                  alt=""
-                />
-              </div>
-              <h5 className="text-center mt-2">Mumbai</h5>
+          <div className="m-5">
+            <div className="roundede">
+              <img
+                src={naital}
+                alt=""
+              />
             </div>
-            <div className="m-5">
-              <div className="roundedee">
-                <img
-                  src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                  alt=""
-                />
-              </div>
-              <h5 className="text-center mt-2">Punjab</h5>
-            </div>
-            <div className="m-5">
-              <div className="roundedee">
-                <img
-                  src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                  alt=""
-                />
-              </div>
-              <h5 className="text-center mt-2">Rajsthan</h5>
-            </div>
-            <div className="m-5">
-              <div className="roundedee">
-                <img
-                  src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                  alt=""
-                />
-              </div>
-              <h5 className="text-center mt-2">Delhi</h5>
-            </div>
-            <div className="m-5">
-              <div className="roundedee">
-                <img
-                  src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                  alt=""
-                />
-              </div>
-              <h5 className="text-center  mt-2">Surat</h5>
-            </div>
-            <div className="m-5">
-              <div className="roundedee">
-                <img
-                  src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                  alt=""
-                />
-              </div>
-              <h5 className="text-center mt-2">Rajkot</h5>
-            </div>
-            <div className="m-5">
-              <div className="roundedee">
-                <img
-                  src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                  alt=""
-                />
-              </div>
-              <h5 className="text-center mt-2">Ahmedabad</h5>
-            </div>
-            <div className="m-5">
-              <div className="roundedee">
-                <img
-                  src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
-                  alt=""
-                />
-              </div>
-              <h5 className="text-center mt-2">Veraval</h5>
-            </div>
+            <h5 className="text-center mt-2">Nailtal</h5>
           </div>
+          <div className="m-5">
+            <div className="roundede">
+              <img
+                src={uttarakhandp}
+                alt=""
+              />
+            </div>
+            <h5 className="text-center mt-2">uttarakhand</h5>
+          </div>
+          <div className="m-5">
+            <div className="roundede">
+              <img
+                src={Kashmir}
+                alt=""
+              />
+            </div>
+            <h5 className="text-center mt-2">Kashmir</h5>
+          </div>
+          <div className="m-5">
+            <div className="roundede">
+              <img
+                src={Kerala}
+                alt=""
+              />
+            </div>
+            <h5 className="text-center  mt-2">Kerala</h5>
+          </div>
+          <div className="m-5">
+            <div className="roundede">
+              <img
+                src={Ooty}
+                alt=""
+              />
+            </div>
+            <h5 className="text-center mt-2">Ooty</h5>
+          </div>
+          <div className="m-5">
+            <div className="roundede">
+              <img
+                src={Kolkata}
+                alt=""
+              />
+            </div>
+            <h5 className="text-center mt-2">Kolkata</h5>
+          </div>
+          <div className="m-5">
+            <div className="roundede">
+              <img
+                src={Kochi}
+                alt=""
+              />
+            </div>
+            <h5 className="text-center mt-2">kochi</h5>
+          </div>
+        </div>
+      </div>
+          
           <br />
+          <div className="container-f shadow p-3 mb-5 bg-body rounded">
+          <HorizontalGallery
+            tiles={next_plan.map((value) => (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-around",
+                  width: 300,
+                  height: 500,
+                }}
+              >
+                <div className="card rounded-5 "  style={{ width: "18rem" }} >
+                  <div className="card-body">
+                    <img className="card-img-top" src={value.img} alt="" />
+                    <p className="card-text">{value.bus_type}</p>
+                    <h3 className="card-title">{value.bus_name}</h3>
+                    <small className="card-text d-flex justify-content-around">
+                      <div>
+                      {value.destination} 
+                      </div>
+                      <div>
+                      To
+                      </div>
+                      <div>
+                      {value.from_location}{" "}
+                      </div>
+                      
+                    </small>
+                    <hr />
+                    <h6>₹ {value.bus_seat_price}/seate</h6>
+                  </div>
+                </div>
+              </div>
+            ))}
+            elementWidth={350}
+            minPadding={20}
+          />
+        </div>
           <div className="">
             <Offers></Offers>
           </div>
