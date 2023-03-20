@@ -375,14 +375,7 @@ function Listbus() {
       </div>
 
       <div className="card mb-3 mt-3 ml-4 "></div>
-      <button
-        type="button"
-        className="btn btn-primary"
-        data-toggle="modal"
-        data-target=".bd-example-modal-lg"
-      >
-        Large modal
-      </button>
+
       {book ? (
         <div
           id="myModal"

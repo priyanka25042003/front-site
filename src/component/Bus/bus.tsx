@@ -341,9 +341,8 @@ function Bus() {
                       <div>
                       {value.from_location}{" "}
                       </div>
-                      
                     </small>
-                    <hr />
+                    <h6 className="mt-3">Type : {value.bus_seat_type}</h6>
                     <h6>₹ {value.bus_seat_price}/seate</h6>
                   </div>
                 </div>
