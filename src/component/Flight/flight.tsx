@@ -5,6 +5,15 @@ import "./flight.css";
 import airport from "../../assert/airport.json";
 import HorizontalGallery from "react-dynamic-carousel";
 import firebase from "firebase";
+import gujrat from "../../assert/gujrat.jpg";
+import naital  from "../../assert/nailtal.jpeg";
+import uttarakhandp  from "../../assert/uttarakhandp.jpg";
+import Kashmir  from "../../assert/Kashmir.jpg";
+import Kerala  from "../../assert/Keralap.jpg";
+import Ooty  from "../../assert/oty.jpeg";
+import Kolkata  from "../../assert/kolkata.jpeg";
+import Kochi  from "../../assert/kochi.jpeg";
+
 
 function Flight() {
   console.log(airport.airports);
@@ -50,7 +59,10 @@ function Flight() {
       .then((res) => {
         res.forEach((element) => {
           arr.push({ key: element.key, ...element.val() });
+
         });
+        console.log(arr);
+        
         // setnxtplan(arr.slice(0, 4))
         setnxtplan(arr);
       })
@@ -109,6 +121,7 @@ function Flight() {
 
   return (
     <div>
+        
       <div className="bg-image containerd"></div>
       <div className="m-1">
         <div className=" hstack gap-3 bg-light text-dark d-flex justify-content-evenly shadow bg-body rounded rounded-pill algine">
@@ -198,9 +211,86 @@ function Flight() {
           </div>
         </div>
         <br />
-        <div className="mb-3 mt-5 ">
-          <h2 className="text-center ">Destination</h2>
+        <div style={{ marginTop: "6rem" }}>
+        <div className="mb-5">
+          <h2 className="text-center">Top destinations</h2>
         </div>
+        <div className="container-fluid d-flex overflow mt-3">
+          <div className="m-5">
+            <div className="roundede">
+              <img
+                src={gujrat}
+                alt=""
+              />
+
+            </div>
+            <h5 className="text-center mt-2">Gujarat</h5>
+          </div>
+          <div className="m-5">
+            <div className="roundede">
+              <img
+                src={naital}
+                alt=""
+              />
+            </div>
+            <h5 className="text-center mt-2">Nailtal</h5>
+          </div>
+          <div className="m-5">
+            <div className="roundede">
+              <img
+                src={uttarakhandp}
+                alt=""
+              />
+            </div>
+            <h5 className="text-center mt-2">uttarakhand</h5>
+          </div>
+          <div className="m-5">
+            <div className="roundede">
+              <img
+                src={Kashmir}
+                alt=""
+              />
+            </div>
+            <h5 className="text-center mt-2">Kashmir</h5>
+          </div>
+          <div className="m-5">
+            <div className="roundede">
+              <img
+                src={Kerala}
+                alt=""
+              />
+            </div>
+            <h5 className="text-center  mt-2">Kerala</h5>
+          </div>
+          <div className="m-5">
+            <div className="roundede">
+              <img
+                src={Ooty}
+                alt=""
+              />
+            </div>
+            <h5 className="text-center mt-2">Ooty</h5>
+          </div>
+          <div className="m-5">
+            <div className="roundede">
+              <img
+                src={Kolkata}
+                alt=""
+              />
+            </div>
+            <h5 className="text-center mt-2">Kolkata</h5>
+          </div>
+          <div className="m-5">
+            <div className="roundede">
+              <img
+                src={Kochi}
+                alt=""
+              />
+            </div>
+            <h5 className="text-center mt-2">kochi</h5>
+          </div>
+        </div>
+      </div>
         <div className="bgcolor">
           <div className="text-center" style={{ marginTop: "6rem" }}>
             <h2 className=""> Plan your next staycation</h2>
@@ -218,7 +308,7 @@ function Flight() {
                 >
                   <div className="card rounded-5 " style={{ width: "18rem" }}>
                     <div className="card-body">
-                      <img className="card-img-top" src={value.img} alt="" />
+                      <img className="card-img-top" src={value.img} style={{ width: "15rem" , height:"10rem"}} alt="" />
                       {/* <h6 className="card-text">{value.flight_name}</h6> */}
                       <h3 className="card-title">{value.flight_name}</h3>
                       <small className="card-text">

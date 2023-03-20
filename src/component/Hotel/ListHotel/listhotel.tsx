@@ -5,7 +5,6 @@ import "./listhotel.css";
 
 import state from "../../../assert/state.json";
 declare var Razorpay: any;
-
 function Listhotel() {
   let array: string[] = [];
   const citys = Object.values(state);
@@ -98,6 +97,7 @@ function Listhotel() {
   }
   function responhendel(res?: any): any {
     let paymentID = res;
+    debugger
     if (paymentID) {
       data.paymentid = paymentID?.razorpay_payment_id;
       data.bookingOf = "hotel"
@@ -147,21 +147,6 @@ function Listhotel() {
   function submit() {
     let arr: any[] = [];
     let data;
-    // if (filterh.From && filterh.hoteltype && filterh.pricerange) {
-    //     data = maindatah.filter(
-    //         (d: any) =>
-    //             d.city == filterh.From &&
-    //             d.hotel_type == filterh.hoteltype &&
-    //             d.total_price <= filterh.pricerange
-    //     );
-    // } else if (filterh.From && filterh.hoteltype) {
-    //     data = maindatah.filter(
-    //         (d: any) => d.city == filterh.From && d.hotel_type == filterh.hoteltype
-    //     );
-    // } else {
-    //     data = maindatah.filter((d: any) => d.city == filterh.From);
-    // }
-    // console.log(data);
     let unique2;
     maindatah.forEach((element: any) => {
       if (element.city == filterh.From) {
@@ -202,7 +187,7 @@ function Listhotel() {
     // info[name] = data[name]
     // setinfos(info)
     setinfos({ ...info, [name[0]]: data[name[0]] });
-    console.log(info);info
+    console.log(info);
   }
   function getdata() {
     let arr: any[] = [];
@@ -223,7 +208,7 @@ function Listhotel() {
         arr.forEach((element) => {
           if (element.city == city) {
             filter.push(element);
-          }info
+          }
         });
         setfilterdatah(filter);
         console.log(filterh);

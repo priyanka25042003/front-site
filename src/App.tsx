@@ -21,7 +21,6 @@ import About from './component/About/about';
 import Contact from './component/Contact/contact';
 import Listpackage from './component/Package/Listpackage/listpackage';
 import Seate from './component/busseate/seat';
-import Hotelview from './component/Hotel/hotel.view';
 const Home = React.lazy(() => import('./component/home/home'))
 const Hotel = React.lazy(() => import('./component/Hotel/hotel'))
 
@@ -32,6 +31,8 @@ const Flight = React.lazy(() => import('./component/Flight/flight'))
 const Listbus=React.lazy(() => import('./component/Bus/Listbus/listbus'))
 const Feedback=React.lazy(() => import('./component/Feedback/feedback'))
 const Refund=React.lazy(() => import('./component/Refund/refund'))
+const Showbookings =React.lazy(() => import('./component/userprofile/showbookings'))
+
 // const Listflight = React.lazy(() => import('./component/Flight/ListFlight/listflight'))
 // const Listhotel = React.lazy(() => import('./component/Hotel/ListHotel/listhotel'))
 
@@ -69,7 +70,6 @@ function App() {
           </React.Suspense>} />
           <Route path="listflight/:from/:to/:day" element={<React.Suspense ><Listflight /></React.Suspense>} />
           <Route path="listbus/:from/:to/:day" element={<React.Suspense ><Listbus /></React.Suspense>} />
-          <Route path="view/:id" element={<React.Suspense ><Hotelview /></React.Suspense>} />
 
           <Route path="offers" element={<React.Suspense >
             <Offers />
@@ -88,6 +88,9 @@ function App() {
           </React.Suspense>} />
           <Route path="seate" element={<React.Suspense >
             <Seate />
+          </React.Suspense>} />
+          <Route path="profile" element={<React.Suspense >
+            <Showbookings />
           </React.Suspense>} />
 
 

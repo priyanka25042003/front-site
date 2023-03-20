@@ -80,6 +80,11 @@ function Navbar() {
                 CONTACT <span className="sr-only">(current)</span>
               </NavLink>
             </li>
+            <li className="nav-item active">
+              <NavLink className="nav-link" to={"profile"}>
+                PROFILE <span className="sr-only">(current)</span>
+              </NavLink>
+            </li>
           </ul>
           <form className="form-inline my-2 my-lg-0">
             <input

@@ -149,3 +149,18 @@
 .card{
     position: none !important;
 } */
+
+.roundede img  {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  transition: ease 0.5s;
+
+
+}
+.roundede img:hover {
+  transform: scale(1.1);
+
+  transition: ease 0.5s;
+  box-shadow: 0 5px 33px rgb(0 0 0 / 40%);
+}

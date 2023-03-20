@@ -15,13 +15,11 @@ function filterD(e:any){
   let val:any = e.target.value
   setfilter({...filter ,[name]:val})
   console.log(filter);
- 
 
 }
 function submit(){
   console.log(filter);
 }  
-
 
   function getdata() {
     let arr: any[] = [];
