@@ -97,7 +97,7 @@ function Listhotel() {
   }
   function responhendel(res?: any): any {
     let paymentID = res;
-    debugger
+    
     if (paymentID) {
       data.paymentid = paymentID?.razorpay_payment_id;
       data.bookingOf = "hotel"
@@ -123,19 +123,24 @@ function Listhotel() {
         userInfo.name &&
         userInfo.age &&
         userInfo.idproof &&
-        userInfo.idproofNumber
+        userInfo.idproofNumber&&
+        userInfo.rooms
+
       ) {
         settabIndex(1);
       }
     } else if (tabIndex == 1) {
+      
       Object.assign(data, userInfo, info, book);
       console.log(data);
+
       let total_set: any;
       let price: any;
       total_set = userInfo.rooms;
-          price =book.total_price;
-          proceed(total_set * price);
-    
+      price = data.Singledelux_room;
+      let p = total_set * price
+      proceed(p);
+
     }
   }
   function setuserinfo(event: any) {
@@ -1028,7 +1033,7 @@ function Listhotel() {
                         onChange={(e) => setuserinfo(e)}
                         className={
                           userInfo.idproofNumber == null ||
-                          userInfo.idproofNumber == ""
+                            userInfo.idproofNumber == ""
                             ? "form-control is-invalid  "
                             : "form-control "
                         }
@@ -1046,12 +1051,12 @@ function Listhotel() {
                         max={6}
                         onChange={(e) => setuserinfo(e)}
                         className={
-                          userInfo.idproofNumber == null ||
-                          userInfo.idproofNumber == ""
+                          userInfo.rooms == null ||
+                            userInfo.rooms == ""
                             ? "form-control is-invalid  "
                             : "form-control "
                         }
-                        value={info.adults >= 4 && info.adults<=5 ? 2 :'' ||info.adults >= 6 && info.adults<=7  ? 4 :'' ||info.adults >= 8 ? 4 :''  }
+                        value={info.adults >= 4 && info.adults <= 5 ? 2 : '' || info.adults >= 6 && info.adults <= 7 ? 4 : '' || info.adults >= 8 ? 6 : ''}
                         name="rooms"
                         id="formGroupExampleInput2"
                         required
@@ -1105,7 +1110,7 @@ function Listhotel() {
                           {userInfo.rooms}
                         </div>
                         <div className="col-12 text-center h6  mt-4 text-muted">
-                         
+
                           <img src={book.img} width={200} height={200} alt="" />
                         </div>
                         <div className="col-4 text-center h6  mt-4 text-muted">
@@ -1127,8 +1132,8 @@ function Listhotel() {
                         </div>
                         <div className="col-6 text-center h6  mt-4 text-muted">
                           Price/Rooms <br />
-                         ₹ {book.total_price}
-                        </div>  
+                          ₹ {book.Singledelux_room}
+                        </div>
                       </div>
                     </div>
                   </div>
