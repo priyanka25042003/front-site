@@ -9,6 +9,10 @@ import himachal from "../assert/Himachal.jpg";
 import plan1 from "../assert/plan1.jpg";
 import plan2 from "../assert/plan2.jpg";
 import plan3 from "../assert/plan3.jpg";
+import plan4 from "../assert/plan4.jpeg";
+import plan5 from "../assert/plan5.jpeg";
+import plan6 from "../assert/plan6.jpeg";
+
 
 
 function Offers() {
@@ -619,7 +623,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg"
+                              src={plan4}
                               style={{ height: "150px", width: "150px" }}
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -648,7 +652,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={plan5}style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -677,7 +681,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={plan6} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."

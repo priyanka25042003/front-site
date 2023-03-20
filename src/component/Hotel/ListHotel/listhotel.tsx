@@ -100,6 +100,7 @@ function Listhotel() {
     let paymentID = res;
     if (paymentID) {
       data.paymentid = paymentID?.razorpay_payment_id;
+      data.bookingOf = "hotel"
       booking(data);
     }
   }
@@ -130,10 +131,10 @@ function Listhotel() {
       Object.assign(data, userInfo, info, book);
       console.log(data);
       let total_set: any;
-      let prise: any;
+      let price: any;
       total_set = userInfo.rooms;
-          prise =book.total_price;
-          proceed(total_set * prise);
+          price =book.total_price;
+          proceed(total_set * price);
     
     }
   }
@@ -201,7 +202,7 @@ function Listhotel() {
     // info[name] = data[name]
     // setinfos(info)
     setinfos({ ...info, [name[0]]: data[name[0]] });
-    console.log(info);
+    console.log(info);info
   }
   function getdata() {
     let arr: any[] = [];
@@ -222,7 +223,7 @@ function Listhotel() {
         arr.forEach((element) => {
           if (element.city == city) {
             filter.push(element);
-          }
+          }info
         });
         setfilterdatah(filter);
         console.log(filterh);

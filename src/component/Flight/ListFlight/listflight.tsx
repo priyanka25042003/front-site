@@ -142,6 +142,8 @@ function Listflight() {
     let paymentID = res
     if (paymentID) {
       data.paymentid =paymentID?.razorpay_payment_id
+      data.bookingOf = "flight"
+
       booking(data)
     }
   }
