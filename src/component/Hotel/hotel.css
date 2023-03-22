@@ -24,11 +24,14 @@
     background-color: rgb(255, 255, 255) !important;
     width: 83.9vw;
     position: absolute;
-    top: 62%;
+    top: 58%;
     left: 8%;
     transform: translate(0%, -50%);
-    padding: 1.5rem;
+    padding: 2rem;
 
+}
+.algin input{
+    padding: 1.2em;
 }
 
 .w-100 {

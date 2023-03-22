@@ -117,10 +117,13 @@
   background-color: rgb(255, 255, 255) !important;
   width: 83.9vw;
   position: absolute;
-  top: 60%;
+  top: 58%;
   left: 8%;
   transform: translate(0%, -50%);
-  padding: 1.5rem;
+  padding: 2rem;
+}
+.algine input{
+  padding: 1.2rem;
 }
 .autosagetions {
   position: absolute;

@@ -1,7 +1,7 @@
 .cg-image {
     background-image: url("../../assert/main3.jpg");
-    width: 99.9vw;
-    height: 50vh;
+    width: 100vw !important;
+    height: 60vh;
     background-size: cover;
 }
 .algine {
@@ -10,14 +10,37 @@
     background-color: rgb(255, 255, 255) !important;
     width: 83.9vw;
     position: absolute;
-    top: 62%;
+    top: 70%;
     left: 8%;
-    transform: translate(0%, -50%);
-    padding: 1.5rem;
+    transform: translate(0, -50%);
+    padding: 2rem;
+}
+.algine input{
+    padding: 1.2em;
 }
 
 .w-100 {
     border: none;
     outline: none;
     padding: 2%;
+}
+.autosagetions{
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    height: 500px;
+    
+}
+.list-items{
+padding: 10px;
+cursor: pointer;
+background-color: #fff; 
+border-bottom: 1px solid #d4d4d4; 
+list-style: none;
 }
