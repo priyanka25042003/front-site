@@ -14,14 +14,14 @@ import bus from "../../assert/bus.jpeg";
 import state from "../../assert/state.json";
 import HorizontalGallery from "react-dynamic-carousel";
 import firebase from "firebase";
-import gujrat from "../../assert/gujrat.jpg";
-import naital  from "../../assert/nailtal.jpeg";
-import uttarakhandp  from "../../assert/uttarakhandp.jpg";
-import Kashmir  from "../../assert/Kashmir.jpg";
-import Kerala  from "../../assert/Keralap.jpg";
-import Ooty  from "../../assert/oty.jpeg";
-import Kolkata  from "../../assert/kolkata.jpeg";
-import Kochi  from "../../assert/kochi.jpeg";
+import Lucknow from "../../assert/Lucknow.jpg";
+import srilanka  from "../../assert/srilanka.jpg";
+import Hyderabad  from "../../assert/Hyderabad.jpg";
+import Shillong  from "../../assert/Shillong, Meghalaya.jpg";
+import Coimbatore  from "../../assert/Coimbatore, Tamil Nadu.jpg";
+import Gangtok  from "../../assert/Gangtok.jpg";
+import pushkar  from "../../assert/pushkar.webp";
+import ladakh  from "../../assert/ladakh.jpeg";
 
 function Bus() {
   let cityarr:any[]=[]
@@ -241,75 +241,75 @@ function Bus() {
           <div className="m-5">
             <div className="roundede">
               <img
-                src={gujrat}
+                src={Lucknow}
                 alt=""
               />
 
             </div>
-            <h5 className="text-center mt-2">Gujarat</h5>
+            <h5 className="text-center mt-2">Lucknow</h5>
           </div>
           <div className="m-5">
             <div className="roundede">
               <img
-                src={naital}
+                src={srilanka}
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">Nailtal</h5>
+            <h5 className="text-center mt-2">Srilanka</h5>
           </div>
           <div className="m-5">
             <div className="roundede">
               <img
-                src={uttarakhandp}
+                src={Hyderabad}
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">uttarakhand</h5>
+            <h5 className="text-center mt-2">Hyderabad</h5>
           </div>
           <div className="m-5">
             <div className="roundede">
               <img
-                src={Kashmir}
+                src={Shillong}
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">Kashmir</h5>
+            <h5 className="text-center mt-2">Shillong</h5>
           </div>
           <div className="m-5">
             <div className="roundede">
               <img
-                src={Kerala}
+                src={Coimbatore}
                 alt=""
               />
             </div>
-            <h5 className="text-center  mt-2">Kerala</h5>
+            <h5 className="text-center  mt-2"> Tamil Nadu</h5>
           </div>
           <div className="m-5">
             <div className="roundede">
               <img
-                src={Ooty}
+                src={Gangtok}
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">Ooty</h5>
+            <h5 className="text-center mt-2">Gangtok</h5>
           </div>
           <div className="m-5">
             <div className="roundede">
               <img
-                src={Kolkata}
+                src={pushkar}
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">Kolkata</h5>
+            <h5 className="text-center mt-2">pushkar</h5>
           </div>
           <div className="m-5">
             <div className="roundede">
               <img
-                src={Kochi}
+                src={ladakh}
                 alt=""
               />
             </div>
-            <h5 className="text-center mt-2">kochi</h5>
+            <h5 className="text-center mt-2">ladakh</h5>
           </div>
         </div>
       </div>
