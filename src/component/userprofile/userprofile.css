@@ -1,0 +1,22 @@
+.alin{
+    display: flex!important;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.bg-change{
+    border-top-left-radius:25px ;
+    border-bottom-left-radius:25px ;
+    background-color:#1baf3dba;
+    color: white;
+}
+.text-muted{
+    color: rgb(225, 225, 225) !important;
+}
+.rediusss{
+    border-top-right-radius:25px ;
+    border-bottom-right-radius:25px ;
+}
+.shado{
+    box-shadow: -8px 8px 20px 0px gray;
+    border-radius: 25px;
+}
