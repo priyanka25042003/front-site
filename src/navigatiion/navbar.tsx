@@ -9,10 +9,16 @@ function Navbar() {
       navigate("home");
     }
   }
+  let userInfo = JSON.parse(localStorage.getItem("user") + "");
   useEffect(() => {
+    console.log(userInfo);
+
     navig();
   }, []);
-
+  function logout() {
+    localStorage.removeItem("user");
+    navigate("/singin");
+  }
   return (
     <div className="" onLoad={navig}>
       <nav className="navbar navbar-expand-lg navbar-light bg-light  p-3">
@@ -86,20 +92,18 @@ function Navbar() {
               </NavLink>
             </li>
           </ul>
-          <form className="form-inline my-2 my-lg-0">
-            <input
-              className="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button
-              className="btn btn-outline-success my-2 my-sm-0"
-              type="submit"
-            >
-              Search
-            </button>
-          </form>
+          <div className="form-inline my-2 my-lg-0">
+            {userInfo ? (
+              <button className="btn btn-outline-info" onClick={logout}>
+                {" "}
+                Sing out <i className="fa fa-sign-out"></i>{" "}
+              </button>
+            ) : (
+              <NavLink className="nav-link btn btn-outline-info" to={"singin"}>
+                Singin <span className="sr-only">(current)</span>
+              </NavLink>
+            )}
+          </div>
         </div>
       </nav>
       <Outlet />

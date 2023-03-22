@@ -1,0 +1,8 @@
+.redius{
+    border-radius: 25px  !important;
+}
+
+.rediuss{
+    transition: ease .6s;
+    box-shadow: -9px 13px 20px 4px gray;
+}
