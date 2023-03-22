@@ -21,6 +21,11 @@ import bus6 from "../assert/bus6.png";
 import hotel2 from "../assert/hotel2.png";
 import hotel1 from "../assert/hotel1.jpg";
 import hotel4 from "../assert/hotel4.png";
+import package1 from "../assert/package1.png";
+import package2 from "../assert/package2.png";
+import package3 from "../assert/package3.jpg";
+
+
 
 
 
@@ -356,10 +361,9 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">EaseMyTrip</h5>
+                              <h5 className="card-title">New User Offer</h5>
                               <p className="card-text">
-                              Users under this offer will get up to 25% discount up to Rs. 1000 off on hotel bookings
-                              </p>
+                              Register & Enjoy Great Discount on First Hotel Booking </p>
                               <p className="card-text">
                                 <small className="text-muted">
                                   Last updated 3 mins ago
@@ -386,11 +390,10 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">EaseMyTrip</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                              Users under this offer will get up to 25% discount up to Rs. 1000 off on hotel bookings
+
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
@@ -914,7 +917,7 @@ function Offers() {
                         <div className="row g-0 ">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={package1} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -924,13 +927,14 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">Leh</h5>
                               <p className="card-text">
-                               
+                               EaseMyTrip.com brings this exclusive 6 nights and 7 days holiday package of Ladakh through which you will get to explore the exotic beauty of Ladakh.
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                Starting From<br></br>
+                               <b>₹ 52999*</b> Per Person 
                                 </small>
                               </p>
                             </div>
@@ -944,7 +948,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={package2} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -954,13 +958,14 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title"> Kerala  </h5>
                               <p className="card-text">
-                                
+                              Holidays in Kerala offers sightseeing, travelling and relaxing experiences. Make your trip a rejuvenating experience with Kerala vacation.
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                Starting From<br></br>
+                               <b>₹ 10499*</b> Per Person 
                                 </small>
                               </p>
                             </div>
@@ -974,7 +979,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={package3} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -984,13 +989,14 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">Char Dham Yatra </h5>
                               <p className="card-text">
-                               
+                              The best time to undertake the Char Dham trip is between the months of April and June
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                Starting From<br></br>
+                               <b>₹ 82,699*</b> Per Person
                                 </small>
                               </p>
                             </div>
@@ -1004,7 +1010,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={package3} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
