@@ -14,7 +14,7 @@ import Ooty  from "../../assert/oty.jpeg";
 import Kolkata  from "../../assert/kolkata.jpeg";
 import Kochi  from "../../assert/kochi.jpeg";
 
-
+import Hotelmodel from "../model/hotelmodel";
 
 
 
@@ -97,6 +97,14 @@ function Hotel() {
   function navigat() {
     navigate("/hotallist/" + filterh.From + "/" + search.chackin + "/" + search.chackout);
   }
+  const [modelval, setmodelval]: any = useState();
+
+  function openmodel(value:any){
+    setmodelval(value)
+  }
+  function close() {
+    setmodelval()
+  }
   return (
     <div>
       <div className="bgg-image containerd">
@@ -131,7 +139,7 @@ function Hotel() {
                     <div
                       onClick={() => select(item)}
                       className="list-item"
-                    >
+                    >openmodel
                       {item}
                     </div>
                   );
@@ -256,7 +264,7 @@ function Hotel() {
                   height: 400,
                 }}
               >
-                <div className="card rounded-5 "  style={{ width: "18rem" }} >
+                <div className="card rounded-5 " onClick={() =>openmodel(value)}  style={{ width: "18rem" }} >
                   <div className="card-body">
                     <img className="card-img-top" src={value.img} style={{ width: "15rem" , height:"10rem"}} alt="" />
                     <p className="card-text">{value.hotel_type}</p>
@@ -279,7 +287,13 @@ function Hotel() {
       <div className="" >
         <Offers></Offers>
       </div>
+      {modelval?
+        <Hotelmodel close={() =>
+          close()
+        } datasoure={modelval}></Hotelmodel>:""
+      }
     </div>
+
   );
 }
 

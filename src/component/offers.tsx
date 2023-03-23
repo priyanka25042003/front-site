@@ -24,6 +24,9 @@ import hotel4 from "../assert/hotel4.png";
 import package1 from "../assert/package1.png";
 import package2 from "../assert/package2.png";
 import package3 from "../assert/package3.jpg";
+import package4 from "../assert/package4.jpg";
+import package5 from "../assert/package5.jpg";
+import package6 from "../assert/package6.jpg";
 
 
 
@@ -1010,7 +1013,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src={package3} style={{ height: "150px", width: "150px" }}
+                              src={package4} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -1020,13 +1023,15 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">Rishikesh </h5>
                               <p className="card-text">
-                              
+                              Rishikesh is a city in Uttarakhand state of India, located on the foothills of the Himalayan beside the Ganges River. 
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                Starting From<br></br>
+                               <b>₹7,999*</b> Per Person
+
                                 </small>
                               </p>
                             </div>
@@ -1040,7 +1045,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={package5} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -1050,13 +1055,14 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title"> Jaipur</h5>
                               <p className="card-text">
-                               
+                              Jaipur tour packages are highly sold due to the rich heritage and legacy that it offers. 
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                Starting From<br></br>
+                               <b>₹14,299*</b> Per Person
                                 </small>
                               </p>
                             </div>
@@ -1070,7 +1076,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={package6} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -1078,13 +1084,14 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title"> Shimla</h5>
                               <p className="card-text">
-                                
+                              Shimla tour packages are sold in great range and one comes to explore here natural beauty and rich greenery around.
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                Starting From<br></br>
+                               <b>₹12,099*</b> Per Person
                                 </small>
                               </p>
                             </div>
