@@ -27,6 +27,8 @@ import package3 from "../assert/package3.jpg";
 import package4 from "../assert/package4.jpg";
 import package5 from "../assert/package5.jpg";
 import package6 from "../assert/package6.jpg";
+import hotel5 from "../assert/hotel5.jpg";
+import hotel6 from "../assert/hotel6.png";
 
 
 
@@ -446,7 +448,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={hotel5} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -456,15 +458,43 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title"> Rajasthan</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                               
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                Starting From <h4>Rs. 7999</h4>
+                                </small>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="card mb-3 mt-3 ml-4 "
+                        style={{ maxWidth: "33rem" }}
+                      >
+                        <div className="row g-0">
+                          <div className="col-md-4">
+                            <img
+                              src={hotel6} style={{ height: "150px", width: "150px" }}
+
+                              className="img-fluid rounded-start m-3"
+                              alt="..."
+
+
+                            />
+                          </div>
+                          <div className="col-md-8">
+                            <div className="card-body">
+                              <h5 className="card-title"> Delhi</h5>
+                              <p className="card-text">
+                                
+                              </p>
+                              <p className="card-text">
+                                <small className="text-muted">
+                                Starting From <h4>Rs. 3899</h4>
                                 </small>
                               </p>
                             </div>
@@ -482,51 +512,17 @@ function Offers() {
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
-
-
                             />
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
                               <h5 className="card-title">Card title</h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                               
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
-                                </small>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="card mb-3 mt-3 ml-4 "
-                        style={{ maxWidth: "33rem" }}
-                      >
-                        <div className="row g-0">
-                          <div className="col-md-4">
-                            <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
-
-                              className="img-fluid rounded-start m-3"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
-                              <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
-                              </p>
-                              <p className="card-text">
-                                <small className="text-muted">
-                                  Last updated 3 mins ago
+                                Starting From <h4>Rs. 3899</h4>
                                 </small>
                               </p>
                             </div>
@@ -981,6 +977,7 @@ function Offers() {
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
+                         
                             <img
                               src={package3} style={{ height: "150px", width: "150px" }}
 
@@ -989,6 +986,7 @@ function Offers() {
 
 
                             />
+                          
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">

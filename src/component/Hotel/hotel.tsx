@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+  import React, { useEffect, useState } from "react";
 import "./hotel.css";
 import firebase from "firebase";
 import HorizontalGallery from "react-dynamic-carousel";
