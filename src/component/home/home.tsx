@@ -26,7 +26,7 @@ function home() {
       <div className="bggg-image containerdd">
         <div className="centeredd">
           <h1
-            className="text-left text-muted text-light fw-bold display-3"
+            className="text-left text-light fw-bold display-3"
             
             style={{ color: "gray" }}
           >
