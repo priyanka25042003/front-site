@@ -7,6 +7,7 @@ import {
   MDBCol,
   MDBIcon,
 } from "mdb-react-ui-kit";
+import Busmodel from "../model2/busmodel";
 import { useNavigate } from "react-router-dom";
 import Offers from "../offers";
 import Hotel from "../Hotel/hotel";
@@ -85,6 +86,14 @@ function Bus() {
   const navigate = useNavigate();
   function navigat() {
     navigate("/listbus/" + search.From + "/" + search.To + "/" + search.day);
+  }
+  const [modelval, setmodelval]: any = useState();
+
+  function openmodel(value:any){
+    setmodelval(value)
+  }
+  function close() {
+    setmodelval()
   }
   function hendelautosagetion(e: any) {
     setshowautosagetion(true);
@@ -355,6 +364,11 @@ function Bus() {
           <div className="">
             <Offers></Offers>
           </div>
+          {modelval?
+        <Busmodel close={() =>
+          close()
+        } datasoure={modelval}></Busmodel>:""
+      }
         </div>
       </>
     </div>
