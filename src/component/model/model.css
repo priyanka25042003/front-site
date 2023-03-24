@@ -1,6 +1,7 @@
 .modal-ku {
     width: 80rem;
     margin-left: -77%;
+    overflow: auto;
   }
   .holi_right_other{
     padding: 15px;
