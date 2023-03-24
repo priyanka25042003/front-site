@@ -42,7 +42,7 @@ function Listhotel() {
     infants: 0,
   });
   let razorPayOptions: any = {
-    key: "rzp_test_aEuup9ULohHsIp",
+    key: "rzp_test_LwoStFwFdLyg9e",
     amount: "",
     name: "Tour&Travels Agency",
     order_id: "",

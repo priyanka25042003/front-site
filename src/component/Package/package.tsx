@@ -6,7 +6,7 @@ import state from "../../assert/state.json";
 import HorizontalGallery from "react-dynamic-carousel";
 import firebase from "firebase";
 import imgnotfound from "../../assert/img_notF.jpg";
-
+import Packagemodel from "../model/packagemodel";
 function Package() {
   const [maindata, setmaindata]: any[] = useState([]);
 
@@ -127,9 +127,17 @@ function Package() {
       "/listpackage/" + search.from + "/" + search.to + "/" + search.day
     );
   }
+  const [modelval, setmodelval]: any = useState();
+
+  function openmodel(value:any){
+    setmodelval(value)
+  }
+  function close() {
+    setmodelval()
+  }
   return (
     <div>
-      <div className="cg-image " style={{ width: "100rem" }}></div>
+      <div className="cg-image "   style={{ width: "100rem" }}></div>
       <div className="m-1"></div>
       <div className=" hstack gap-3 bg-light text-dark d-flex justify-content-evenly shadow bg-body rounded rounded-pill algine">
         <div className="w-25    bg-body rounded">
@@ -232,7 +240,7 @@ function Package() {
                   height: 500,
                 }}
               >
-                <div className="card rounded-5 " style={{ width: "18rem" }}>
+                <div className="card rounded-5 "  onClick={()=>openmodel(value)} style={{ width: "18rem" }}>
                   <div className="card-body">
                     <img className="card-img-top" src={value.img ? value.img : imgnotfound} alt={value.img ? value.img : imgnotfound} />
                     <h3 className="card-title">{value.package_name}</h3>
@@ -266,6 +274,11 @@ function Package() {
         <div className="">
           <Offers></Offers>
         </div>
+        {modelval?
+        <Packagemodel close={() =>
+          close()
+        } datasoure={modelval}></Packagemodel>:""
+      }
       </div>
     </div>
   );

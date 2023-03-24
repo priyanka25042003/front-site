@@ -3,13 +3,17 @@ import "./model.css";
 import ac from "../../assert/air-conditioner-icon.png";
 import { useNavigate } from "react-router";
 import firebase from "firebase";
+import Seate from "../seate/seat";
 declare var Razorpay: any;
 
-export default function Hotelmodel(props: any) {
-  const [dataaaaa, setdata]: any = useState(props);
+export default function Flightmodel(props: any) {
+  const [dataaa, setdata]: any = useState(props);
   const [localinfo, setlocalinfo]: any = useState([]);
-  let navigate = useNavigate();
-
+  console.log(dataaa);
+  
+  const [book, setbook]: any = useState(false);
+  const [tabIndex, settabIndex]: any = useState(0);
+  const [seate, setseate]: any[] = useState([]);
   let data: any = {};
 
   const [userInfo, setUserInfo]: any[] = useState({
@@ -23,28 +27,11 @@ export default function Hotelmodel(props: any) {
     child: 0,
     infants: 0,
   });
-  function setinfo(data: any) {
-    let name: any = Object.keys(data);
-    // {adults:1}
-    // name = [adults] name[0] = adults
-    // let qwee = daa
-    // info[name] = data[name]
-    // setinfos(info)
-    setinfos({ ...info, [name[0]]: data[name[0]] });
-    console.log(info);
-  }
-  function setuserinfo(event: any) {
-    let name: any = event.target.name;
-    let value: any = event.target.value;
-    setUserInfo({ ...userInfo, [name]: value });
-    console.log(userInfo);
-  }
-  console.log(data);
-  const [book, setbook]: any = useState(false);
-  const [tabIndex, settabIndex]: any = useState(0);
-  function close() {
-    props.close();
-  }
+  useEffect(() => {
+    setlocalinfo(JSON.parse(localStorage.getItem("user") + ""));
+
+  }, [])
+  let navigate = useNavigate();
   let razorPayOptions: any = {
     key: "rzp_test_LwoStFwFdLyg9e",
     amount: "",
@@ -78,33 +65,26 @@ export default function Hotelmodel(props: any) {
       color: "#0096C5",
     },
   };
-  function next() {
-    if (tabIndex == 0) {
-      if (
-        userInfo.name &&
-        userInfo.age &&
-        userInfo.idproof &&
-        userInfo.idproofNumber&&
-        userInfo.rooms
-
-      ) {
-        settabIndex(1);
-      }
-    } else if (tabIndex == 1) {
-      
-      Object.assign(data, userInfo, info, book);
-      console.log(data);
-
-      let total_set: any;
-      let price: any;
-      total_set = userInfo.rooms;
-      price = data.Singledelux_room;
-      let p = total_set * price
-      proceed(p);
-
+  function responhendel(res?: any): any {
+    let paymentID = res
+    if (paymentID) {
+      data.paymentid =paymentID?.razorpay_payment_id
+      booking(data)
     }
   }
+  function setinfo(data: any) {
+    let name: any = Object.keys(data);
+    // {adults:1}
+    // name = [adults] name[0] = adults
+    // let qwee = daa
+    // info[name] = data[name]
+    // setinfos(info)
+    setinfos({ ...info, [name[0]]: data[name[0]] });
+    console.log(info);
+  }
   function booking(item: any) {
+    // data.item = item;
+
     firebase
       .database()
       .ref("/booking")
@@ -116,20 +96,70 @@ export default function Hotelmodel(props: any) {
         console.log(err);
       });
   }
-  function responhendel(res?: any): any {
-    let paymentID = res;
-    
-    if (paymentID) {
-      data.paymentid = paymentID?.razorpay_payment_id;
-      data.bookingOf = "hotel"
+  function next() {
+    if (tabIndex == 0) {
+      if (
+        userInfo.name &&
+        userInfo.age &&
+        userInfo.idproof &&
+        userInfo.idproofNumber
+      ) {
+        settabIndex(1);
+      }
+    } else if (tabIndex == 1 && seate.length > 0) {
+      settabIndex(2);
+    } else if (tabIndex == 2) {
+      Object.assign(data,userInfo,seate,info,book)
+      // data.userinfo = userInfo;
+      // data.seate = seate;
+      // data.pasenger = info;
+      // data.flight = book;
+      console.log(data);
+      let total_set: any;
+      let prise: any;
+      switch (userInfo.booking_class) {
+        case "eco":
+          total_set =
+            data.adults + data.child + data.infants;
+          prise = data.economy_class;
+          proceed(total_set * prise);
+          break;
+
+        case "first":
+          total_set =
+            data.adults + data.child + data.infants;
+          prise = data.first_class;
+          proceed(total_set * prise);
+          break;
+
+        case "business":
+          total_set =
+            data.adults + data.child + data.infants;
+          prise = data.business_class;
+          proceed(total_set * prise);
+          break;
+      }
       booking(data);
     }
   }
+  function sendData(sate: any) {
+    console.log(sate);
+    setseate(sate);
+  }
+  function setuserinfo(event: any) {
+    let name: any = event.target.name;
+    let value: any = event.target.value;
+    setUserInfo({ ...userInfo, [name]: value });
+    console.log(userInfo);
+  }
   function proceed(amount: any) {
-    razorPayOptions.amount = amount * 100;
+    razorPayOptions.amount = amount* 100
     var rzp1 = new Razorpay(razorPayOptions);
     rzp1.open();
-    responhendel(razorPayOptions.handler);
+    responhendel(razorPayOptions.handler)
+  }
+  function close() {
+    props.close();
   }
   return (
     <>
@@ -143,10 +173,10 @@ export default function Hotelmodel(props: any) {
           aria-hidden="true"
         >
           <div className="modal-dialog">
-            <div className="modal-content  modal-ku">
+            <div className="modal-content modal-ku">
               <div className="modal-header">
                 <h3 className=" ml-5 text-muted">
-                  {dataaaaa.datasoure.hotel_name}
+                  {dataaa.datasoure.flight_name}
                 </h3>
                 <button
                   type="button"
@@ -165,19 +195,19 @@ export default function Hotelmodel(props: any) {
                       <img
                         className="w-75 h-25"
                         width={500}
-                        src={dataaaaa.datasoure.img}
+                        src={dataaa.datasoure.img}
                         alt=""
                       />
                     </div>
                     <div className="container ml-5">
                       <p className="mt-3 text-muted">
-                        {dataaaaa.datasoure.hotel_type}{" "}
+                        {dataaa.datasoure.flight_seate_type}{" "}
                       </p>
                       <div className=" mt-4  d-flex">
-                        <p className="font-weight-bold"> City : </p>{" "}
-                        {dataaaaa.datasoure.city}
+                        <p className="font-weight-bold"> city : </p>{" "}
+                        {dataaa.datasoure.city}
                         <div className="ml-5">
-                          { dataaaaa.datasoure.city ? <img width={40} src={ac} alt="" /> :""}
+                          { dataaa.datasoure.city ? <img width={40} src={ac} alt="" /> :""}
                         </div>
                         <div className="ml-5">
                         <i className="fa fa-wifi fa-2x" aria-hidden="true"></i>
@@ -186,7 +216,7 @@ export default function Hotelmodel(props: any) {
                       </div>
                       <div className="border rounded shadow p-3">
                         <h5 className="text-muted mb-4">Description:-</h5>
-                        {dataaaaa.datasoure.description}
+                        {dataaa.datasoure.description}
                       </div>
                     </div>
                   </div>
@@ -194,22 +224,22 @@ export default function Hotelmodel(props: any) {
                     <div className="d-flex justify-content-center mt-5">
                       <div className="mt-0 shadow w-75 ">
                         <div className="text-center mt-3">
-                          <h3>₹ {dataaaaa.datasoure.doubledelux_room} </h3>{" "}
-                          <p>Per person</p>
+                          <h3>₹ {dataaa.datasoure.economy_class} </h3>{" "}
+                          <p>Per seate</p>
                         </div>
                         <div className="d-flex justify-content-center mt-5 mb-4">
                           <div className=" w-75">
                             <button className="btn btn-lg w-100 btn-success p-2" onClick={() =>
-                              localinfo ? setbook(dataaaaa.datasoure) : navigate("/singin")
+                              localinfo ? setbook(dataaa.datasoure) : navigate("/singin")
                             }>
-                              Book Hotel
+                              Book Bus
                             </button>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div className="d-flex justify-content-center mt-5">
-                      <div className="holi_right_other w-75">
+                      <div className="holli_right_other w-75">
                         <h3 className="nh_color fs_18">Feel free to call us</h3>
                         <p className="mb-3 mt-3 pb-2 border-bottom"></p>
                         <span className="d-block fs-12">
@@ -254,6 +284,7 @@ export default function Hotelmodel(props: any) {
           </div>
         </div>
       </div>
+
       {book ? (
         <div
           id="myModal"
@@ -302,17 +333,17 @@ export default function Hotelmodel(props: any) {
                       Information
                     </p>
                   </li>
-                  {/* <li className="nav-item m-1" role="presentation">
+                  <li className="nav-item m-1" role="presentation">
                     <p
                       className={tabIndex == 1 ? "nav-link active" : "nav-item"}
                       id="profile-tab"
                     >
                       Payment
                     </p>
-                  </li> */}
+                  </li>
                   <li className="nav-item m-1" role="presentation">
                     <p
-                      className={tabIndex == 1 ? "nav-link active" : "nav-item"}
+                      className={tabIndex == 2 ? "nav-link active" : "nav-item"}
                       id="messages-tab"
                     >
                       Messages
@@ -722,7 +753,7 @@ export default function Hotelmodel(props: any) {
                         onChange={(e) => setuserinfo(e)}
                         className={
                           userInfo.idproofNumber == null ||
-                            userInfo.idproofNumber == ""
+                          userInfo.idproofNumber == ""
                             ? "form-control is-invalid  "
                             : "form-control "
                         }
@@ -733,35 +764,42 @@ export default function Hotelmodel(props: any) {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="formGroupExampleInput2">Rooms</label>
-                      <input
-                        type="number"
-                        min={1}
-                        max={6}
-                        onChange={(e) => setuserinfo(e)}
+                      <label htmlFor="exampleFormControlSelect1">
+                        Document
+                      </label>
+                      <select
                         className={
-                          userInfo.rooms == null ||
-                            userInfo.rooms == ""
-                            ? "form-control is-invalid  "
+                          userInfo.booking_class == null ||
+                          userInfo.booking_class == ""
+                            ? "form-control is-invalid"
                             : "form-control "
                         }
-                        value={info.adults >= 4 && info.adults <= 5 ? 2 : '' || info.adults >= 6 && info.adults <= 7 ? 4 : '' || info.adults >= 8 ? 6 : ''}
-                        name="rooms"
-                        id="formGroupExampleInput2"
+                        onChange={(e) => setuserinfo(e)}
+                        name="booking_class"
+                        id="exampleFormControlSelect1"
                         required
-                        placeholder="Rooms"
-                      />
+                      >
+                        <option value="eco">ECONOMY</option>
+                        <option value="first">FIRST CLASS</option>
+                        <option value="business">BUSINESS CLASS</option>
+                      </select>
                     </div>
                   </div>
 
-                  {/* <div
+                  <div
                     className={tabIndex == 1 ? "tab-pane active" : "tab-pane"}
                     id="home"
                     role="tabpanel"
                     aria-labelledby="home-tab"
-                  ></div> */}
+                  >
+                    <div className="">
+                      <Seate
+                        sendData={(seates: any) => sendData(seates)}
+                      ></Seate>
+                    </div>
+                  </div>
                   <div
-                    className={tabIndex == 1 ? "tab-pane active" : "tab-pane"}
+                    className={tabIndex == 2 ? "tab-pane active" : "tab-pane"}
                     id="home"
                     role="tabpanel"
                     aria-labelledby="home-tab"
@@ -782,6 +820,19 @@ export default function Hotelmodel(props: any) {
                           </div>
                         </div>
                         <br />
+                        <div className="col-5 text-center h6 mt-4 text-muted">
+                          {book.arrival_time} <br />
+                          {book.from_location}
+                        </div>
+
+                        <div className="col-2 text-center  mt-4 text-dark">
+                          TO
+                        </div>
+                        <div className="col-5 text-center h6  mt-4 text-muted">
+                          {book.departure_time}
+                          <br />
+                          {book.to_location}
+                        </div>
                         <div className="col-4 text-center h6  mt-4 text-muted">
                           ADULTS <br />
                           {info.adults}
@@ -795,33 +846,19 @@ export default function Hotelmodel(props: any) {
                           {info.infants}
                         </div>
                         <div className="col-12 text-center h6  mt-4 text-muted">
-                          Rooms <br />
-                          {userInfo.rooms}
-                        </div>
-                        <div className="col-12 text-center h6  mt-4 text-muted">
-
-                          <img src={book.img} width={200} height={200} alt="" />
-                        </div>
-                        <div className="col-4 text-center h6  mt-4 text-muted">
-                          Hotel Name <br />
-                          {book.hotel_name}
-                        </div>
-                        <div className="col-4 text-center h6  mt-4 text-muted">
-                          Hotel Type <br />
-                          {book.hotel_type}
-                        </div>
-                        <div className="col-4 text-center h6  mt-4 text-muted">
-                          Location <br />
-                          {book.city}
-                        </div>
-
-                        <div className="col-6 text-center h6  mt-4 text-muted">
-                          Address <br />
-                          {book.street_address}
-                        </div>
-                        <div className="col-6 text-center h6  mt-4 text-muted">
-                          Price/Rooms <br />
-                          ₹ {book.Singledelux_room}
+                          SEATE <br />
+                          <ul className="list-inline">
+                            {seate.map((i: any, index: any) => {
+                              let lIndex = seate.length;
+                              console.log(index == lIndex);
+                              return (
+                                <li className="list-inline-item">
+                                  {i}
+                                  {index == lIndex - 1 ? "" : ","}
+                                </li>
+                              );
+                            })}
+                          </ul>
                         </div>
                       </div>
                     </div>
@@ -835,6 +872,8 @@ export default function Hotelmodel(props: any) {
       ) : (
         ""
       )}
+
+
     </>
   );
 }

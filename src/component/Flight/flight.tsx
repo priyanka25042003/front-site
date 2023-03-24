@@ -13,6 +13,7 @@ import Kerala  from "../../assert/Keralap.jpg";
 import Ooty  from "../../assert/oty.jpeg";
 import Kolkata  from "../../assert/kolkata.jpeg";
 import Kochi  from "../../assert/kochi.jpeg";
+import Flightmodel from "../model/flightmodel";
 
 
 function Flight() {
@@ -117,6 +118,14 @@ function Flight() {
       setshowautofrom(false);
     }
     console.log(search);
+  }
+  const [modelval, setmodelval]: any = useState();
+
+  function openmodel(value:any){
+    setmodelval(value)
+  }
+  function close() {
+    setmodelval()
   }
 
   return (
@@ -306,7 +315,7 @@ function Flight() {
                     height: 500,
                   }}
                 >
-                  <div className="card rounded-5 " style={{ width: "18rem" }}>
+                  <div className="card rounded-5 " onClick={()=>openmodel(value)} style={{ width: "18rem" }}>
                     <div className="card-body">
                       <img className="card-img-top" src={value.img} style={{ width: "15rem" , height:"10rem"}} alt="" />
                       {/* <h6 className="card-text">{value.flight_name}</h6> */}
@@ -341,6 +350,11 @@ function Flight() {
       <div className="">
         <Offers></Offers>
       </div>
+      {modelval?
+        <Flightmodel close={() =>
+          close()
+        } datasoure={modelval}></Flightmodel>:""
+      }
     </div>
   );
 }

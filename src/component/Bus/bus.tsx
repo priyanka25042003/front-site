@@ -7,7 +7,7 @@ import {
   MDBCol,
   MDBIcon,
 } from "mdb-react-ui-kit";
-import Busmodel from "../model2/busmodel";
+import Busmodel from "../model/busmodel";
 import { useNavigate } from "react-router-dom";
 import Offers from "../offers";
 import Hotel from "../Hotel/hotel";
@@ -335,7 +335,7 @@ function Bus() {
                   height: 500,
                 }}
               >
-                <div className="card rounded-5 "  style={{ width: "18rem" }} >
+                <div className="card rounded-5 " onClick={()=>openmodel(value)}  style={{ width: "18rem" }} >
                   <div className="card-body">
                     <img className="card-img-top" src={value.img} alt="" />
                     <p className="card-text">{value.bus_type}</p>
