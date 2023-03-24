@@ -1,6 +1,26 @@
-import React from 'react'
+import firebase from 'firebase';
+import React, { useState } from 'react'
 
 function Contact() {
+    const [userfeed, setuserfeed] :any= useState()
+    function feed(params:any) {
+        let name = params.terget.name;
+        let value = params.terget.value;
+        setuserfeed({ ...userfeed, [name]: value });
+    }
+    function submit() {
+        firebase
+        .database()
+        .ref("/feedback/")
+        .push(userfeed)
+        .then((res) => {
+          console.log(res);
+          alert("Your Response is send")
+        })
+        .catch((err) => {
+
+        });
+    }
     return (
         <div>
             <div className="hero hero-inner">
@@ -8,7 +28,7 @@ function Contact() {
                     <div className="row align-items-center">
                         <div className="col-lg-6 mx-auto text-center text-#1A374D ">
                             <div className="intro-wrap ">
-                                <h1 className="mb-0 text-white">Contact  Us</h1>
+                                <h1 className="mb-0 text-wsubjectite">Contact  Us</h1>
                                 <p className="text-white">"Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of hours to help you."
                                 </p>
                             </div>
@@ -21,31 +41,31 @@ function Contact() {
                     <div className="col-lg-6 mb-5 mb-lg-0">
                         <form className="contact-form aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
                             <div className="row">
-                                <div className="col-6">
+                                <div className="col-12">
                                     <div className="form-group">
                                         <label className="text-black" htmlFor="fname">First name</label>
-                                        <input type="text" className="form-control" id="fname" />
+                                        <input type="text" className="form-control" name='name' onChange={(e)=>feed(e)} id="fname" />
                                     </div>
                                 </div>
-                                <div className="col-6">
+                                <div className="col-12">
                                     <div className="form-group">
                                         
-                                        <label className="text-black" htmlFor="lname">Last name</label>
-                                        <input type="text" className="form-control" id="lname"></input>
+                                        <label className="text-black" htmlFor="lname">Phone .NO</label>
+                                        <input type="text" className="form-control" name="phone" onChange={(e)=>feed(e)}  id="lname"></input>
                                     </div>
 
                                 </div>
                             </div>
                             <div className="form-group">
                                 <label className="text-black" htmlFor="email">Email address</label>
-                                <input type="email" className="form-control" id="email"></input>
+                                <input type="email" className="form-control " onChange={(e)=>feed(e)} name="email"  id="email"></input>
                             </div>
                             <div className="form-group">
                                 <label className="text-black" htmlFor="message">Message</label>
-                                <textarea className="form-control" id="exampleFormControlTextarea1" rows={3}></textarea>
+                                <textarea className="form-control" onChange={(e)=>feed(e)} name="message"  id="exampleFormControlTextarea1" rows={3}></textarea>
 
                             </div>
-                            <button type="submit" className="btn btn-primary">Send Message</button>
+                            <button type="submit" className="btn btn-primary" onClick={submit}>Send Message</button>
                         </form>
                     </div>
                     <div className="col-lg-5 ml-auto mt-4  text-center">

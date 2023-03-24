@@ -32,6 +32,11 @@ import hotel8 from "../assert/hotel8.png";
 import hotel10 from "../assert/hotel10.png";
 import hotel11 from "../assert/hotel11.png";
 import flight1 from "../assert/flight1.png";
+import flight2 from "../assert/flight2.png";
+import flight3 from "../assert/flight3.png";
+import flight4 from "../assert/flight4.png";
+import flight5 from "../assert/flight5.png";
+import flight6 from "../assert/flight6.png";
 
 
 
@@ -450,7 +455,7 @@ function Offers() {
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
-                          <div className="col-md-4">flight1
+                          <div className="col-md-4">
                             <img
                               src={hotel8} style={{ height: "150px", width: "150px" }}
 
@@ -579,7 +584,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src={plan2}
+                              src={flight2}
                               className="img-fluid rounded-start m-3"
                               alt="..."
                               style={{ height: "150px", width: "150px" }}
@@ -588,13 +593,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Indigo Airlines</h5>
+                              <h5 className="card-title">Flight Deal</h5>
                               <p className="card-text">
-                                FLAT Rs.550 OFF* | India Flights
+                              Get Discount up to 35% on Booking Flight Tickets
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Expries on 31st December 2023
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>
@@ -608,7 +613,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src={plan3}
+                              src={flight6}
                               className="img-fluid rounded-start m-3"
                               alt="..."
                               style={{ height: "150px", width: "150px" }}
@@ -617,13 +622,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">SpiceJet</h5>
+                              <h5 className="card-title"> Standard Chartered</h5>
                               <p className="card-text">
-                                FLAT Rs.550 OFF* | India Flights
+                              Book Travel using Standard Chartered EaseMyTrip Credit Card to save huge! 
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Expries on 31st December 2023
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>
@@ -637,7 +642,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src={plan4}
+                              src={flight3}
                               style={{ height: "150px", width: "150px" }}
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -646,13 +651,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">AirAsia India</h5>
+                              <h5 className="card-title"> Fly Couple</h5>
                               <p className="card-text">
-                                FLAT Rs.550 OFF* | India Flights
+                              Get Up to Rs. 2500 Off on Booking Flight Tickets for Two Persons
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Expries on 31st December 2023
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>
@@ -666,7 +671,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src={plan5}style={{ height: "150px", width: "150px" }}
+                              src={flight4}style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -675,17 +680,17 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Go First</h5>
+                              <h5 className="card-title">Fly Family</h5>
                               <p className="card-text">
-                                FLAT Rs.550 OFF* | India Flights
+                              Enjoy Up to Rs. 3000 Off on Booking Flight Tickets for your Family
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Expries on 31st December 2023
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>
-                          </div>nav-bus-tab
+                          </div>
                         </div>
                       </div>
                       <div
@@ -695,7 +700,7 @@ function Offers() {
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src={plan6} style={{ height: "150px", width: "150px" }}
+                              src={flight5} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -703,13 +708,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Air India</h5>
+                              <h5 className="card-title"> Senior Citizens Offer</h5>
                               <p className="card-text">
-                                FLAT Rs.550 OFF* | India Flights
+                              Book Flights to Avail Special Discounts for Senior Citizens
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Expries on 31st December 2023Users under this offer will get up to 25% discount up to Rs. 1000 off on hotel bookings
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>

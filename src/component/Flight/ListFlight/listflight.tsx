@@ -17,7 +17,7 @@ function Listflight() {
   const [tabIndex, settabIndex]: any = useState(0);
   const [seate, setseate]: any[] = useState([]);
   let data: any = {};
- 
+
   const [userInfo, setUserInfo]: any[] = useState({
     name: " ",
     age: " ",
@@ -102,13 +102,13 @@ function Listflight() {
     console.log(info);
   }
   function proceed(amount: any) {
-    razorPayOptions.amount = amount* 100
-    data.pyment = amount
+    console.log(data, amount);
+    razorPayOptions.amount = amount * 100
     var rzp1 = new Razorpay(razorPayOptions);
     rzp1.open();
     responhendel(razorPayOptions.handler)
   }
-  
+
   function getdata() {
     let arr: any[] = [];
     let filter: any[] = [];
@@ -142,7 +142,7 @@ function Listflight() {
   function responhendel(res?: any): any {
     let paymentID = res
     if (paymentID) {
-      data.paymentid =paymentID?.razorpay_payment_id
+      data.paymentid = paymentID?.razorpay_payment_id
       data.bookingOf = "flight"
 
       booking(data)
@@ -150,7 +150,7 @@ function Listflight() {
   }
 
   function booking(item: any) {
-  
+
     firebase
       .database()
       .ref("/booking")
@@ -175,7 +175,7 @@ function Listflight() {
     } else if (tabIndex == 1 && seate.length > 0) {
       settabIndex(2);
     } else if (tabIndex == 2) {
-      Object.assign(data,userInfo,seate,info,book)
+      Object.assign(data, userInfo, seate, info, book)
       // data.userinfo = userInfo;
       // data.seate = seate;
       // data.pasenger = info;
@@ -188,6 +188,8 @@ function Listflight() {
           total_set =
             data.adults + data.child + data.infants;
           prise = data.economy_class;
+          data.pyment = prise
+
           proceed(total_set * prise);
           break;
 
@@ -195,13 +197,18 @@ function Listflight() {
           total_set =
             data.adults + data.child + data.infants;
           prise = data.first_class;
+          data.pyment = prise
+
           proceed(total_set * prise);
+
           break;
 
         case "business":
           total_set =
             data.adults + data.child + data.infants;
           prise = data.business_class;
+          data.pyment = prise
+
           proceed(total_set * prise);
           break;
       }
@@ -440,16 +447,16 @@ function Listflight() {
                     <>
                       <tr key={index}>
                         <td>
-                        {!    item.img?<img
+                          {!item.img ? <img
                             src="https://previews.123rf.com/images/farang/farang1112/farang111200023/11537629-jet-airplane-in-a-sky-at-sunset-time-square-composition-.jpg"
                             alt=""
                             width={150}
-                          />:<img
-                          src={item.img}
-                          alt=""
-                          width={150}
-                        />}
-                          
+                          /> : <img
+                            src={item.img}
+                            alt=""
+                            width={150}
+                          />}
+
                           &nbsp;&nbsp;&nbsp;&nbsp; &AirIndia
                         </td>
                         <td>{item.flight_name}</td>
@@ -985,7 +992,7 @@ function Listflight() {
                         onChange={(e) => setuserinfo(e)}
                         className={
                           userInfo.idproofNumber == null ||
-                          userInfo.idproofNumber == ""
+                            userInfo.idproofNumber == ""
                             ? "form-control is-invalid  "
                             : "form-control "
                         }
@@ -1002,7 +1009,7 @@ function Listflight() {
                       <select
                         className={
                           userInfo.booking_class == null ||
-                          userInfo.booking_class == ""
+                            userInfo.booking_class == ""
                             ? "form-control is-invalid"
                             : "form-control "
                         }
