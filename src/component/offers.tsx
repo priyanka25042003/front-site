@@ -26,9 +26,15 @@ import package2 from "../assert/package2.png";
 import package3 from "../assert/package3.jpg";
 import package4 from "../assert/package4.jpg";
 import package5 from "../assert/package5.jpg";
-import package6 from "../assert/package6.jpg";
-import hotel5 from "../assert/hotel5.jpg";
-import hotel6 from "../assert/hotel6.png";
+import package6 from "../assert/package6.jpg";  
+import hotel7 from "../assert/hotel7.png";
+import hotel8 from "../assert/hotel8.png";
+import hotel10 from "../assert/hotel10.png";
+import hotel11 from "../assert/hotel11.png";
+import flight1 from "../assert/flight1.png";
+
+
+
 
 
 
@@ -164,7 +170,7 @@ function Offers() {
                   >
                     <div className="row row-cols-1 mx-1 row-cols-md-2 g-4">
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0 ">
@@ -193,7 +199,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -223,7 +229,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -253,7 +259,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -283,7 +289,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -312,7 +318,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -350,7 +356,7 @@ function Offers() {
                   >
                     <div className="row row-cols-1 mx-1 row-cols-md-2 g-4">
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0 ">
@@ -371,7 +377,7 @@ function Offers() {
                               Register & Enjoy Great Discount on First Hotel Booking </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>
@@ -379,7 +385,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -402,7 +408,7 @@ function Offers() {
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>
@@ -410,13 +416,13 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src={hotel4} style={{ height: "150px", width: "150px" }}
+                              src={hotel11} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -426,15 +432,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title">Couple Friendly Hotels </h5>
                               <p className="card-text">
-                                This is a wider card with supporting text below
-                                as a natural lead-in to additional content. This
-                                content is a little bit longer.
+                              Grab Discount Up to Rs. 250 on First Bus Booking with EaseMyTrip
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Last updated 3 mins ago
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>
@@ -442,13 +446,13 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
-                          <div className="col-md-4">
+                          <div className="col-md-4">flight1
                             <img
-                              src={hotel5} style={{ height: "150px", width: "150px" }}
+                              src={hotel8} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -458,13 +462,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title"> Rajasthan</h5>
+                              <h5 className="card-title"> Zero Cancellation fees on Hotel Bookings</h5>
                               <p className="card-text">
-                               
+                              Enjoy No Cancellation Fees on Domestic Hotel Bookings
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                Starting From <h4>Rs. 7999</h4>
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>
@@ -472,13 +476,13 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src={hotel6} style={{ height: "150px", width: "150px" }}
+                              src={hotel10} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -488,13 +492,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title"> Delhi</h5>
+                              <h5 className="card-title"> Hotels in Goa</h5>
                               <p className="card-text">
-                                
+                              Exciting Sale, Grab up to 50% OFF on Hotels in Goa
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                Starting From <h4>Rs. 3899</h4>
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>
@@ -502,13 +506,13 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
                           <div className="col-md-4">
                             <img
-                              src="https://modtel.travelerwp.com/wp-content/uploads/2022/04/Los-Angeles-400x400.jpg" style={{ height: "150px", width: "150px" }}
+                              src={hotel7} style={{ height: "150px", width: "150px" }}
 
                               className="img-fluid rounded-start m-3"
                               alt="..."
@@ -516,13 +520,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
+                              <h5 className="card-title"> Hotel offer</h5>
                               <p className="card-text">
-                               
+                              Last Minute Hotel Booking with up to 30% Discount
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                Starting From <h4>Rs. 3899</h4>
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>
@@ -539,13 +543,13 @@ function Offers() {
                   >
                     <div className="row row-cols-1 mx-1 row-cols-md-2 g-4">
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0 ">
                           <div className="col-md-4">
                             <img
-                              src={plan1}
+                              src={flight1}
                               className="img-fluid rounded-start m-3 m-3"
                               alt="..."
                               style={{ height: "150px", width: "150px" }}
@@ -554,14 +558,14 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Air India</h5>
+                              <h5 className="card-title">New User Offer </h5>
                               <p className="card-text">
-                                FLAT Rs.650 OFF* | India Flights
+                              Get Discount on Booking First Flight with Us
 
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                  Expries on 31st December 2023
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>
@@ -569,7 +573,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -598,7 +602,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -627,7 +631,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -656,7 +660,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -685,7 +689,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -723,7 +727,7 @@ function Offers() {
                   >
                     <div className="row row-cols-1 mx-1 row-cols-md-2 g-4">
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0 ">
@@ -741,11 +745,12 @@ function Offers() {
                             <div className="card-body">
                               <h5 className="card-title"> Easy Bus</h5>
                               <p className="card-text">
-                              Users under this offer will 10% discount up to Rs.250 on their first Bus booking with Easybus.com
+                              Grab Discount Up to Rs. 250 on First Bus Booking with EaseMyTrip
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
                                 This offer is valid for first user
+                                <p>Till 31st Mar, 2023</p>
                                 </small>
                               </p>
                             </div>
@@ -753,7 +758,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -769,13 +774,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Big Bus</h5>
+                              <h5 className="card-title">Bus Deal</h5>
                               <p className="card-text">
-                              Users will get 5% instant discount (up to Rs.500) on bus tickets
+                              Enjoy Bus Tickets to Different Destinations At A Discount up to Rs. 500
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                This offer is valid for first user
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>
@@ -783,7 +788,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -799,13 +804,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Express Line 	</h5>
+                              <h5 className="card-title">Yolo Bus offer	</h5>
                               <p className="card-text">
-                              Users will get up to Rs. 150 instant discount on bus tickets for all major bus routes
+                              Get Flat 10% Off on Booking Yolo Bus Tickets with EaseMyTrip
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                This offer is valid for first user
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>
@@ -813,7 +818,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -829,13 +834,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Zoom Star</h5>
+                              <h5 className="card-title">Smart Offer</h5>
                               <p className="card-text">
-                              Users will get 10% instant discount (upto Rs.75) on Bus Tickets
+                              Book Intrcity Smart Bus Tickets And Enjoy 200 Flat Discount
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                This offer is valid for first user
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>
@@ -843,7 +848,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -859,13 +864,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Real Bus</h5>
+                              <h5 className="card-title">VRL Travel Offer</h5>
                               <p className="card-text">
-                              Users will get 12% (up to Rs. 100) instant discount on bus tickets for selected bus routes of VRL Travel
+                              Enjoy 12% Discount & Up to Rs.100 on VRL Travels Bus Tickets
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                This offer is valid for first user
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>
@@ -873,7 +878,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -887,13 +892,13 @@ function Offers() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">Minibus</h5>
+                              <h5 className="card-title">Bus offer</h5>
                               <p className="card-text">
-                              Users will get flat 100 off on booking Intercity Smart Bus tickets above 500 Rs. and flat 200 off on booking above 1000 Rs.
+                              Book Bus Tickets for Your Preferred Route at 10% Discount 
                               </p>
                               <p className="card-text">
                                 <small className="text-muted">
-                                This offer is valid for first user
+                                Till 31st Mar, 2023
                                 </small>
                               </p>
                             </div>
@@ -910,7 +915,7 @@ function Offers() {
                   >
                     <div className="row row-cols-1 mx-1 row-cols-md-2 g-4">
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0 ">
@@ -941,7 +946,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -972,7 +977,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -1005,7 +1010,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -1037,7 +1042,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
@@ -1068,7 +1073,7 @@ function Offers() {
                         </div>
                       </div>
                       <div
-                        className="card mb-3 mt-3 ml-4 "
+                        className="card mb-1 mt-3 ml-4 "
                         style={{ maxWidth: "33rem" }}
                       >
                         <div className="row g-0">
