@@ -20,3 +20,7 @@
     box-shadow: -8px 8px 20px 0px gray;
     border-radius: 25px;
 }
+.card :hover{
+background-clip: border-box;
+border-radius: .25rem;
+}

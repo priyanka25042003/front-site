@@ -103,6 +103,7 @@ function Listflight() {
   }
   function proceed(amount: any) {
     razorPayOptions.amount = amount* 100
+    data.pyment = amount
     var rzp1 = new Razorpay(razorPayOptions);
     rzp1.open();
     responhendel(razorPayOptions.handler)

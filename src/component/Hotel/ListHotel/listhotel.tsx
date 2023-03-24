@@ -81,6 +81,7 @@ function Listhotel() {
   }, []);
   function proceed(amount: any) {
     razorPayOptions.amount = amount * 100;
+    data.pyment = amount
     var rzp1 = new Razorpay(razorPayOptions);
     rzp1.open();
     responhendel(razorPayOptions.handler);
@@ -155,7 +156,7 @@ function Listhotel() {
     let unique2;
     maindatah.forEach((element: any) => {
       if (element.city == filterh.From) {
-        // console.log(!arr.find((e:any) => e.key == element.key) ,arr);
+        // console.log(!arr.find((e:any) => e.keybooking == element.key) ,arr);
         // if (!arr.find((e:any) => e.key == element.key)) {
         arr.push(element);
 
