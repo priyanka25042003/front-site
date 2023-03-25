@@ -3,22 +3,23 @@ import React, { useState } from 'react'
 
 function Contact() {
     const [userfeed, setuserfeed] :any= useState()
-    function feed(params:any) {
-        let name = params.terget.name;
-        let value = params.terget.value;
+    function feed(e:any) {
+        
+        let name = e.target.name;
+        let value = e.target.value;
         setuserfeed({ ...userfeed, [name]: value });
+        console.log(userfeed);
+        
     }
     function submit() {
         firebase
         .database()
-        .ref("/feedback/")
+        .ref("/contectus")
         .push(userfeed)
-        .then((res) => {
-          console.log(res);
-          alert("Your Response is send")
+        .then((res:any) => {
+        alert(res )
         })
-        .catch((err) => {
-
+        .catch((err:any) => {
         });
     }
     return (

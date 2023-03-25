@@ -29,6 +29,8 @@ export default function Busmodel(props: any) {
   });
   useEffect(() => {
     setlocalinfo(JSON.parse(localStorage.getItem("user") + ""));
+    console.log(localinfo);
+    
 
   }, [])
   let navigate = useNavigate();
@@ -152,7 +154,7 @@ export default function Busmodel(props: any) {
           aria-hidden="true"
         >
           <div className="modal-dialog">
-            <div className="modal-content modal-kui">
+            <div className="modal-content modal-ku">
               <div className="modal-header">
                 <h3 className=" ml-5 text-muted">
                   {dataaa.datasoure.bus_name}
@@ -218,7 +220,7 @@ export default function Busmodel(props: any) {
                       </div>
                     </div>
                     <div className="d-flex justify-content-center mt-5">
-                      <div className="holli_right_other w-75">
+                      <div className="holi_right_other w-75">
                         <h3 className="nh_color fs_18">Feel free to call us</h3>
                         <p className="mb-3 mt-3 pb-2 border-bottom"></p>
                         <span className="d-block fs-12">

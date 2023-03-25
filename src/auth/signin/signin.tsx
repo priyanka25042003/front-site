@@ -26,6 +26,17 @@ export default function Singin() {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then((userCredential: any) => {
+           firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings)
+    .then(() => {
+
+      window.localStorage.setItem('emailForSignIn', email);
+      // ...
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ...
+    });
         localStorage.setItem("user", JSON.stringify(userCredential));
         const user = userCredential.user;
         console.log(user);
