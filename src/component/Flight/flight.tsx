@@ -334,7 +334,6 @@ function Flight() {
                           <p>{value.arrival_time}</p>
                         </div>
                       </small>
-                      
                       <hr />
                     </div>
                   </div>
