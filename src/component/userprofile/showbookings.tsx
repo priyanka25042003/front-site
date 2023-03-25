@@ -10,6 +10,7 @@ function Showbookings() {
   useEffect(() => {
     getbookings();
   }, []);
+  let user:any = JSON.stringify(localStorage.getItem("user")+"") 
 
   function getbookings() {
     let arr: any[] = [];
@@ -45,21 +46,22 @@ function Showbookings() {
         <div className="col-4 bg-change" >
           <div className="container">
             <div className="mt-3">
-              <h2 className="text-muted">Sumit Patel</h2>
+              <h2 className="text-muted">{user.displayName}</h2>
               <hr className="hr" />
               <div className="mt-5  alin">
                 <div className="d-flex">
                   <p>Email : &nbsp;</p>
-                  <p className="text-muted"> patelsumit75757@gmail.com</p>
+                  <p className="text-muted"> {user.email}</p>
                 </div>
                 <div className="d-flex">
                   <p> Phone : &nbsp;</p>
-                  <p className="text-muted">+91 97249 46850</p>
+                  <p className="text-muted">{user.phone ?user.phone :"N/A" }</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        
         <div className="col-8 rediusss">
           <h3 className="text-muted mt-3">Bookings </h3>
           <div className="container">

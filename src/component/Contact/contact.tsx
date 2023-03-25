@@ -133,7 +133,7 @@ function Contact() {
                         <div className="row d-flex justify-content-center">
                             <div className="col-lg-8">
                                 <h5 className="mb-3 text-center">John Doe</h5>
-                                <p className=' text-center'>Web Developer</p>
+                                <p className=' text-center'>Web Developer</p>••••••••
                                 <p className="text-muted text-center">
                                     <i className="fa fa-quote-left pe-2"></i>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti
