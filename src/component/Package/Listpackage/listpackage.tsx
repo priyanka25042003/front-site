@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import firebase from 'firebase';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import firebase from "firebase";
+import { useNavigate, useParams } from "react-router-dom";
 declare var Razorpay: any;
 
 function Listpackage() {
-  const [maindata, setmaindata]: any[] = useState([])
+  const [maindata, setmaindata]: any[] = useState([]);
   const { from, to, day } = useParams();
-  const [filter ,setfilter]:any = useState([])
+  const [filter, setfilter]: any = useState([]);
   const [book, setbook]: any = useState(false);
   const [tabIndex, settabIndex]: any = useState(0);
   let data: any = {};
@@ -16,63 +16,64 @@ function Listpackage() {
     child: 0,
     infants: 0,
   });
+  let navigate = useNavigate();
 
-useEffect(() => {
-  getdata()
-}, [])
+  useEffect(() => {
+    getdata();
+  }, []);
 
-const [userInfo, setUserInfo]: any[] = useState({
-  name: " ",
-  age: " ",
-  idproof: " ",
-  idproofNumber: " ",
-});
+  const [userInfo, setUserInfo]: any[] = useState({
+    name: " ",
+    age: " ",
+    idproof: " ",
+    idproofNumber: " ",
+  });
+  const [localinfo, setlocalinfo]: any = useState([]);
 
-let razorPayOptions: any = {
-  key: "rzp_test_aEuup9ULohHsIp",
-  amount: "",
-  name: "Tour&Travels Agency",
-  order_id: "",
-  description: "Load Wallet",
-  image:
-    "https://livestatic.novopay.in/resources/img/nodeapp/img/Logo_NP.jpg",
-  prefill: {
+  let razorPayOptions: any = {
+    key: "rzp_test_aEuup9ULohHsIp",
+    amount: "",
     name: "Tour&Travels Agency",
+    order_id: "",
+    description: "Load Wallet",
+    image:
+      "https://livestatic.novopay.in/resources/img/nodeapp/img/Logo_NP.jpg",
+    prefill: {
+      name: "Tour&Travels Agency",
 
-    contact: "",
-    method: "",
-  },
-  handler: (response: any) => {
-    console.log(response);
-    responhendel(response);
-  },
-  modal: {
-    ondismiss: function () {
-      if (window.confirm("Are you sure, you want to close the form?")) {
-        let txt = "You pressed OK!";
-        console.log("Checkout form closed by the user");
-      } else {
-        let txt = "You pressed Cancel!";
-        console.log("Complete the Payment");
-      }
+      contact: "",
+      method: "",
     },
-  },
-  theme: {
-    color: "#0096C5",
-  },
-};
-function filterD(e:any){
-  let name:any = e.target.name
-  let val:any = e.target.value
-  setfilter({...filter ,[name]:val})
-  console.log(filter);
+    handler: (response: any) => {
+      console.log(response);
+      responhendel(response);
+    },
+    modal: {
+      ondismiss: function () {
+        if (window.confirm("Are you sure, you want to close the form?")) {
+          let txt = "You pressed OK!";
+          console.log("Checkout form closed by the user");
+        } else {
+          let txt = "You pressed Cancel!";
+          console.log("Complete the Payment");
+        }
+      },
+    },
+    theme: {
+      color: "#0096C5",
+    },
+  };
+  function filterD(e: any) {
+    let name: any = e.target.name;
+    let val: any = e.target.value;
+    setfilter({ ...filter, [name]: val });
+    console.log(filter);
+  }
+  function submit() {
+    console.log(filter);
+  }
 
-}
-function submit(){
-  console.log(filter);
-}  
-
-function setinfo(data: any) {
+  function setinfo(data: any) {
     let name: any = Object.keys(data);
     // {adults:1}
     // name = [adults] name[0] = adults
@@ -84,7 +85,7 @@ function setinfo(data: any) {
   }
   function getdata() {
     let arr: any[] = [];
-    let filter: any[] = []
+    let filter: any[] = [];
     firebase
       .database()
       .ref("/package")
@@ -95,7 +96,6 @@ function setinfo(data: any) {
         });
         setmaindata(arr);
         console.log(arr);
-        
       })
       .catch((err) => {
         console.log(err);
@@ -103,17 +103,17 @@ function setinfo(data: any) {
   }
   function proceed(amount: any) {
     razorPayOptions.amount = amount * 100;
-    data.pyment = amount
+    data.pyment = amount;
     var rzp1 = new Razorpay(razorPayOptions);
     rzp1.open();
     responhendel(razorPayOptions.handler);
   }
   function responhendel(res?: any): any {
     let paymentID = res;
-    
+
     if (paymentID) {
       data.paymentid = paymentID?.razorpay_payment_id;
-      data.bookingOf = "hotel"
+      data.bookingOf = "hotel";
       booking(data);
     }
   }
@@ -142,14 +142,12 @@ function setinfo(data: any) {
         userInfo.name &&
         userInfo.age &&
         userInfo.idproof &&
-        userInfo.idproofNumber&&
+        userInfo.idproofNumber &&
         userInfo.rooms
-
       ) {
         settabIndex(1);
       }
     } else if (tabIndex == 1) {
-      
       Object.assign(data, userInfo, info, book);
       console.log(data);
 
@@ -157,41 +155,58 @@ function setinfo(data: any) {
       let price: any;
       total_set = userInfo.rooms;
       price = data.Singledelux_room;
-      let p = total_set * price
+      let p = total_set * price;
       proceed(p);
-
     }
   }
   return (
     <div>
       <div>
-        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-          Filter
-        </button>
+     
 
-        <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div
+          className="modal fade"
+          id="exampleModal"
+          tabIndex={-1}
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">package Filter</h5>
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                <h5 className="modal-title" id="exampleModalLabel">
+                  package Filter
+                </h5>
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div className="modal-body">
-
                 <div className="">
                   <h5 className="">Locations</h5>
                   <div className="row">
                     <div className="col-sm-12">
                       <div className="mb-2">
-                        <label id="origin-label" htmlFor="origin-input" className="form-label">From</label                    >
+                        <label
+                          id="origin-label"
+                          htmlFor="origin-input"
+                          className="form-label"
+                        >
+                          From
+                        </label>
                         <div className="input-group">
-                          <span className="input-group-text"><i className="bi-pin-map"></i> </span>
+                          <span className="input-group-text">
+                            <i className="bi-pin-map"></i>{" "}
+                          </span>
                           <input
                             type="text"
                             name="From"
-                            onChange={(e)=>filterD(e)}
+                            onChange={(e) => filterD(e)}
                             className="form-control"
                             list="origin-options"
                             id="origin-input"
@@ -204,19 +219,26 @@ function setinfo(data: any) {
                     </div>
                     <div className="col-sm">
                       <div className="mb-2">
-                        <label id="destination-label" htmlFor="destination-input" className="form-label">To</label                     >
+                        <label
+                          id="destination-label"
+                          htmlFor="destination-input"
+                          className="form-label"
+                        >
+                          To
+                        </label>
                         <div className="input-group">
-                          <span className="input-group-text"><i className="bi-pin-map-fill"></i> </span>
+                          <span className="input-group-text">
+                            <i className="bi-pin-map-fill"></i>{" "}
+                          </span>
                           <input
                             type="text"
                             name="To"
-                            onChange={(e)=>filterD(e)}
+                            onChange={(e) => filterD(e)}
                             className="form-control"
                             list="destination-options"
                             id="destination-input"
                             placeholder="Location"
                             aria-describedby="destination-label"
-
                           />
                           <datalist id="destination-options"></datalist>
                         </div>
@@ -226,18 +248,26 @@ function setinfo(data: any) {
                 </div>
                 <div className="row">
                   <div className="mb-2 col-sm-12">
-                    <div className="h-100 "><br />
+                    <div className="h-100 ">
+                      <br />
                       <div className="card-body">
                         <h5 className="card-title">Dates</h5>
                         <div id="departure-date" className="mb-2">
-                          <label id="departure-date-label" htmlFor="departure-date-input" className="form-label"
-                          >strating date</label                   >
+                          <label
+                            id="departure-date-label"
+                            htmlFor="departure-date-input"
+                            className="form-label"
+                          >
+                            strating date
+                          </label>
                           <div className="input-group">
-                            <span className="input-group-text"><i className="bi-calendar"></i></span>
+                            <span className="input-group-text">
+                              <i className="bi-calendar"></i>
+                            </span>
                             <input
                               type="date"
                               name="Departure Data"
-                            onChange={(e)=>filterD(e)}
+                              onChange={(e) => filterD(e)}
                               className="form-control"
                               id="departure-date-input"
                               aria-describedby="departure-date-label"
@@ -245,20 +275,27 @@ function setinfo(data: any) {
                           </div>
                         </div>
                         <div id="return-date" className="mb-2">
-                          <label id="return-date-label" htmlFor="return-date-input" className="form-label">Ending date</label>
+                          <label
+                            id="return-date-label"
+                            htmlFor="return-date-input"
+                            className="form-label"
+                          >
+                            Ending date
+                          </label>
                           <div className="input-group">
-                            <span className="input-group-text"><i className="bi-calendar-fill"></i> </span>
+                            <span className="input-group-text">
+                              <i className="bi-calendar-fill"></i>{" "}
+                            </span>
                             <input
                               type="date"
                               name="Return Data"
-                              onChange={(e)=>filterD(e)}
+                              onChange={(e) => filterD(e)}
                               className="form-control"
                               id="return-date-input"
                               aria-describedby="return-date-label"
                             />
                           </div>
                         </div>
-
                       </div>
                     </div>
                   </div>
@@ -266,50 +303,106 @@ function setinfo(data: any) {
                 ...
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary" onClick={submit}>Save changes</button>
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={submit}
+                >
+                  Save changes
+                </button>
               </div>
             </div>
           </div>
         </div>
-
       </div>
 
-    <div className='mt-5  h-100  rounded shadow-lg'>
-      <table className="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col"> <small><b>Sorted By:</b></small>  </th>
-            <th scope="col"><small>packagename</small></th>
-            <th scope="col"><small>From</small></th>
-            <th scope="col"><small>to</small></th>
-            <th scope="col"><small>Strating date</small></th>
-            <th scope="col"><small>Ending date</small></th>
-            <th scope="col"><small> totalprice</small></th>
-          </tr>
-        </thead>
-        <tbody>
-          {maindata.map((item: any, index: any) => {
-
-            return (
-              <tr key={index}>
-                <td><img src={item!.img} alt="" width={40} />AirIndia
-                </td>
-                <td>{item.package_name}</td>
-                <td>{item.from_location}</td>
-                <td>{item.to_location}</td>
-                <td>{item.strating_date}</td>
+      <div className="mt-5  h-100  rounded shadow-lg">
+        <table className="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">
+                {" "}
+                <small>
+                  <b>Sorted By:</b>
+                </small>{" "}
+              </th>
+              <th scope="col">
+                <small>packagename</small>
+              </th>
+              <th scope="col">
+                <small>From</small>
+              </th>
+              <th scope="col">
+                <small>to</small>
+              </th>
+              <th scope="col">
+                <small>Strating date</small>
+              </th>
+              <th scope="col">
+                <small>Ending date</small>
+              </th>
+              <th scope="col">
+                <small> totalprice</small>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {maindata.map((item: any, index: any) => {
+              return (
+                <><tr key={index}>
+                  <td>
+                    <img src={item!.img} alt="" className="m-1" width={150} />
+                    AirIndia
+                  </td>
+                  <td>{item.package_name}</td>
+                  <td>{item.from_location}</td>
+                  <td>{item.to_location}</td>
+                  <td>{item.strating_date}</td>
                   <td>{item.endind_date}</td>
-                <td>{item.total_price}</td>
-              </tr>
-            )
-          })
-          }
+                  <td>{item.total_price ? "₹"+item.total_price : " "}</td>
 
-        </tbody>
-      </table>
-    </div>
-    {book ? (
+                  <td>
+                    <button
+                      className="btn btn-info rounded-circle m-3"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target={"#" + item.key}
+                      aria-expanded="false"
+                      aria-controls="collapseExample">
+                      <i
+                        className="fa fa-info-circle "
+                        aria-hidden="true"
+                      ></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      className="btn btn-primary btn-lg rounded-pill"
+                      onClick={() => localinfo ? setbook(item) : navigate("/singin")}
+                    >
+                      BOOK
+                    </button>
+                  </td>
+                </tr><tr>
+                    <td colSpan={9}>
+                      <div className="collapse w-100" id={item.key}>
+                        {item.description}
+                      </div>
+                    </td>
+                  </tr></>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      {book ? (
         <div
           id="myModal"
           className="modal d-block"
@@ -777,7 +870,7 @@ function setinfo(data: any) {
                         onChange={(e) => setuserinfo(e)}
                         className={
                           userInfo.idproofNumber == null ||
-                            userInfo.idproofNumber == ""
+                          userInfo.idproofNumber == ""
                             ? "form-control is-invalid  "
                             : "form-control "
                         }
@@ -795,12 +888,19 @@ function setinfo(data: any) {
                         max={6}
                         onChange={(e) => setuserinfo(e)}
                         className={
-                          userInfo.rooms == null ||
-                            userInfo.rooms == ""
+                          userInfo.rooms == null || userInfo.rooms == ""
                             ? "form-control is-invalid  "
                             : "form-control "
                         }
-                        value={info.adults >= 4 && info.adults <= 5 ? 2 : '' || info.adults >= 6 && info.adults <= 7 ? 4 : '' || info.adults >= 8 ? 6 : ''}
+                        value={
+                          info.adults >= 4 && info.adults <= 5
+                            ? 2
+                            : "" || (info.adults >= 6 && info.adults <= 7)
+                            ? 4
+                            : "" || info.adults >= 8
+                            ? 6
+                            : ""
+                        }
                         name="rooms"
                         id="formGroupExampleInput2"
                         required
@@ -854,7 +954,6 @@ function setinfo(data: any) {
                           {userInfo.rooms}
                         </div>
                         <div className="col-12 text-center h6  mt-4 text-muted">
-
                           <img src={book.img} width={200} height={200} alt="" />
                         </div>
                         <div className="col-4 text-center h6  mt-4 text-muted">
@@ -875,8 +974,7 @@ function setinfo(data: any) {
                           {book.street_address}
                         </div>
                         <div className="col-6 text-center h6  mt-4 text-muted">
-                          Price/Rooms <br />
-                          ₹ {book.Singledelux_room}
+                          Price/Rooms <br />₹ {book.Singledelux_room}
                         </div>
                       </div>
                     </div>
@@ -891,13 +989,7 @@ function setinfo(data: any) {
         ""
       )}
     </div>
-
-
-
-
-
-
-  )
+  );
 }
 
-export default Listpackage
+export default Listpackage;

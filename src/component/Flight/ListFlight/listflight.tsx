@@ -219,14 +219,7 @@ function Listflight() {
   return (
     <div>
       <div>
-        <button
-          type="button"
-          className="btn btn-primary"
-          data-toggle="modal"
-          data-target="#exampleModal"
-        >
-          Filter
-        </button>
+     
 
         <div
           className="modal fade"
@@ -515,14 +508,14 @@ function Listflight() {
       </div>
 
       <div className="card mb-3 mt-3 ml-4 "></div>
-      <button
+      {/* <button
         type="button"
         className="btn btn-primary"
         data-toggle="modal"
         data-target=".bd-example-modal-lg"
       >
         Large modal
-      </button>
+      </button> */}
 
       {book ? (
         <div

@@ -26,9 +26,9 @@ function Contact() {
             <div className="hero hero-inner">
                 <div className="container ">
                     <div className="row align-items-center">
-                        <div className="col-lg-6 mx-auto text-center text-#1A374D ">
+                        <div className="col-lg-6 mx-auto text-center ">
                             <div className="intro-wrap ">
-                                <h1 className="mb-0 text-wsubjectite">Contact  Us</h1>
+                                <h1 className="mb-0 text-title text-light">Contact  Us</h1>
                                 <p className="text-white">"Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of hours to help you."
                                 </p>
                             </div>

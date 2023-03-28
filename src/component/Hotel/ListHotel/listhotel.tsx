@@ -252,7 +252,7 @@ function Listhotel() {
   return (
     <div>
       <div>
-        <div className="container">
+        {/* <div className="container">
           <button
             type="button"
             className="btn btn-primary btn-lg float-right  mb-5"
@@ -261,7 +261,7 @@ function Listhotel() {
           >
             Filter
           </button>
-        </div>
+        </div> */}
 
         <div
           className="modal fade"
@@ -284,6 +284,7 @@ function Listhotel() {
                 >
                   <span aria-hidden="true">&times;</span>
                 </button>
+
               </div>
               <div className="modal-body">
                 <div className="">

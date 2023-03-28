@@ -191,9 +191,9 @@ function Listbus() {
   return (
     <div>
       <div>
-        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        {/* <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
           Filter
-        </button>
+        </button> */}
 
         <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered">
