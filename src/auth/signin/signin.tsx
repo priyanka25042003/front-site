@@ -3,6 +3,7 @@ import "./signin.css";
 import firebase from "../../firebase";
 import { useNavigate, useNavigation } from "react-router-dom";
 import googleImg from "../../assert/VHSZf.png";
+import Swal from "sweetalert2";
 export default function Singin() {
   var actionCodeSettings = {
     // URL you want to redirect back to. The domain (www.example.com) for this
@@ -35,6 +36,8 @@ export default function Singin() {
     .catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
+      Swal.fire("Error",error.message,"error")
+
       // ...
     });
         localStorage.setItem("user", JSON.stringify(userCredential));
@@ -45,6 +48,7 @@ export default function Singin() {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        Swal.fire("Error",error.message,"error")
         console.log(errorCode, errorMessage);
       });
     //   firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings)
@@ -77,6 +81,8 @@ export default function Singin() {
                   navigate("/home");
                 },
                 function (error) {
+        Swal.fire("Error",error.message,"error")
+
                   // An error happened.
                 }
               );
@@ -111,6 +117,8 @@ export default function Singin() {
         var errorMessage = error.message;
         // The email of the user's account used.
         var email = error.email;
+        Swal.fire("Error",error.message,"error")
+
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
         // ...
@@ -127,6 +135,8 @@ export default function Singin() {
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
+        Swal.fire("Error",error.message,"error")
+
         // ..
       });
   }
