@@ -23,6 +23,7 @@ import Coimbatore  from "../../assert/Coimbatore, Tamil Nadu.jpg";
 import Gangtok  from "../../assert/Gangtok.jpg";
 import pushkar  from "../../assert/pushkar.webp";
 import ladakh  from "../../assert/ladakh.jpeg";
+import Swal from "sweetalert2";
 
 function Bus() {
   let cityarr:any[]=[]
@@ -64,6 +65,7 @@ function Bus() {
         setnxtplan(arr);
       })
       .catch((err) => {
+        Swal.fire("Error",err.message,"error")
         console.log(err);
       });
   }

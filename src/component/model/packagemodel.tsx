@@ -3,6 +3,7 @@ import "./model.css";
 import ac from "../../assert/air-conditioner-icon.png";
 import { useNavigate } from "react-router";
 import firebase from "firebase";
+import Swal from "sweetalert2";
 
 
 declare var Razorpay: any;
@@ -94,6 +95,7 @@ export default function Packagetmodel(props: any) {
         console.log(res);
       })
       .catch((err) => {
+        Swal.fire("Error",err.message,"error")
         console.log(err);
       });
   }

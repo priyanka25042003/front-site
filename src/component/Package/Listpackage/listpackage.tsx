@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import firebase from "firebase";
 import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
+
 declare var Razorpay: any;
 
 function Listpackage() {
@@ -98,6 +100,7 @@ function Listpackage() {
         console.log(arr);
       })
       .catch((err) => {
+        Swal.fire("Error",err.message,"error")
         console.log(err);
       });
   }
@@ -126,6 +129,7 @@ function Listpackage() {
         console.log(res);
       })
       .catch((err) => {
+        Swal.fire("Error",err.message,"error")
         console.log(err);
       });
   }

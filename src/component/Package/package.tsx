@@ -7,6 +7,8 @@ import HorizontalGallery from "react-dynamic-carousel";
 import firebase from "firebase";
 import imgnotfound from "../../assert/img_notF.jpg";
 import Packagemodel from "../model/packagemodel";
+import Swal from "sweetalert2";
+
 function Package() {
   const [maindata, setmaindata]: any[] = useState([]);
 
@@ -51,13 +53,7 @@ function Package() {
         res.forEach((element) => {
           arr.push({ key: element.key, ...element.val() });
         });
-        // console.log(arr);
-
-        // arr.forEach((element) => {
-        //   if (element.from_location == from && element.to_location == to) {
-        //     filter.push(element);
-        //   }
-        // });
+       
         if (filter.length != -1) {
           setmaindata(filter);
         } else {
@@ -69,6 +65,7 @@ function Package() {
         console.log(arr);
       })
       .catch((err) => {
+        Swal.fire("Error",err.message,"error")
         // console.log(err);
       });
   }

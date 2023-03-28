@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./model.css";
 import ac from "../../assert/air-conditioner-icon.png";
 import { useNavigate } from "react-router";
+import Swal from "sweetalert2";
 import firebase from "firebase";
 declare var Razorpay: any;
 

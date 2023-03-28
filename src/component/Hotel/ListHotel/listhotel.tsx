@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import firebase from "firebase";
 import "./listhotel.css";
+import Swal from "sweetalert2";
 
 import state from "../../../assert/state.json";
 declare var Razorpay: any;
@@ -115,6 +116,7 @@ function Listhotel() {
         console.log(res);
       })
       .catch((err) => {
+        Swal.fire("Error",err.message,"error")
         console.log(err);
       });
   }
@@ -220,6 +222,7 @@ function Listhotel() {
         console.log(filterh);
       })
       .catch((err) => {
+        Swal.fire("Error",err.message,"error")
         console.log(err);
       });
   }

@@ -1,16 +1,20 @@
 import firebase from "firebase";
 import React, { useEffect, useState } from "react";
 import "./userprofile.css";
+import Swal from "sweetalert2";
 
 function Showbookings() {
   const [index, setindex]: any = useState(0);
   const [table, settable]: any = useState([]);
-
+  const [user, setuser]: any = useState([]);
 
   useEffect(() => {
     getbookings();
+    debugger;
+    let data: any = JSON.parse(localStorage.getItem("user") + "");
+    setuser(data.user);
+    console.log(user);
   }, []);
-  let user:any = JSON.stringify(localStorage.getItem("user")+"") 
 
   function getbookings() {
     let arr: any[] = [];
@@ -31,19 +35,48 @@ function Showbookings() {
         });
       })
       .catch((err) => {
+        Swal.fire("Error", err.message, "error");
         console.log(err);
       });
   }
-  let da = true
-  let da1 = true
-  let da2 = true
-  let da3 = true
-
+  function refund(params: any) {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Are you cancel this booking and get refund?s ",
+      showCloseButton: true,
+      showCancelButton: true,
+    }).then((willDelete) => {
+      if (willDelete.dismiss) {
+      } else {
+        params.cancel = true
+        firebase
+          .database()
+          .ref("/booking/" + params.key)
+          .update(params)
+          .then((res) => {
+            getbookings();
+            Swal.fire(
+              "Refund",
+              "your refund is granted you should be able to see this transaction in your account within 3 business days",
+              "info"
+            );
+          })
+          .catch((err) => {
+            Swal.fire("Error", err.message, "error");
+            console.log(err);
+          });
+      }
+    });
+  }
+  let da = true;
+  let da1 = true;
+  let da2 = true;
+  let da3 = true;
 
   return (
     <div className="container">
-      <div className="row shado m-5" >
-        <div className="col-4 bg-change" >
+      <div className="row shado m-5">
+        <div className="col-4 bg-change">
           <div className="container">
             <div className="mt-3">
               <h2 className="text-muted">{user.displayName}</h2>
@@ -55,13 +88,15 @@ function Showbookings() {
                 </div>
                 <div className="d-flex">
                   <p> Phone : &nbsp;</p>
-                  <p className="text-muted">{user.phone ?user.phone :"N/A" }</p>
+                  <p className="text-muted">
+                    {user.phone ? user.phone : "N/A"}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div className="col-8 rediusss">
           <h3 className="text-muted mt-3">Bookings </h3>
           <div className="container">
@@ -122,48 +157,55 @@ function Showbookings() {
                   if (item.hotel_name) {
                     console.log(item);
 
-                    return (<div className="card m-3">
-                      <div className="row no-gutters">
-                        <div className="col-sm-3 d-flex justify-content-center align-items-center">
-                          <img
-                            className="card-img rounded"
-                            src={item.img}
-                            alt="Suresh Dasari Card"
-                            style={{ maxWidth: "100px", maxHeight: "100px" }}
-                          />
-                        </div>
-                        <div className="col-sm-8">
-                          <div className="card-body d-flex justify-content-between">
-                            <div>
-                            <h5 className="card-title">{item.hotel_name}</h5>
-                            <p className="card-text">
-                             {item.hotel_type}
-                            </p>
-                           <p>
-                            <small>
-                            {item.city}
-                            </small>
-                           </p>
+                    return (
+                      <div className="card m-3">
+                        <div className="row no-gutters">
+                          <div className="col-sm-3 d-flex justify-content-center align-items-center">
+                            <img
+                              className="card-img rounded"
+                              src={item.img}
+                              alt="Suresh Dasari Card"
+                              style={{ maxWidth: "100px", maxHeight: "100px" }}
+                            />
+                          </div>
+                          <div className="col-sm-8">
+                            <div className="card-body d-flex justify-content-between ">
+                              <div>
+                                <h5 className="card-title">
+                                  {item.hotel_name}
+                                </h5>
+                                <p className="card-text">{item.hotel_type}</p>
+                                <p>
+                                  <small>{item.city}</small>
+                                </p>
+                              </div>
+                              <div>
+                                <h3>₹ {parseInt(item.pyment)}</h3>
+                                {item.cancel ? (
+                                  <p className="text-danger"> cancled</p>
+                                ) : (
+                                  <button
+                                    onClick={() => refund(item)}
+                                    className="btn btn-link"
+                                  >
+                                    refund
+                                  </button>
+                                )}
+                              </div>
                             </div>
-                            <div>
-                              <h3>
-                              ₹ {parseInt(item.pyment)  }
-                              </h3>
-                            </div>
-                          
                           </div>
                         </div>
                       </div>
-                    </div>)
-                     } else {
-                      da2  = false 
+                    );
+                  } else {
+                    da2 = false;
                   }
-
                 })}
-                 {
-                  !da2 ? "" : <h1 className="text-center text-muted">No Booking Found!</h1> 
-                }
-
+                {!da2 ? (
+                  ""
+                ) : (
+                  <h1 className="text-center text-muted">No Booking Found!</h1>
+                )}
               </div>
               <div
                 className="tab-pane fade show "
@@ -175,41 +217,61 @@ function Showbookings() {
                   if (item.flight_name) {
                     console.log(item);
 
-                    return (<div className="card m-3">
-                      <div className="row no-gutters">
-                        <div className="col-sm-3 d-flex justify-content-center align-items-center">
-                          <img
-                            className="card-img rounded"
-                            src={item.img}
-                            alt="Suresh Dasari Card"
-                            style={{ maxWidth: "100px", maxHeight: "100px" }}
-                          />
-                        </div>
-                        <div className="col-sm-8">
-                          <div className="card-body">
-                            <h5 className="card-title">{item.flight_name}</h5>
-                            <p className="card-text d-flex">
-                            <p className="">{item.from_location}</p> &nbsp; &nbsp; To&nbsp; &nbsp; <p>{item.to_location}</p>
-                            </p>
-                            <p className="card-text d-flex">
-                            <p className="">{item.arrival_time}</p> &nbsp; &nbsp; To&nbsp; &nbsp; <p>{item.departure_time}</p>
-                            </p>
-                          <div>
-                            <h2>{item.pyment}</h2>
+                    return (
+                      <div className="card m-3">
+                        <div className="row no-gutters">
+                          <div className="col-sm-3 d-flex justify-content-center align-items-center">
+                            <img
+                              className="card-img rounded"
+                              src={item.img}
+                              alt="Suresh Dasari Card"
+                              style={{ maxWidth: "100px", maxHeight: "100px" }}
+                            />
                           </div>
+                          <div className="col-sm-8">
+                            <div className="card-body d-flex justify-content-between">
+                              <div>
+                                <h5 className="card-title">
+                                  {item.flight_name}
+                                </h5>
+                                <p className="card-text d-flex">
+                                  <p className="">{item.from_location}</p>{" "}
+                                  &nbsp; &nbsp; To&nbsp; &nbsp;{" "}
+                                  <p>{item.to_location}</p>
+                                </p>
+                                <p className="card-text d-flex">
+                                  <p className="">{item.arrival_time}</p> &nbsp;
+                                  &nbsp; To&nbsp; &nbsp;{" "}
+                                  <p>{item.departure_time}</p>
+                                </p>
+                              </div>
+                              <div>
+                                <h2>₹{item.pyment}</h2>
+                                {item.cancel ? (
+                                  <p className="text-danger"> cancled</p>
+                                ) : (
+                                  <button
+                                    onClick={() => refund(item)}
+                                    className="btn btn-link"
+                                  >
+                                    refund
+                                  </button>
+                                )}
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>)
-                     } else {
-                      da1  = false 
+                    );
+                  } else {
+                    da1 = false;
                   }
-
                 })}
-                  {
-                  !da1 ? "" : <h1 className="text-center text-muted">No Booking Found!</h1> 
-                }
-
+                {!da1 ? (
+                  ""
+                ) : (
+                  <h1 className="text-center text-muted">No Booking Found!</h1>
+                )}
               </div>
               <div
                 className="tab-pane fade show "
@@ -221,39 +283,53 @@ function Showbookings() {
                   if (item.bus_name) {
                     console.log(item);
 
-                    return (<div className="card m-3">
-                      <div className="row no-gutters">
-                        <div className="col-sm-3 d-flex justify-content-center align-items-center">
-                          <img
-                            className="card-img rounded"
-                            src={item.img}
-                            alt="Suresh Dasari Card"
-                            style={{ maxWidth: "100px", maxHeight: "100px" }}
-                          />
-                        </div>
-                        <div className="col-sm-8">
-                          <div className="card-body">
-                            <h5 className="card-title">{item.bus_name}</h5>
-                            <p className="card-text d-flex">
-                            <p className="">{item.from_location}</p> &nbsp; &nbsp; To&nbsp; &nbsp; <p>{item.to_location}</p>
-                            </p>
-                            <p className="card-text d-flex">
-                            <p className="">{item.arrival_time}</p> &nbsp; &nbsp; To&nbsp; &nbsp; <p>{item.departure_time}</p>
-                            </p>
-                           
-                           
+                    return (
+                      <div className="card m-3">
+                        <div className="row no-gutters">
+                          <div className="col-sm-3 d-flex justify-content-center align-items-center">
+                            <img
+                              className="card-img rounded"
+                              src={item.img}
+                              alt="Suresh Dasari Card"
+                              style={{ maxWidth: "100px", maxHeight: "100px" }}
+                            />
+                          </div>
+                          <div className="col-sm-8">
+                            <div className="card-body d-flex justify-content-between">
+                              <h5 className="card-title">{item.bus_name}</h5>
+                              <p className="card-text d-flex">
+                                <p className="">{item.from_location}</p> &nbsp;
+                                &nbsp; To&nbsp; &nbsp; <p>{item.to_location}</p>
+                              </p>
+                              <p className="card-text d-flex">
+                                <p className="">{item.arrival_time}</p> &nbsp;
+                                &nbsp; To&nbsp; &nbsp;{" "}
+                                <p>{item.departure_time}</p>
+                              </p>
+                            </div>
+                            {item.cancel ? (
+                              <p className="text-danger"> cancled</p>
+                            ) : (
+                              <button
+                                onClick={() => refund(item)}
+                                className="btn btn-link"
+                              >
+                                refund
+                              </button>
+                            )}
                           </div>
                         </div>
                       </div>
-                    </div>)
-                      } else {
-                        da3  = false 
+                    );
+                  } else {
+                    da3 = false;
                   }
-
                 })}
-                {
-                  !da3 ? "" : <h1 className="text-center text-muted">No Booking Found!</h1> 
-                }
+                {!da3 ? (
+                  ""
+                ) : (
+                  <h1 className="text-center text-muted">No Booking Found!</h1>
+                )}
               </div>
               <div
                 className="tab-pane fade show "
@@ -264,40 +340,48 @@ function Showbookings() {
                 {table.map((item: any) => {
                   if (item.package_name) {
                     console.log(item);
-                    return (<div className="card m-3">
-                      <div className="row no-gutters">
-                        <div className="col-sm-3 d-flex justify-content-center align-items-center">
-                          <img
-                            className="card-img rounded"
-                            src={item.img}
-                            alt="Suresh Dasari Card"
-                            style={{ maxWidth: "100px", maxHeight: "100px" }}
-                          />
-                        </div>
-                        <div className="col-sm-8">
-                          <div className="card-body">
-                            <h5 className="card-title">{item.bus_name}</h5>
-                            <p className="card-text">
-                              With supporting text below as a natural lead-in to
-                              additional content.
-                            </p>
-                            <a href="#" className="btn btn-primary">
-                              Go somewhere
-                            </a>
+                    return (
+                      <div className="card m-3">
+                        <div className="row no-gutters">
+                          <div className="col-sm-3 d-flex justify-content-center align-items-center">
+                            <img
+                              className="card-img rounded"
+                              src={item.img}
+                              alt="Suresh Dasari Card"
+                              style={{ maxWidth: "100px", maxHeight: "100px" }}
+                            />
+                          </div>
+                          <div className="col-sm-8">
+                            <div className="card-body d-flex justify-content-between">
+                              <h5 className="card-title">{item.bus_name}</h5>
+                              <p className="card-text">
+                                With supporting text below as a natural lead-in
+                                to additional content.
+                              </p>
+                              {item.cancel ? (
+                                <p className="text-danger"> cancled</p>
+                              ) : (
+                                <button
+                                  onClick={() => refund(item)}
+                                  className="btn btn-link"
+                                >
+                                  refund
+                                </button>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>)
+                    );
                   } else {
-                    da  = false 
-                    
+                    da = false;
                   }
-                    
-                })
-                }
-                {
-                  !da ? "" : <h1 className="text-center text-muted">No Booking Found!</h1> 
-                }
+                })}
+                {!da ? (
+                  ""
+                ) : (
+                  <h1 className="text-center text-muted">No Booking Found!</h1>
+                )}
               </div>
             </div>
           </div>

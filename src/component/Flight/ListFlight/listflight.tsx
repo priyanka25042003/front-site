@@ -3,6 +3,8 @@ import firebase from "firebase";
 import { useNavigate, useParams } from "react-router-dom";
 import "./listflight.css";
 import Seate from "../../seate/seat";
+import Swal from "sweetalert2";
+
 declare var Razorpay: any;
 
 function Listflight() {
@@ -135,6 +137,7 @@ function Listflight() {
         console.log(arr);
       })
       .catch((err) => {
+        Swal.fire("Error",err.message,"error")
         console.log(err);
       });
   }
@@ -159,6 +162,7 @@ function Listflight() {
         console.log(res);
       })
       .catch((err) => {
+        Swal.fire("Error",err.message,"error")
         console.log(err);
       });
   }

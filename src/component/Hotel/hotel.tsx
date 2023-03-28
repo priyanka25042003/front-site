@@ -13,7 +13,7 @@ import Kerala  from "../../assert/Keralap.jpg";
 import Ooty  from "../../assert/oty.jpeg";
 import Kolkata  from "../../assert/kolkata.jpeg";
 import Kochi  from "../../assert/kochi.jpeg";
-
+import Swal from "sweetalert2";
 import Hotelmodel from "../model/hotelmodel";
 
 
@@ -49,7 +49,8 @@ function Hotel() {
         setnxtplan(arr);
       })
       .catch((err) => {
-        console.log(err);
+        Swal.fire("Error",err.message,"error")
+        Swal.fire("Error",err.message,"error")
       });
   }
   const [autosagetion, setautosagetion]: any[] = useState([]);

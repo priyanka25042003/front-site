@@ -4,6 +4,7 @@ import ac from "../../assert/air-conditioner-icon.png";
 import { useNavigate } from "react-router";
 import firebase from "firebase";
 import Seate from '../busseate/seat';
+import Swal from "sweetalert2";
 
 declare var Razorpay: any;
 
@@ -95,6 +96,7 @@ export default function Busmodel(props: any) {
         console.log(res);
       })
       .catch((err) => {
+        Swal.fire("Error",err.message,"error")
         console.log(err);
       });
   }

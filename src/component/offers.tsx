@@ -40,6 +40,7 @@ import flight6 from "../assert/flight6.png";
 
 
 
+import Swal from "sweetalert2";
 
 
 
@@ -69,6 +70,7 @@ function Offers() {
         setdata(arr);
       })
       .catch((err) => {
+        Swal.fire("Error",err.message,"error")
         console.log(err);
       });
   }

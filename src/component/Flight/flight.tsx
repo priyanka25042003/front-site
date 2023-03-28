@@ -14,6 +14,7 @@ import Ooty  from "../../assert/oty.jpeg";
 import Kolkata  from "../../assert/kolkata.jpeg";
 import Kochi  from "../../assert/kochi.jpeg";
 import Flightmodel from "../model/flightmodel";
+import Swal from "sweetalert2";
 
 
 function Flight() {
@@ -68,6 +69,7 @@ function Flight() {
         setnxtplan(arr);
       })
       .catch((err) => {
+        Swal.fire("Error",err.message,"error")
         console.log(err);
       });
   }
