@@ -1,6 +1,7 @@
 import React from 'react'
 import HorizontalGallery from 'react-dynamic-carousel';
 import "./about.css";
+import priya from "../../assert/priya.jpg";
 
 function About() {
     return (
@@ -33,7 +34,7 @@ function About() {
                             <img src="https://themewagon.github.io/tour/images/slider-3.jpg" className="d-block w-100" alt="..." />
                         </div>
                         <div className="carousel-item">
-                            <img src="https://themewagon.github.io/tour/images/slider-4.jpg" className="d-block w-100" alt="..." />
+                            <img src="https://themewagon.github.io/tour/images/slider-4.jpg"  className="d-block w-100" alt="..." />
                         </div>
                     </div>
                     <button className="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">

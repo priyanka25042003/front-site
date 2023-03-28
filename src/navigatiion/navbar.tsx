@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import Footer from "../component/Footer/footer";
+import logo from "../assert/logo1.png"; 
 
 function Navbar() {
   let navigate = useNavigate();
@@ -21,8 +22,13 @@ function Navbar() {
   }
   return (
     <div className="" onLoad={navig}>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light  p-3">
-        <h3 className="navbar-brand">Navbar</h3>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light ">
+        <h3 className="navbar-brand">  <img
+                              src={logo} style={{ height: "55px", width: "100px" }}
+
+                              className="img-fluid rounded-start"
+                              alt="..."
+                            /></h3>
         <button
           className="navbar-toggler"
           type="button"

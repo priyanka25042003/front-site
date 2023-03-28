@@ -758,7 +758,7 @@ export default function Hotelmodel(props: any) {
                   {/* <div
                     className={tabIndex == 1 ? "tab-pane active" : "tab-pane"}
                     id="home"
-                    role="tabpanel"
+                    role="tabpanel"feedback
                     aria-labelledby="home-tab"
                   ></div> */}
                   <div

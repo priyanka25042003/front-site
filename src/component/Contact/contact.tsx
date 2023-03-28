@@ -1,24 +1,25 @@
 import firebase from 'firebase';
 import React, { useState } from 'react'
-
+import priya from "../../assert/priya.jpg";
 function Contact() {
     const [userfeed, setuserfeed] :any= useState()
-    function feed(params:any) {
-        let name = params.terget.name;
-        let value = params.terget.value;
+    function feed(e:any) {
+        
+        let name = e.target.name;
+        let value = e.target.value;
         setuserfeed({ ...userfeed, [name]: value });
+        console.log(userfeed);
+        
     }
     function submit() {
         firebase
         .database()
-        .ref("/feedback/")
+        .ref("/contectus")
         .push(userfeed)
-        .then((res) => {
-          console.log(res);
-          alert("Your Response is send")
+        .then((res:any) => {
+        alert("Your response has been recorded." )
         })
-        .catch((err) => {
-
+        .catch((err:any) => {
         });
     }
     return (
@@ -65,21 +66,21 @@ function Contact() {
                                 <textarea className="form-control" onChange={(e)=>feed(e)} name="message"  id="exampleFormControlTextarea1" rows={3}></textarea>
 
                             </div>
-                            <button type="submit" className="btn btn-primary" onClick={submit}>Send Message</button>
+                            <button  className="btn btn-primary" onClick={submit}>Send Message</button>
                         </form>
                     </div>
                     <div className="col-lg-5 ml-auto mt-4  text-center">
 
                         <ul className="list-unstyled mb-0">
                             <li><i className="fa fa-map-marker fa-2x"></i>
-                                <p>San Francisco, CA 94126, USA</p>
+                                <p>San Francisco, CA 94126, India</p>
                             </li>
                             <br />
                             <li className='mt-2'><i className="fa fa-phone fa-2x" aria-hidden="true"></i>
                                 <p>+ 01 234 567 89</p>
                             </li>
                             <li><i className="fa fa-envelope mt-4 fa-2x"></i>
-                                <p>contact@mdbootstrap.com</p>
+                                <p>contact@gmail.com</p>
                             </li>
                         </ul>
 
@@ -103,14 +104,11 @@ function Contact() {
                         </div>
                         <div className="row d-flex justify-content-center">
                             <div className="col-lg-8">
-                                <h5 className="mb-3 text-center ">Maria Kate</h5>
-                                <p className=' text-center'>Photographer</p>
+                                <h5 className="mb-3 text-center "> Banshari Parajapati</h5>
+                                <p className=' text-center'>home fiveer person</p>
                                 <p className="text-muted text-center">
                                     <i className="fa fa-quote-left pe-2"></i>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti
-                                    nesciunt sint eligendi reprehenderit reiciendis, quibusdam illo, beatae quia
-                                    fugit consequatur laudantium velit magnam error. Consectetur distinctio fugit
-                                    doloremque.
+                                   i am not comming for project in clg and my Friend done only.
                                 </p>
                             </div>
                         </div>
@@ -132,8 +130,8 @@ function Contact() {
                         </div>
                         <div className="row d-flex justify-content-center">
                             <div className="col-lg-8">
-                                <h5 className="mb-3 text-center">John Doe</h5>
-                                <p className=' text-center'>Web Developer</p>••••••••
+                                <h5 className="mb-3 text-center"> Chandni Makwna</h5>
+                                <p className=' text-center'>Web Developer</p>
                                 <p className="text-muted text-center">
                                     <i className="fa fa-quote-left pe-2"></i>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti
@@ -152,13 +150,13 @@ function Contact() {
                     <div className="carousel-item">
                         <div className='d-flex justify-content-center' >
                             <img className="rounded-circle shadow-1-strong mb-4 mt-5"
-                                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" alt="avatar"
+                                src={priya} alt="avatar"
                                 style={{ width: "150px" }} />
                         </div>
                         <div className="row d-flex justify-content-center">
                             <div className="col-lg-8">
-                                <h5 className="mb-3  text-center">Anna Deynah</h5>
-                                <p className='  text-center'>UX Designer</p>
+                                <h5 className="mb-3  text-center"> Priyanka Thakor</h5>
+                                <p className='  text-center'>Web Designer</p>
                                 <p className="text-muted  text-center">
                                     <i className="fas fa-quote-left pe-2"></i>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti
