@@ -70,9 +70,13 @@ function Offers() {
         setdata(arr);
       })
       .catch((err) => {
-        Swal.fire("Error",err.message,"error")
-        console.log(err);
+        
+        if (err.message != "Error: Client is offline.") { 
+          Swal.fire("Error",err.message,"error")
+          console.log(err);
+        }
       });
+   
   }
   return (
 

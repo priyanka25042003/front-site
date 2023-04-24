@@ -36,6 +36,7 @@ function Listhotel() {
     age: " ",
     idproof: " ",
     idproofNumber: " ",
+    rooms:''
   });
   const [info, setinfos]: any = useState({
     adults: 1,
@@ -83,7 +84,8 @@ function Listhotel() {
   function proceed(amount: any) {
     razorPayOptions.amount = amount * 100;
     data.pyment = amount
-    var rzp1 = new Razorpay(razorPayOptions);
+    data.id = data.key;
+    delete data.key ;var rzp1 = new Razorpay(razorPayOptions);
     rzp1.open();
     responhendel(razorPayOptions.handler);
   }
@@ -115,9 +117,12 @@ function Listhotel() {
       .then((res) => {
         console.log(res);
       })
-      .catch((err) => {
-        Swal.fire("Error",err.message,"error")
-        console.log(err);
+     .catch((err) => {
+        
+        if (err.message != "Error: Client is offline.") { 
+          Swal.fire("Error",err.message,"error")
+          console.log(err);
+        }
       });
   }
   function next() {
@@ -221,9 +226,12 @@ function Listhotel() {
         setfilterdatah(filter);
         console.log(filterh);
       })
-      .catch((err) => {
-        Swal.fire("Error",err.message,"error")
-        console.log(err);
+     .catch((err) => {
+        
+        if (err.message != "Error: Client is offline.") { 
+          Swal.fire("Error",err.message,"error")
+          console.log(err);
+        }
       });
   }
   const [autosagetion, setautosagetion]: any[] = useState([]);
@@ -1061,10 +1069,10 @@ function Listhotel() {
                             ? "form-control is-invalid  "
                             : "form-control "
                         }
-                        value={info.adults >= 4 && info.adults <= 5 ? 2 : '' || info.adults >= 6 && info.adults <= 7 ? 4 : '' || info.adults >= 8 ? 6 : ''}
+                        value={(info.adults == 1 && info.adults <= 3 ? 1 : '' )|| (info.adults >= 4 && info.adults <= 5 ? 2 : '' )|| (info.adults >= 6 && info.adults <= 7 ? 4 : '') || (info.adults >= 8 ? 6 : '') }
                         name="rooms"
                         id="formGroupExampleInput2"
-                        required
+                        // required
                         placeholder="Rooms"
                       />
                     </div>

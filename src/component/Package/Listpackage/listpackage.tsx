@@ -99,15 +99,19 @@ function Listpackage() {
         setmaindata(arr);
         console.log(arr);
       })
-      .catch((err) => {
-        Swal.fire("Error",err.message,"error")
-        console.log(err);
+     .catch((err) => {
+        
+        if (err.message != "Error: Client is offline.") { 
+          Swal.fire("Error",err.message,"error")
+          console.log(err);
+        }
       });
   }
   function proceed(amount: any) {
     razorPayOptions.amount = amount * 100;
     data.pyment = amount;
-    var rzp1 = new Razorpay(razorPayOptions);
+    data.id = data.key;
+    delete data.key ;var rzp1 = new Razorpay(razorPayOptions);
     rzp1.open();
     responhendel(razorPayOptions.handler);
   }
@@ -128,9 +132,12 @@ function Listpackage() {
       .then((res) => {
         console.log(res);
       })
-      .catch((err) => {
-        Swal.fire("Error",err.message,"error")
-        console.log(err);
+     .catch((err) => {
+        
+        if (err.message != "Error: Client is offline.") { 
+          Swal.fire("Error",err.message,"error")
+          console.log(err);
+        }
       });
   }
   function setuserinfo(event: any) {

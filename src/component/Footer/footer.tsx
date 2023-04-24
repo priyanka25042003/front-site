@@ -31,10 +31,10 @@ function Footer() {
                       <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
                           <h6 className='text-uppercase fw-bold mb-4'>
                               <MDBIcon icon="gem" className="me-3" />
-                              Online Bus Ticketing
+                              Online Ticketing Booking
                           </h6>
                           <p>
-                              This website provides online bus booking services throughout India with amazing deals on bus ticket prices.
+                              This website provides online  booking services throughout India with amazing deals on bus ticket prices.
                           </p>
                       </MDBCol>
 

@@ -10,7 +10,7 @@ function Showbookings() {
 
   useEffect(() => {
     getbookings();
-    debugger;
+    ;
     let data: any = JSON.parse(localStorage.getItem("user") + "");
     setuser(data.user);
     console.log(user);
@@ -24,6 +24,7 @@ function Showbookings() {
       .get()
       .then((res) => {
         res.forEach((element) => {
+          
           // console.log( element.forEach(c => ()));
           arr.push({ key: element.key, ...element.val() });
           if (arr.length > 0) {
@@ -48,6 +49,7 @@ function Showbookings() {
     }).then((willDelete) => {
       if (willDelete.dismiss) {
       } else {
+        
         params.cancel = true
         firebase
           .database()
@@ -201,7 +203,7 @@ function Showbookings() {
                     da2 = false;
                   }
                 })}
-                {!da2 ? (
+                {da2 ? (
                   ""
                 ) : (
                   <h1 className="text-center text-muted">No Booking Found!</h1>
@@ -267,7 +269,7 @@ function Showbookings() {
                     da1 = false;
                   }
                 })}
-                {!da1 ? (
+                {da1 ? (
                   ""
                 ) : (
                   <h1 className="text-center text-muted">No Booking Found!</h1>
@@ -325,7 +327,7 @@ function Showbookings() {
                     da3 = false;
                   }
                 })}
-                {!da3 ? (
+                {da3 ? (
                   ""
                 ) : (
                   <h1 className="text-center text-muted">No Booking Found!</h1>
@@ -377,7 +379,7 @@ function Showbookings() {
                     da = false;
                   }
                 })}
-                {!da ? (
+                {da ? (
                   ""
                 ) : (
                   <h1 className="text-center text-muted">No Booking Found!</h1>

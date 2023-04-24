@@ -18,6 +18,7 @@ export default function Hotelmodel(props: any) {
     age: " ",
     idproof: " ",
     idproofNumber: " ",
+    rooms:1
   });
   const [info, setinfos]: any = useState({
     adults: 1,
@@ -129,7 +130,8 @@ export default function Hotelmodel(props: any) {
   function proceed(amount: any) {
     razorPayOptions.amount = amount * 100;
     data.pyment = amount
-    var rzp1 = new Razorpay(razorPayOptions);
+    data.id = data.key;
+    delete data.key ;var rzp1 = new Razorpay(razorPayOptions);
     rzp1.open();
     responhendel(razorPayOptions.handler);
   }
@@ -737,7 +739,7 @@ export default function Hotelmodel(props: any) {
                     <div className="form-group">
                       <label htmlFor="formGroupExampleInput2">Rooms</label>
                       <input
-                        type="number"
+                        type="tel"
                         min={1}
                         max={6}
                         onChange={(e) => setuserinfo(e)}
@@ -747,7 +749,8 @@ export default function Hotelmodel(props: any) {
                             ? "form-control is-invalid  "
                             : "form-control "
                         }
-                        value={info.adults >= 4 && info.adults <= 5 ? 2 : '' || info.adults >= 6 && info.adults <= 7 ? 4 : '' || info.adults >= 8 ? 6 : ''}
+                        value={info.adults >= 1 && info.adults <= 2 ? 1 : '' ||info.adults >= 3 && info.adults <= 4 ? 2 : '' || info.adults >= 5 && info.adults <= 6 ? 4 : '' || info.adults >= 7 ? 6 : '' }
+
                         name="rooms"
                         id="formGroupExampleInput2"
                         required

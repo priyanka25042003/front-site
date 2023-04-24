@@ -36,7 +36,7 @@ export default function Singin() {
     .catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
-      Swal.fire("Error",error.message,"error")
+      // Swal.fire("Error",error.message,"error")
 
       // ...
     });
@@ -104,8 +104,9 @@ export default function Singin() {
       .auth()
       .signInWithPopup(provider)
       .then((result) => {
+        
         var credential: any = result.credential;
-        localStorage.setItem("user", JSON.stringify(credential));
+        localStorage.setItem("user", JSON.stringify(result));
         var token = credential.accessToken;
         var user = result.user;
         navigate("/home");
@@ -118,7 +119,6 @@ export default function Singin() {
         // The email of the user's account used.
         var email = error.email;
         Swal.fire("Error",error.message,"error")
-
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
         // ...
@@ -129,7 +129,9 @@ export default function Singin() {
       .auth()
       .sendPasswordResetEmail(email)
       .then(() => {
-        // Password reset email sent!
+        // 
+        Swal.fire("Reset","Password reset email sent!","success")
+
         // ..
       })
       .catch((error) => {
