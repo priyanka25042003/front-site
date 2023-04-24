@@ -1,6 +1,10 @@
 import firebase from 'firebase';
 import React, { useState } from 'react'
 import priya from "../../assert/priya.jpg";
+import chandni from "../../assert/chandni.png";
+
+
+
 function Contact() {
     const [userfeed, setuserfeed] :any= useState()
     function feed(e:any) {
@@ -105,10 +109,11 @@ function Contact() {
                         <div className="row d-flex justify-content-center">
                             <div className="col-lg-8">
                                 <h5 className="mb-3 text-center "> Banshari Parajapati</h5>
-                                <p className=' text-center'>home fiveer person</p>
+                                <p className=' text-center'>Lorem ipsum dolor sit</p>
                                 <p className="text-muted text-center">
                                     <i className="fa fa-quote-left pe-2"></i>
-                                   i am not comming for project in clg and my Friend done only.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti
+                                    nesciunt sint eligendi reprehenderit reiciendis.
                                 </p>
                             </div>
                         </div>
@@ -125,7 +130,7 @@ function Contact() {
 
 
                             <img className="rounded-circle shadow-1-strong mb-4 mt-5"
-                                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp" alt="avatar"
+                                src={chandni} alt="avatar"
                                 style={{ width: "150px" }} />
                         </div>
                         <div className="row d-flex justify-content-center">
